@@ -1,35 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Haptic Feedback Example</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        function sendHapticFeedback() {
-            $.ajax({
-                url: 'https://api.telegram.org/7361056451:AAFy4hdDceQJXdYFwhIm6g7L9D54mjH-dFY/sendMessage',
-                type: 'POST',
-                data: {
-                    chat_id: '7361056451',
-                    text: 'Haptic Feedback Sent!'
-                },
-                success: function(resp) {
-                    console.log('Haptic Feedback sent successfully!');
-                },
-                error: function(err) {
-                    console.error('Error sending Haptic Feedback:', err);
-                }
-            });
-        }
-
-        $(document).ready(function() {
-            $('#sendFeedbackBtn').click(function() {
-                sendHapticFeedback();
-            });
-        });
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Mini App</title>
 </head>
 <body>
-    <h1>Haptic Feedback Example</h1>
-    <button id="sendFeedbackBtn">Send Haptic Feedback</button>
+
+<button id="my-button" style="width:200px; height:200px;">Нажми меня</button>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+  document.getElementById('my-button').addEventListener('click', function() {
+    if (window.Telegram.WebApp.isHapticFeedbackSupported()) {
+      Telegram.WebApp.TapticEngine.impactOccurred('medium');
+    }
+  });
+</script>
+
 </body>
 </html>
