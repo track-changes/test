@@ -1,21 +1,911 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Mini App</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#f9f9f9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#f9f9f9" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="site">
+  <meta name="keywords" content="site">
+  <title>RTX-game</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+  <script defer src="js/vendor.min.js"></script>
+  <script defer src="js/app.min.js"></script>
 </head>
-<body>
 
-<button id="my-button">Нажми меня</button>
-
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script>
-  document.getElementById('my-button').addEventListener('click', function() {
-    // Убедитесь, что этот код запускается внутри Telegram Mini App
-    Telegram.WebApp.TapticEngine.impactOccurred('medium');
-  });
-</script>
-
+<body class="body">
+  <div id="wrapper">
+    <div class="header__light"></div>
+    <header class="header js-header">
+      <div class="header__inner js-openProfile">
+        <div class="header__user">
+          <div class="header__img">
+            <img src="img/avatars/hamster.png" alt="Hamster">
+            <span>1</span>
+          </div>
+          <div class="header__progress">
+            <div class="header__info">
+              <div class="header__name">Hamster</div>
+              <div class="header__level">
+                <i>Level </i>
+                <span>1</span>/10
+              </div>
+            </div>
+            <div class="progress">
+              <progress max="100" value="44"></progress>
+              <div class="progress__bar"></div>
+              <div class="progress__bg"></div>
+            </div>
+          </div>
+        </div>
+        <div class="header__stats">
+          <div class="header__stat coin">+2,25 </div>
+          <div class="header__stat up">10 000 000</div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="tap js-sectionTap hide">
+        <div class="income tap__total">1 000 000 000<small>,00</small>
+        </div>
+        <div class="tap__coin-wrap js-tapCoinWrap">
+          <div class="tap__zeus-lightning">
+            <img class="js-zeusGif" src="img/zeus.gif">
+          </div>
+          <div class="tap__coin js-tapCoin" data-plus="2,15">
+            <img src="img/coin-rotate.png" alt="btc">
+          </div>
+        </div>
+        <div class="tap__row">
+          <div class="tap__item js-openBoostScreen tap__item--boost">
+            <div class="tap__item-icon">
+              <img src="img/icons/rocket.svg" alt="Boost">
+            </div>
+            <div class="tap__item-text">Boost</div>
+          </div>
+          <div class="tap__item tap__item--rate">
+            <div class="tap__item-icon">
+              <img src="img/icons/btc.svg" alt="btc">
+            </div>
+            <div class="tap__item-text text-grow">+3,45%</div>
+            <!--.tap__item-text.text-decrease -3,45%-->
+          </div>
+          <div class="tap__zeus">
+            <img src="img/icons/zeus.svg" alt="">
+            <span>Tapping Zeus</span>
+            <div class="tap__zeus-bg">
+              <div class="tap__zeus-progress" style="width: 25%"></div>
+            </div>
+          </div>
+          <div class="tap__item tap__item--energy">
+            <div class="tap__item-icon lightning">
+              <div class="tap__item-energy" style="height:60%">
+                <span> </span>
+              </div>
+              <img src="img/icons/lightning-gray.svg" alt="lightning">
+            </div>
+            <div class="tap__item-text tap__item-text--small">3000 <span>/3000</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="stat js-sectionStat hide">
+        <div class="stat__text">Общий баланс RTx</div>
+        <div class="income stat__total">1 000 000 000<small>,00</small>
+        </div>
+        <div class="stat__inner">
+          <div class="stat__taps">
+            <div class="stat__taps-icon">
+              <img src="img/icons/tap-border.svg" alt="Тап">
+            </div>
+            <div class="stat__taps-text">
+              <div class="stat__taps-label">Всего кликов:</div>
+              <div class="stat__taps-value">1 117 420 575 280</div>
+            </div>
+          </div>
+          <div class="stat__item">
+            <div class="stat__item-icon">
+              <img src="img/icons/ref-border.svg" alt="Тап">
+            </div>
+            <div class="stat__item-label">Всего игроков:</div>
+            <div class="stat__item-value">33 867 806</div>
+          </div>
+          <div class="stat__item">
+            <div class="stat__item-icon">
+              <img src="img/icons/calendar.svg" alt="Календарь">
+            </div>
+            <div class="stat__item-label">Всего игроков:</div>
+            <div class="stat__item-value">33 867 806</div>
+          </div>
+          <div class="stat__item">
+            <div class="stat__item-icon">
+              <img src="img/icons/gamepad.svg" alt="Глобус">
+            </div>
+            <div class="stat__item-label">Всего игроков:</div>
+            <div class="stat__item-value">33 867 806</div>
+          </div>
+        </div>
+      </section>
+      <section class="top js-sectionTop hide">
+        <div class="top__title">Приглашайте друзей</div>
+        <div class="top__subtitle">и получите возможность выиграть 5 000 000 RTx!</div>
+        <button class="top__rules js-popupOpen" type="button" data-popup="rules-awards">Правила получения наград</button>
+        <div class="separator">
+          <span>Список лидеров</span>
+        </div>
+        <div class="top__leader">
+          <div class="top__leader-img">
+            <img src="img/icons/trophy-cup.svg" alt="">
+          </div>
+          <div class="top__leader-text">
+            <div class="top__leader-label">Текущий лидер:</div>
+            <div class="top__leader-name">Имя Фамилия</div>
+            <div class="income top__leader-value">1 000 000 000<small>,00</small>
+            </div>
+          </div>
+        </div>
+        <ol class="top__list">
+          <li class="top__list-item">
+            <div class="top__list-img">
+              <img src="img/avatars/hamster-master.png" alt="">
+            </div>
+            <div class="top__list-info">
+              <div class="top__list-name">Имя Фамилия</div>
+              <div class="top__list-value">22,5K</div>
+            </div>
+            <div class="top__list-place">2 </div>
+          </li>
+          <li class="top__list-item">
+            <div class="top__list-img">
+              <img src="img/avatars/shark-mid.png" alt="">
+            </div>
+            <div class="top__list-info">
+              <div class="top__list-name">Имя Фамилия</div>
+              <div class="top__list-value">22,5K</div>
+            </div>
+            <div class="top__list-place">3 </div>
+          </li>
+          <li class="top__list-item">
+            <div class="top__list-img">
+              <img src="img/avatars/shark-master.png" alt="">
+            </div>
+            <div class="top__list-info">
+              <div class="top__list-name">Имя Фамилия</div>
+              <div class="top__list-value">22,5K</div>
+            </div>
+            <div class="top__list-place">4 </div>
+          </li>
+          <li class="top__list-item">
+            <div class="top__list-img">
+              <img src="img/avatars/hamster-master.png" alt="">
+            </div>
+            <div class="top__list-info">
+              <div class="top__list-name">Имя Фамилия</div>
+              <div class="top__list-value">22,5K</div>
+            </div>
+            <div class="top__list-place">2 </div>
+          </li>
+          <li class="top__list-item">
+            <div class="top__list-img">
+              <img src="img/avatars/shark-mid.png" alt="">
+            </div>
+            <div class="top__list-info">
+              <div class="top__list-name">Имя Фамилия</div>
+              <div class="top__list-value">22,5K</div>
+            </div>
+            <div class="top__list-place">3 </div>
+          </li>
+          <li class="top__list-item">
+            <div class="top__list-img">
+              <img src="img/avatars/shark-master.png" alt="">
+            </div>
+            <div class="top__list-info">
+              <div class="top__list-name">Имя Фамилия</div>
+              <div class="top__list-value">22,5K</div>
+            </div>
+            <div class="top__list-place">4 </div>
+          </li>
+          <li class="top__list-item">
+            <div class="top__list-img">
+              <img src="img/avatars/hamster-master.png" alt="">
+            </div>
+            <div class="top__list-info">
+              <div class="top__list-name">Имя Фамилия</div>
+              <div class="top__list-value">22,5K</div>
+            </div>
+            <div class="top__list-place">2 </div>
+          </li>
+          <li class="top__list-item">
+            <div class="top__list-img">
+              <img src="img/avatars/shark-mid.png" alt="">
+            </div>
+            <div class="top__list-info">
+              <div class="top__list-name">Имя Фамилия</div>
+              <div class="top__list-value">22,5K</div>
+            </div>
+            <div class="top__list-place">3 </div>
+          </li>
+          <li class="top__list-item">
+            <div class="top__list-img">
+              <img src="img/avatars/shark-master.png" alt="">
+            </div>
+            <div class="top__list-info">
+              <div class="top__list-name">Имя Фамилия</div>
+              <div class="top__list-value">22,5K</div>
+            </div>
+            <div class="top__list-place">4 </div>
+          </li>
+        </ol>
+        <div class="top__player">
+          <div class="top__list-item">
+            <div class="top__list-img">
+              <img src="img/avatars/hamster.png" alt="">
+            </div>
+            <div class="top__list-info">
+              <div class="top__list-name">Имя Фамилия</div>
+              <div class="top__list-value">22,5K</div>
+            </div>
+            <div class="top__list-place">3 </div>
+          </div>
+        </div>
+      </section>
+      <section class="ref js-sectionRef hide">
+        <div class="ref__title">Пригласите друзей!</div>
+        <div class="ref__subtitle">
+          <span>Вы и ваш друг получите бонусы!</span>
+          <div class="ref__subtitle-img js-popupOpen" data-popup="ref-rules">
+            <img src="img/icons/question.svg" alt="">
+          </div>
+        </div>
+        <div class="ref__box">
+          <div class="ref__count">
+            <div class="ref__count-title">Всего рефералов:</div>
+            <div class="ref__count-value">
+              <span>0 </span>
+              <span>/ 50</span>
+            </div>
+          </div>
+          <div class="ref__earned js-openTop">
+            <div class="ref__earned-title">Заработано рефералами</div>
+            <div class="income ref__earned-value">1 000 000 000<small>,00</small>
+            </div>
+          </div>
+        </div>
+        <div class="ref__link js-copyWrap">
+          <div class="ref__link-left">
+            <div class="ref__link-title">Ссылка:</div>
+            <div class="ref__link-text js-copyText">https://t.me/tapswap_mirror_1_bot?start=r_6982614608 </div>
+          </div>
+          <div class="ref__link-copy js-copyBtn"></div>
+        </div>
+        <!--<div class="ref__list-warning">Вы достигли максимального количества рефералов на текущем уровне. Чтобы увеличить лимит продолжайте тапать!</div>-->
+        <div class="ref__list-title">Список рефералов:</div>
+        <div class="ref__list-item">
+          <div class="ref__list-img">
+            <img src="img/avatars/whale-light.png" alt="">
+          </div>
+          <div class="ref__list-user">
+            <div class="ref__list-name">Имя Фамилия</div>
+            <div class="ref__list-info">
+              <div class="ref__list-status">Hamster</div>
+              <div class="ref__list-value">22,5K</div>
+            </div>
+          </div>
+          <div class="income ref__list-earned">+55К</div>
+        </div>
+        <div class="ref__list-item">
+          <div class="ref__list-img">
+            <img src="img/avatars/whale.png" alt="">
+          </div>
+          <div class="ref__list-user">
+            <div class="ref__list-name">Имя Фамилия</div>
+            <div class="ref__list-info">
+              <div class="ref__list-status">Hamster</div>
+              <div class="ref__list-value">22,5K</div>
+            </div>
+          </div>
+          <div class="income ref__list-earned">+55К</div>
+        </div>
+        <button class="ref__share" type="button" onclick="window.location.href = 'tg://msg?text=Текст%20для%20поделиться'">
+          <span>Пригласить друга</span>
+        </button>
+        <!--<p class="ref__list-empty">У вас нет рефералов</p>-->
+      </section>
+      <section class="tasks js-sectionTasks hide">
+        <div class="tasks__title">Заработай больше монет!</div>
+        <div class="tasks__text">Выполняй простые задания и получай награду!</div>
+        <div class="separator tasks__line">
+          <span>Ежедневная награда</span>
+        </div>
+        <div class="tasks__item js-popupOpen tasks__item--check" data-popup="daily-reward">
+          <div class="tasks__icon">
+            <img src="img/icons/calendar.svg" alt="Календарь">
+          </div>
+          <div class="tasks__info">
+            <div class="tasks__target">Награда за ежедневный вход</div>
+            <div class="income tasks__award">5 000 000</div>
+          </div>
+        </div>
+        <div class="separator tasks__line">
+          <span>Список заданий</span>
+        </div>
+        <div class="tasks__item js-popupOpen" data-popup="task-telegram">
+          <div class="tasks__icon">
+            <img src="img/icons/telegram.svg" alt="Телеграм">
+          </div>
+          <div class="tasks__info">
+            <div class="tasks__target">Подписка на Telegram-канал</div>
+            <div class="income tasks__award">250 000</div>
+          </div>
+        </div>
+        <div class="tasks__item">
+          <div class="tasks__icon">
+            <img src="img/icons/x-twitter.svg" alt="X-Twitter">
+          </div>
+          <div class="tasks__info">
+            <div class="tasks__target">Подписка на Twitter</div>
+            <div class="income tasks__award">250 000</div>
+          </div>
+        </div>
+        <div class="tasks__item js-popupOpen tasks__item--check" data-popup="task-invite">
+          <div class="tasks__icon">
+            <img src="img/icons/friend1.svg" alt="Приглашение">
+          </div>
+          <div class="tasks__info">
+            <div class="tasks__target">Пригласить 1 друга</div>
+            <div class="income tasks__award">500 000</div>
+          </div>
+        </div>
+        <div class="tasks__item">
+          <div class="tasks__icon">
+            <img src="img/icons/friend5.svg" alt="Приглашение">
+          </div>
+          <div class="tasks__info">
+            <div class="tasks__target">Пригласить 5 друзей</div>
+            <div class="income tasks__award">2 500 000</div>
+          </div>
+        </div>
+        <div class="tasks__item">
+          <div class="tasks__icon">
+            <img src="img/icons/friend10.svg" alt="Приглашение">
+          </div>
+          <div class="tasks__info">
+            <div class="tasks__target">Пригласить 10 друзей</div>
+            <div class="income tasks__award">10 000 000</div>
+          </div>
+        </div>
+      </section>
+      <section class="boost js-sectionBoost hide">
+        <div class="boost__suptitle">Ваш баланс:</div>
+        <div class="income boost__total">1 000 000 000<small>,00</small>
+        </div>
+        <div class="separator boost__line">
+          <span>Ежедневные Бусты</span>
+        </div>
+        <div class="boost-item js-popupOpen" data-popup="update-zeus">
+          <div class="boost__icon">
+            <img src="img/icons/zeus-border.svg" alt="Tapping Zeus">
+          </div>
+          <div class="boost__info">
+            <div class="boost__name">Tapping Zeus</div>
+            <div class="boost__bonus">
+              <img src="img/coin.png" alt="Монета">
+              <b>33&nbsp</b>
+              <span>/ тап на 15 сек.</span>
+            </div>
+          </div>
+          <div class="boost__status">
+            <div class="boost__value">5/5</div>
+          </div>
+        </div>
+        <div class="separator boost__line">
+          <span>Улучшения</span>
+        </div>
+        <div class="boost-item js-popupOpen" data-popup="multitap">
+          <div class="boost__icon">
+            <img src="img/icons/tap-border.svg" alt="Мультитап">
+          </div>
+          <div class="boost__info">
+            <div class="boost__name">Мультитап</div>
+            <div class="boost__bonus">
+              <img src="img/coin.png" alt="Монета">
+              <b>+ 1&nbsp</b>
+              <span>/ тап </span>
+            </div>
+          </div>
+          <div class="boost__status">
+            <div class="boost__value">1 lvl</div>
+            <div class="income boost__price">5 000</div>
+          </div>
+        </div>
+        <div class="boost-item blocked">
+          <div class="boost__blocked">Откроется на уровне Hamster Mid</div>
+          <div class="boost__icon">
+            <img src="img/icons/battery.svg" alt="Лимит энергии">
+          </div>
+          <div class="boost__info">
+            <div class="boost__name">Лимит энергии</div>
+            <div class="boost__bonus">
+              <img src="img/icons/lightning.svg" alt="Заряд">
+              <b>+ 1 000</b>
+            </div>
+          </div>
+          <div class="boost__status">
+            <div class="boost__value">1 lvl</div>
+            <div class="income boost__price">3 000</div>
+          </div>
+        </div>
+        <div class="boost-item blocked">
+          <div class="boost__blocked">Откроется на уровне Hamster Mid</div>
+          <div class="boost__icon">
+            <img src="img/icons/battery-charge.svg" alt="Восстановление энергии">
+          </div>
+          <div class="boost__info">
+            <div class="boost__name">Восстановление энергии</div>
+            <div class="boost__bonus">
+              <img src="img/icons/lightning.svg" alt="Заряд">
+              <b>+ 2</b>
+              <span>/ сек </span>
+            </div>
+          </div>
+          <div class="boost__status">
+            <div class="boost__value">1 lvl</div>
+            <div class="income boost__price">10 000</div>
+          </div>
+        </div>
+      </section>
+      <section class="profile js-sectionProfile hide">
+        <div class="slider js-slider">
+          <div class="slider-inner">
+            <div class="slider__slide js-sliderSlide">
+              <div class="slider__slide-img">
+                <img src="img/avatars/hamster.png" alt="Аватар 1">
+              </div>
+            </div>
+            <div class="slider__slide js-sliderSlide">
+              <div class="slider__slide-img">
+                <img src="img/avatars/hamster-light.png" alt="Аватар 2">
+              </div>
+            </div>
+            <div class="slider__slide js-sliderSlide">
+              <div class="slider__slide-img">
+                <img src="img/avatars/hamster-mid.png" alt="Аватар 3">
+              </div>
+            </div>
+            <div class="slider__slide js-sliderSlide">
+              <div class="slider__slide-img">
+                <img src="img/avatars/hamster-master.png" alt="Аватар 4">
+              </div>
+            </div>
+            <div class="slider__slide js-sliderSlide">
+              <div class="slider__slide-img">
+                <img src="img/avatars/shark-light.png" alt="Аватар 5">
+              </div>
+            </div>
+            <div class="slider__slide js-sliderSlide">
+              <div class="slider__slide-img">
+                <img src="img/avatars/shark-mid.png" alt="Аватар 6">
+              </div>
+            </div>
+            <div class="slider__slide js-sliderSlide">
+              <div class="slider__slide-img">
+                <img src="img/avatars/shark-master.png" alt="Аватар 7">
+              </div>
+            </div>
+            <div class="slider__slide js-sliderSlide">
+              <div class="slider__slide-img">
+                <img src="img/avatars/whale-light.png" alt="Аватар 8">
+              </div>
+            </div>
+            <div class="slider__slide js-sliderSlide">
+              <div class="slider__slide-img">
+                <img src="img/avatars/whale-mid.png" alt="Аватар 9">
+              </div>
+            </div>
+            <div class="slider__slide js-sliderSlide">
+              <div class="slider__slide-img">
+                <img src="img/avatars/whale.png" alt="Аватар 10">
+              </div>
+            </div>
+          </div>
+          <button class="slider__btn js-sliderPrev"> </button>
+          <button class="slider__btn slider__btn--next js-sliderNext"> </button>
+        </div>
+        <div class="profile-inner">
+          <div class="profile__info">
+            <div class="profile__status">Hamster</div>
+            <div class="profile__level">
+              <i>Level </i>
+              <span>1</span>/10
+            </div>
+          </div>
+          <div class="progress__numbers">
+            <span>3000 </span>/ <span>10000</span>
+          </div>
+          <div class="progress">
+            <progress max="100" value="33"></progress>
+            <div class="progress__bar"></div>
+            <div class="progress__bg"></div>
+          </div>
+          <div class="profile__items">
+            <div class="profile__item profile__item--popup js-popupOpen" data-popup="multiplier">
+              <div class="profile__item-title">Множитель BTC </div>
+              <div class="profile__item-text">
+                <img src="img/icons/error.svg" alt="">
+                <span>Нет</span>
+              </div>
+              <!-- <div class="profile__item">
+                    <div class="profile__item-title">Множитель BTC </div>
+                    <div class="profile__item-text">
+                    <img src="img/icons/check.svg" alt="">
+                    <span>да</span>
+                    </div>
+                </div>
+                -->
+            </div>
+            <div class="profile__item">
+              <div class="profile__item-title">Макс. энергии</div>
+              <div class="profile__item-text">
+                <img src="img/icons/lightning.svg" alt="">
+                <span>3 000</span>
+              </div>
+            </div>
+            <div class="profile__item">
+              <div class="profile__item-title">Макс. рефералов</div>
+              <div class="profile__item-text">
+                <img src="img/icons/nav-ref-active.svg" alt="">
+                <span>50</span>
+              </div>
+            </div>
+            <div class="profile__item">
+              <div class="profile__item-title">% от рефералов</div>
+              <div class="profile__item-text">
+                <img src="img/icons/percent.svg" alt="">
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="ref js-sectionRef hide">
+        <div class="ref__title">Пригласите друзей!</div>
+        <div class="ref__subtitle">
+          <span>Вы и ваш друг получите бонусы!</span>
+          <div class="ref__subtitle-img js-popupOpen" data-popup="ref-rules">
+            <img src="img/icons/question.svg" alt="">
+          </div>
+        </div>
+        <div class="ref__box">
+          <div class="ref__count">
+            <div class="ref__count-title">Всего рефералов:</div>
+            <div class="ref__count-value">
+              <span>0 </span>
+              <span>/ 50</span>
+            </div>
+          </div>
+          <div class="ref__earned js-openTop">
+            <div class="ref__earned-title">Заработано рефералами</div>
+            <div class="income ref__earned-value">1 000 000 000<small>,00</small>
+            </div>
+          </div>
+        </div>
+        <div class="ref__link js-copyWrap">
+          <div class="ref__link-left">
+            <div class="ref__link-title">Ссылка:</div>
+            <div class="ref__link-text js-copyText">https://t.me/tapswap_mirror_1_bot?start=r_6982614608 </div>
+          </div>
+          <div class="ref__link-copy js-copyBtn"></div>
+        </div>
+        <!--<div class="ref__list-warning">Вы достигли максимального количества рефералов на текущем уровне. Чтобы увеличить лимит продолжайте тапать!</div>-->
+        <div class="ref__list-title">Список рефералов:</div>
+        <div class="ref__list-item">
+          <div class="ref__list-img">
+            <img src="img/avatars/whale-light.png" alt="">
+          </div>
+          <div class="ref__list-user">
+            <div class="ref__list-name">Имя Фамилия</div>
+            <div class="ref__list-info">
+              <div class="ref__list-status">Hamster</div>
+              <div class="ref__list-value">22,5K</div>
+            </div>
+          </div>
+          <div class="income ref__list-earned">+55К</div>
+        </div>
+        <div class="ref__list-item">
+          <div class="ref__list-img">
+            <img src="img/avatars/whale.png" alt="">
+          </div>
+          <div class="ref__list-user">
+            <div class="ref__list-name">Имя Фамилия</div>
+            <div class="ref__list-info">
+              <div class="ref__list-status">Hamster</div>
+              <div class="ref__list-value">22,5K</div>
+            </div>
+          </div>
+          <div class="income ref__list-earned">+55К</div>
+        </div>
+        <button class="ref__share" type="button" onclick="window.location.href = 'tg://msg?text=Текст%20для%20поделиться'">
+          <span>Пригласить друга</span>
+        </button>
+        <!--<p class="ref__list-empty">У вас нет рефералов</p>-->
+      </section>
+    </main>
+    <nav class="nav js-nav">
+      <ul class="nav__list js-navList">
+        <li class="nav__item js-navItem" data-nav="ref">
+          <div class="nav__icon">
+            <img src="img/icons/nav-ref.svg" alt="Ref">
+            <img class="active" src="img/icons/nav-ref-active.svg" alt="Ref">
+          </div>
+          <div class="nav__text">Ref</div>
+        </li>
+        <li class="nav__item js-navItem" data-nav="tasks">
+          <div class="nav__icon">
+            <img src="img/icons/nav-tasks.svg" alt="tasks">
+            <img class="active" src="img/icons/nav-tasks-active.svg" alt="tasks">
+          </div>
+          <div class="nav__text">Tasks</div>
+        </li>
+        <li class="nav__item js-navItem active" data-nav="tap">
+          <div class="nav__icon">
+            <img class="default" src="img/coin-rotate.png" alt="tap">
+          </div>
+          <div class="nav__text">Tap</div>
+        </li>
+        <li class="nav__item js-navItem" data-nav="top">
+          <div class="nav__icon">
+            <img src="img/icons/nav-top.svg" alt="Top">
+            <img class="active" src="img/icons/nav-top-active.svg" alt="Top">
+          </div>
+          <div class="nav__text">Top</div>
+        </li>
+        <li class="nav__item js-navItem" data-nav="stat">
+          <div class="nav__icon">
+            <img src="img/icons/nav-stat.svg" alt="Stat">
+            <img class="active" src="img/icons/nav-stat-active.svg" alt="Stat">
+          </div>
+          <div class="nav__text">Stat</div>
+        </li>
+      </ul>
+    </nav>
+    <div class="popup js-popup hide" id="rules-awards">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__title">Правила
+            <br> получения наград
+          </div>
+          <div class="popup__award-text">Битва рефералов проходит каждые 2 недели. Текущая битва завершается: <b>04.06.2024, 00:00</b>
+          </div>
+          <div class="popup__award-text">Призы за битву рефералов распределяются следующим образом:</div>
+          <ol class="popup__awards-table">
+            <li class="popup__awards-item">
+              <div class="popup__awards-text">1 место</div>
+              <div class="income popup__awards-number">5 000 000</div>
+            </li>
+            <li class="popup__awards-item">
+              <div class="popup__awards-text">2 место</div>
+              <div class="income popup__awards-number">5 000 000</div>
+            </li>
+            <li class="popup__awards-item">
+              <div class="popup__awards-text">3 место</div>
+              <div class="income popup__awards-number">5 000 000</div>
+            </li>
+            <li class="popup__awards-item">
+              <div class="popup__awards-text">4 место</div>
+              <div class="income popup__awards-number">5 000 000</div>
+            </li>
+            <li class="popup__awards-item">
+              <div class="popup__awards-text">5 место</div>
+              <div class="income popup__awards-number">5 000 000</div>
+            </li>
+            <li class="popup__awards-item">
+              <div class="popup__awards-text">6 место</div>
+              <div class="income popup__awards-number">5 000 000</div>
+            </li>
+            <li class="popup__awards-item">
+              <div class="popup__awards-text">7 место</div>
+              <div class="income popup__awards-number">5 000 000</div>
+            </li>
+            <li class="popup__awards-item">
+              <div class="popup__awards-text">8 место</div>
+              <div class="income popup__awards-number">5 000 000</div>
+            </li>
+            <li class="popup__awards-item">
+              <div class="popup__awards-text">9 место</div>
+              <div class="income popup__awards-number">5 000 000</div>
+            </li>
+            <li class="popup__awards-item">
+              <div class="popup__awards-text">10 место</div>
+              <div class="income popup__awards-number">5 000 000</div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="update-zeus">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__img">
+            <img src="img/icons/zeus.svg" alt="">
+          </div>
+          <div class="popup__title">Tapping Zeus</div>
+          <div class="popup__text">Получайте 33 RTx за тап в течение 15 секунд</div>
+          <div class="popup__subtext">Осталось на сегодня: 5 /5</div>
+          <button class="popup__btn" type="button">Активировать</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="multitap">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__img">
+            <img src="img/icons/tap.svg" alt="">
+          </div>
+          <div class="popup__title">Мультитап</div>
+          <div class="popup__text">Увеличивает доход за каждый тап на +1</div>
+          <div class="popup__buy">
+            <div class="income popup__price">5 000 000</div>
+            <p>1 lvl</p>
+          </div>
+          <button class="popup__btn" type="button">Получить</button>
+          <!--<button class="popup__btn" type="button" disabled="">Неостаточно монет</button> Или можно класс disabled-->
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="multiplier">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__title">Множитель BTC</div>
+          <div class="popup__text">Множитель BTC позволяет получать больше RTx за тап. Достигнул уровня Shark Light количество монет будет зависеть от волатильности BTC за последние 4 часа. </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="daily-reward">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap popup-inner__wrap--full">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__title">Ежедневная
+            <br>награда
+          </div>
+          <div class="popup__text">Забирайте монеты за ежедневный вход в игру без пропусков. Кнопку “Получить” нужно нажимать каждый день, иначе счетчик дней начнется заново</div>
+          <ol class="popup__daily-list">
+            <li class="popup__daily-item popup__daily-item--prev">
+              <div class="popup__daily-title">День 2</div>
+              <div class="popup__daily-img">
+                <img src="img/coin.png" alt="">
+              </div>
+              <div class="popup__daily-award">700</div>
+            </li>
+            <li class="popup__daily-item popup__daily-item--active">
+              <div class="popup__daily-title">День 3</div>
+              <div class="popup__daily-img">
+                <img src="img/coin.png" alt="">
+              </div>
+              <div class="popup__daily-award">900</div>
+            </li>
+            <li class="popup__daily-item popup__daily-item--next">
+              <div class="popup__daily-title">День 4</div>
+              <div class="popup__daily-img">
+                <img src="img/coin.png" alt="">
+              </div>
+              <div class="popup__daily-award">1,1К</div>
+            </li>
+          </ol>
+          <button class="popup__btn" type="button" disabled>Возвращайтесь завтра</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="task-telegram">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__img">
+            <img src="img/icons/telegram.svg" alt="">
+          </div>
+          <div class="popup__title">Подписка на Telegram-канал</div>
+          <div class="popup__box">
+            <a class="popup__btn-link" href="#" target="_blank">Подписаться</a>
+          </div>
+          <div class="income popup__task-award">250 000</div>
+          <button class="popup__btn" type="button" onclick="createNotification('warning', 'Вы не выполнили условия', 3)">Проверить</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="task-invite">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__img">
+            <img src="img/icons/friend1.svg" alt="">
+          </div>
+          <div class="popup__title">Пригласить 1 друга</div>
+          <div class="income popup__task-award">500 000</div>
+          <div class="popup__task-complete">
+            <img src="img/icons/check.svg" alt="">
+            <span>Выполнено</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="ref-rules">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__title">Правила
+            <br> получения бонусов
+          </div>
+          <div class="popup__text">Приглашая своих друзей, вы получаете дополнительные монеты RTx от их тапов, в соответствии с вашим уровнем</div>
+          <div class="popup__ref-table">
+            <div class="popup__ref-head">
+              <span>Уровень</span>
+              <span>% отчис.</span>
+              <span>Макс. рефералов</span>
+            </div>
+            <div class="popup__ref-row">
+              <span>Hamster</span>
+              <span>0</span>
+              <span>50</span>
+            </div>
+            <div class="popup__ref-row">
+              <span>Hamster Light</span>
+              <span>0,1%</span>
+              <span>100</span>
+            </div>
+            <div class="popup__ref-row popup__ref-row--active">
+              <span>Hamster Mid</span>
+              <span>0,2%</span>
+              <span>200</span>
+            </div>
+            <div class="popup__ref-row">
+              <span>Hamster Master</span>
+              <span>0,3%</span>
+              <span>500</span>
+            </div>
+            <div class="popup__ref-row">
+              <span>Shark Light</span>
+              <span>1%</span>
+              <span>1 000</span>
+            </div>
+            <div class="popup__ref-row">
+              <span>Shark Mid</span>
+              <span>1,5%</span>
+              <span>2 000</span>
+            </div>
+            <div class="popup__ref-row">
+              <span>Shark Master</span>
+              <span>1,7%</span>
+              <span>5 000</span>
+            </div>
+            <div class="popup__ref-row">
+              <span>Whale Light</span>
+              <span>2%</span>
+              <span>10 000</span>
+            </div>
+            <div class="popup__ref-row">
+              <span>Whale Mid</span>
+              <span>2,5%</span>
+              <span>20 000</span>
+            </div>
+            <div class="popup__ref-row">
+              <span>Whale</span>
+              <span>3%</span>
+              <span>50 000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav__light"></div>
+    <div class="nav__border"></div>
+  </div>
 </body>
+
 </html>
