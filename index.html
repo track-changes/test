@@ -19,10 +19,9 @@
 
 <body class="body">
   <div id="wrapper">
-    <div class="header__light"></div>
     <header class="header js-header">
-      <div class="header__inner js-openProfile">
-        <div class="header__user">
+      <div class="header__inner">
+        <div class="header__user js-openProfile">
           <div class="header__img">
             <img src="img/avatars/hamster.png" alt="Hamster">
             <span>1</span>
@@ -43,8 +42,10 @@
           </div>
         </div>
         <div class="header__stats">
-          <div class="header__stat coin">+2,25 </div>
-          <div class="header__stat up">10 000 000</div>
+          <div class="header__stat wallet js-openWallet">Кошелек</div>
+          <div class="header__stat coin">+1,55</div>
+          <div class="header__stat up">10 000</div>
+          <button class="header__language" type="button">En</button>
         </div>
       </div>
     </header>
@@ -63,11 +64,15 @@
         <div class="tap__row">
           <div class="tap__item js-openBoostScreen tap__item--boost">
             <div class="tap__item-icon">
-              <img src="img/icons/rocket.svg" alt="Boost">
+              <img src="img/icons/fire.svg" alt="Boost">
             </div>
             <div class="tap__item-text">Boost</div>
           </div>
-          <div class="tap__item tap__item--rate">
+          <div class="tap__item tap__item--rate lock js-rateLock">
+            <div class="tap__tooltip">
+              <div class="tap__tooltip-title js-popupOpen" data-popup="multiplier">Множитель BTC</div>
+              <div class="tap__tooltip-text">Откроется на уровне Shark Light</div>
+            </div>
             <div class="tap__item-icon">
               <img src="img/icons/btc.svg" alt="btc">
             </div>
@@ -93,155 +98,336 @@
           </div>
         </div>
       </section>
-      <section class="stat js-sectionStat hide">
-        <div class="stat__text">Общий баланс RTx</div>
-        <div class="income stat__total">1 000 000 000<small>,00</small>
+      <section class="top js-sectionTrade hide"></section>
+      <section class="stat js-sectionStat hide js-tabsWrap" data-tabs="stat">
+        <div class="stat__content stat__content--left js-tabContent" data-tab="top-list">
+          <div class="top__head">
+            <div class="top__title">Рейтинг игроков</div>
+            <div class="top__trophy">
+              <img src="img/icons/trophy.svg" alt="">
+              <b>Топ 25</b>
+            </div>
+          </div>
+          <div class="top__text">Рейтинг игроков формируется на основе данных о количестве RTX на балансе.</div>
+          <div class="top__info">Информация обновляется 1 раз в сутки в 06:00 (MSK).
+            <br>Представленные данные несут информационный характер
+          </div>
+          <ol class="top__levels">
+            <li class="top__level top__level--active">
+              <span class="top__level-name">Все</span>
+            </li>
+            <li class="top__level">
+              <div class="top__level-img">
+                <img src="img/avatars/hamster.png" alt="">
+              </div>
+              <span class="top__level-name">Hamster</span>
+            </li>
+            <li class="top__level">
+              <div class="top__level-img">
+                <img src="img/avatars/hamster-light.png" alt="">
+              </div>
+              <span class="top__level-name">Hamster Light</span>
+            </li>
+            <li class="top__level">
+              <div class="top__level-img">
+                <img src="img/avatars/hamster-mid.png" alt="">
+              </div>
+              <span class="top__level-name">Hamster Mid</span>
+            </li>
+            <li class="top__level">
+              <div class="top__level-img">
+                <img src="img/avatars/hamster-master.png" alt="">
+              </div>
+              <span class="top__level-name">Hamster Master</span>
+            </li>
+            <li class="top__level">
+              <div class="top__level-img">
+                <img src="img/avatars/shark-light.png" alt="">
+              </div>
+              <span class="top__level-name">Shark Light</span>
+            </li>
+            <li class="top__level">
+              <div class="top__level-img">
+                <img src="img/avatars/shark-mid.png" alt="">
+              </div>
+              <span class="top__level-name">Shark Mid</span>
+            </li>
+            <li class="top__level">
+              <div class="top__level-img">
+                <img src="img/avatars/shark-master.png" alt="">
+              </div>
+              <span class="top__level-name">Shark Master</span>
+            </li>
+            <li class="top__level">
+              <div class="top__level-img">
+                <img src="img/avatars/whale-light.png" alt="">
+              </div>
+              <span class="top__level-name">Whale Light</span>
+            </li>
+            <li class="top__level">
+              <div class="top__level-img">
+                <img src="img/avatars/whale-mid.png" alt="">
+              </div>
+              <span class="top__level-name">Whale Mid</span>
+            </li>
+            <li class="top__level">
+              <div class="top__level-img">
+                <img src="img/avatars/whale.png" alt="">
+              </div>
+              <span class="top__level-name">Whale</span>
+            </li>
+          </ol>
+          <!--<div class="top__empty">
+              <div class="top__empty-title">Тут пусто...</div>
+              <div class="top__empty-text">Игроков данного уровня пока нет</div>
+            </div>
+            -->
+          <ol class="top__list">
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/hamster-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">2 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-mid.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">3 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">4 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/hamster-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">2 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-mid.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">3 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">4 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/hamster-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">2 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-mid.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">3 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">4 </div>
+            </li>
+          </ol>
         </div>
-        <div class="stat__inner">
-          <div class="stat__taps">
-            <div class="stat__taps-icon">
-              <img src="img/icons/tap-border.svg" alt="Тап">
-            </div>
-            <div class="stat__taps-text">
-              <div class="stat__taps-label">Всего кликов:</div>
-              <div class="stat__taps-value">1 117 420 575 280</div>
+        <div class="stat__content hide js-tabContent" data-tab="referrals">
+          <div class="top__title">Приглашайте друзей</div>
+          <div class="top__subtitle">и получите возможность выиграть 5 000 000 RTx!</div>
+          <button class="top__rules js-openSubsection" type="button" data-subsection="rules-awards">Правила получения наград</button>
+          <div class="top__countdown">
+            <span class="top__countdown-text">До завершения турнира:</span>
+            <div class="top__countdown-numbers">
+              <span>12 д.</span>:<span>11 ч. </span>
             </div>
           </div>
-          <div class="stat__item">
-            <div class="stat__item-icon">
-              <img src="img/icons/ref-border.svg" alt="Тап">
+          <div class="top__info">Данные обновляются ежедневно в 06:00 (MSK)</div>
+          <div class="top__leader">
+            <div class="top__leader-img">
+              <img src="img/icons/trophy-cup.svg" alt="">
             </div>
-            <div class="stat__item-label">Всего игроков:</div>
-            <div class="stat__item-value">33 867 806</div>
-          </div>
-          <div class="stat__item">
-            <div class="stat__item-icon">
-              <img src="img/icons/calendar.svg" alt="Календарь">
+            <div class="top__leader-text">
+              <div class="top__leader-label">Текущий лидер:</div>
+              <div class="top__leader-name">Имя Фамилия</div>
+              <div class="income top__leader-value">1 000 000 000<small>,00</small>
+              </div>
             </div>
-            <div class="stat__item-label">Всего игроков:</div>
-            <div class="stat__item-value">33 867 806</div>
           </div>
-          <div class="stat__item">
-            <div class="stat__item-icon">
-              <img src="img/icons/gamepad.svg" alt="Глобус">
-            </div>
-            <div class="stat__item-label">Всего игроков:</div>
-            <div class="stat__item-value">33 867 806</div>
-          </div>
+          <ol class="top__list">
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/hamster-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">2 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-mid.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">3 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">4 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/hamster-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">2 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-mid.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">3 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">4 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/hamster-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">2 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-mid.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">3 </div>
+            </li>
+            <li class="top__list-item">
+              <div class="top__list-img">
+                <img src="img/avatars/shark-master.png" alt="">
+              </div>
+              <div class="top__list-info">
+                <div class="top__list-name">Имя Фамилия</div>
+                <div class="top__list-value">22,5K</div>
+              </div>
+              <div class="top__list-place">4 </div>
+            </li>
+          </ol>
         </div>
-        <div class="stat__info">Информация обновляется каждый час</div>
-      </section>
-      <section class="top js-sectionTop hide">
-        <div class="top__title">Приглашайте друзей</div>
-        <div class="top__subtitle">и получите возможность выиграть 5 000 000 RTx!</div>
-        <button class="top__rules js-popupOpen" type="button" data-popup="rules-awards">Правила получения наград</button>
-        <div class="separator">
-          <span>Список лидеров</span>
-        </div>
-        <div class="top__info">Данные обновляются ежедневно в 06:00 (MSK)</div>
-        <div class="top__leader">
-          <div class="top__leader-img">
-            <img src="img/icons/trophy-cup.svg" alt="">
+        <div class="stat__content stat__content--last hide js-tabContent" data-tab="stat-screen">
+          <div class="stat__text">Общий баланс RTx</div>
+          <div class="income stat__total">1 000 000 000<small>,00</small>
           </div>
-          <div class="top__leader-text">
-            <div class="top__leader-label">Текущий лидер:</div>
-            <div class="top__leader-name">Имя Фамилия</div>
-            <div class="income top__leader-value">1 000 000 000<small>,00</small>
+          <div class="stat__inner">
+            <div class="stat__taps">
+              <div class="stat__taps-icon">
+                <img src="img/icons/tap.svg" alt="Тап">
+              </div>
+              <div class="stat__taps-text">
+                <div class="stat__taps-label">Всего кликов:</div>
+                <div class="stat__taps-value">1 117 420 575 280</div>
+              </div>
+            </div>
+            <div class="stat__item">
+              <div class="stat__item-icon">
+                <img src="img/icons/refs.svg" alt="">
+              </div>
+              <div class="stat__item-label">Всего игроков:</div>
+              <div class="stat__item-value">33 867 806</div>
+            </div>
+            <div class="stat__item">
+              <div class="stat__item-icon">
+                <img src="img/icons/calendar-outline.svg" alt="Календарь">
+              </div>
+              <div class="stat__item-label">Всего игроков:</div>
+              <div class="stat__item-value">33 867 806</div>
+            </div>
+            <div class="stat__item">
+              <div class="stat__item-icon">
+                <img src="img/icons/users-check.svg" alt="">
+              </div>
+              <div class="stat__item-label">Всего игроков:</div>
+              <div class="stat__item-value">33 867 806</div>
             </div>
           </div>
+          <div class="stat__info">Информация обновляется каждый час</div>
         </div>
-        <ol class="top__list">
-          <li class="top__list-item">
-            <div class="top__list-img">
-              <img src="img/avatars/hamster-master.png" alt="">
-            </div>
-            <div class="top__list-info">
-              <div class="top__list-name">Имя Фамилия</div>
-              <div class="top__list-value">22,5K</div>
-            </div>
-            <div class="top__list-place">2 </div>
-          </li>
-          <li class="top__list-item">
-            <div class="top__list-img">
-              <img src="img/avatars/shark-mid.png" alt="">
-            </div>
-            <div class="top__list-info">
-              <div class="top__list-name">Имя Фамилия</div>
-              <div class="top__list-value">22,5K</div>
-            </div>
-            <div class="top__list-place">3 </div>
-          </li>
-          <li class="top__list-item">
-            <div class="top__list-img">
-              <img src="img/avatars/shark-master.png" alt="">
-            </div>
-            <div class="top__list-info">
-              <div class="top__list-name">Имя Фамилия</div>
-              <div class="top__list-value">22,5K</div>
-            </div>
-            <div class="top__list-place">4 </div>
-          </li>
-          <li class="top__list-item">
-            <div class="top__list-img">
-              <img src="img/avatars/hamster-master.png" alt="">
-            </div>
-            <div class="top__list-info">
-              <div class="top__list-name">Имя Фамилия</div>
-              <div class="top__list-value">22,5K</div>
-            </div>
-            <div class="top__list-place">2 </div>
-          </li>
-          <li class="top__list-item">
-            <div class="top__list-img">
-              <img src="img/avatars/shark-mid.png" alt="">
-            </div>
-            <div class="top__list-info">
-              <div class="top__list-name">Имя Фамилия</div>
-              <div class="top__list-value">22,5K</div>
-            </div>
-            <div class="top__list-place">3 </div>
-          </li>
-          <li class="top__list-item">
-            <div class="top__list-img">
-              <img src="img/avatars/shark-master.png" alt="">
-            </div>
-            <div class="top__list-info">
-              <div class="top__list-name">Имя Фамилия</div>
-              <div class="top__list-value">22,5K</div>
-            </div>
-            <div class="top__list-place">4 </div>
-          </li>
-          <li class="top__list-item">
-            <div class="top__list-img">
-              <img src="img/avatars/hamster-master.png" alt="">
-            </div>
-            <div class="top__list-info">
-              <div class="top__list-name">Имя Фамилия</div>
-              <div class="top__list-value">22,5K</div>
-            </div>
-            <div class="top__list-place">2 </div>
-          </li>
-          <li class="top__list-item">
-            <div class="top__list-img">
-              <img src="img/avatars/shark-mid.png" alt="">
-            </div>
-            <div class="top__list-info">
-              <div class="top__list-name">Имя Фамилия</div>
-              <div class="top__list-value">22,5K</div>
-            </div>
-            <div class="top__list-place">3 </div>
-          </li>
-          <li class="top__list-item">
-            <div class="top__list-img">
-              <img src="img/avatars/shark-master.png" alt="">
-            </div>
-            <div class="top__list-info">
-              <div class="top__list-name">Имя Фамилия</div>
-              <div class="top__list-value">22,5K</div>
-            </div>
-            <div class="top__list-place">4 </div>
-          </li>
-        </ol>
         <div class="top__player">
           <div class="top__list-item">
             <div class="top__list-img">
@@ -259,7 +445,7 @@
         <div class="ref__title">Пригласите друзей!</div>
         <div class="ref__subtitle">
           <span>Вы и ваш друг получите бонусы!</span>
-          <div class="ref__subtitle-img js-popupOpen" data-popup="ref-rules">
+          <div class="ref__subtitle-img js-openSubsection" data-subsection="ref-rules">
             <img src="img/icons/question.svg" alt="">
           </div>
         </div>
@@ -321,64 +507,102 @@
       <section class="tasks js-sectionTasks hide">
         <div class="tasks__title">Заработай больше монет!</div>
         <div class="tasks__text">Выполняй простые задания и получай награду!</div>
-        <div class="separator tasks__line">
-          <span>Ежедневная награда</span>
-        </div>
-        <div class="tasks__item js-popupOpen tasks__item--check" data-popup="daily-reward">
-          <div class="tasks__icon">
-            <img src="img/icons/calendar.svg" alt="Календарь">
+        <div class="tasks__tabs js-tabsWrap" data-tabs="tasks">
+          <div class="tasks__content js-tabContent show" data-tab="social">
+            <div class="separator tasks__line">
+              <span>Ежедневная награда</span>
+            </div>
+            <div class="tasks__item js-popupOpen tasks__item--check" data-popup="daily-reward">
+              <div class="tasks__icon">
+                <img src="img/icons/calendar.svg" alt="Календарь">
+              </div>
+              <div class="tasks__info">
+                <div class="tasks__target">Награда за ежедневный вход</div>
+                <div class="tasks__award">+500 000 RTX</div>
+              </div>
+            </div>
+            <div class="separator tasks__line">
+              <span>Список заданий</span>
+            </div>
+            <div class="tasks__item js-popupOpen" data-popup="task-telegram">
+              <div class="tasks__icon">
+                <img src="img/icons/telegram.svg" alt="Телеграм">
+              </div>
+              <div class="tasks__info">
+                <div class="tasks__target">Подписка на Telegram-канал</div>
+                <div class="tasks__award">+500 000 RTX</div>
+              </div>
+            </div>
+            <div class="tasks__item">
+              <div class="tasks__icon">
+                <img src="img/icons/x-twitter.svg" alt="X-Twitter">
+              </div>
+              <div class="tasks__info">
+                <div class="tasks__target">Подписка на Twitter</div>
+                <div class="tasks__award">+500 000 RTX</div>
+              </div>
+            </div>
           </div>
-          <div class="tasks__info">
-            <div class="tasks__target">Награда за ежедневный вход</div>
-            <div class="income tasks__award">5 000 000</div>
+          <div class="tasks__content js-tabContent hide" data-tab="earn">
+            <div class="separator tasks__line">
+              <span>Список заданий</span>
+            </div>
+            <div class="tasks__item tasks__item--nocheck js-openPrognosis">
+              <div class="tasks__icon">
+                <img src="img/icons/forecast.svg" alt="Прогнозы">
+              </div>
+              <div class="tasks__info">
+                <div class="tasks__target">Predict</div>
+                <div class="tasks__award">Получи X2 от суммы!</div>
+              </div>
+              <div class="tasks__status">Доступно</div>
+              <!-- <div class="tasks__status tasks__status--active">Доступно</div>-->
+              <!--  <div class="tasks__status tasks__status--block">
+                    Откроется через:<span>9:58</span>
+                </div>
+                -->
+            </div>
           </div>
-        </div>
-        <div class="separator tasks__line">
-          <span>Список заданий</span>
-        </div>
-        <div class="tasks__item js-popupOpen" data-popup="task-telegram">
-          <div class="tasks__icon">
-            <img src="img/icons/telegram.svg" alt="Телеграм">
-          </div>
-          <div class="tasks__info">
-            <div class="tasks__target">Подписка на Telegram-канал</div>
-            <div class="income tasks__award">250 000</div>
-          </div>
-        </div>
-        <div class="tasks__item">
-          <div class="tasks__icon">
-            <img src="img/icons/x-twitter.svg" alt="X-Twitter">
-          </div>
-          <div class="tasks__info">
-            <div class="tasks__target">Подписка на Twitter</div>
-            <div class="income tasks__award">250 000</div>
-          </div>
-        </div>
-        <div class="tasks__item js-popupOpen tasks__item--check" data-popup="task-invite">
-          <div class="tasks__icon">
-            <img src="img/icons/friend1.svg" alt="Приглашение">
-          </div>
-          <div class="tasks__info">
-            <div class="tasks__target">Пригласить 1 друга</div>
-            <div class="income tasks__award">500 000</div>
-          </div>
-        </div>
-        <div class="tasks__item">
-          <div class="tasks__icon">
-            <img src="img/icons/friend5.svg" alt="Приглашение">
-          </div>
-          <div class="tasks__info">
-            <div class="tasks__target">Пригласить 5 друзей</div>
-            <div class="income tasks__award">2 500 000</div>
-          </div>
-        </div>
-        <div class="tasks__item">
-          <div class="tasks__icon">
-            <img src="img/icons/friend10.svg" alt="Приглашение">
-          </div>
-          <div class="tasks__info">
-            <div class="tasks__target">Пригласить 10 друзей</div>
-            <div class="income tasks__award">10 000 000</div>
+          <div class="tasks__content js-tabContent hide" data-tab="ref">
+            <div class="separator tasks__line">
+              <span>Список заданий</span>
+            </div>
+            <div class="tasks__item js-popupOpen tasks__item--check" data-popup="task-invite">
+              <div class="tasks__icon">
+                <img src="img/icons/logo-white.svg" alt="">
+              </div>
+              <div class="tasks__info">
+                <div class="tasks__target">Пригласить 1 друга</div>
+                <div class="tasks__award">+500 000 RTX</div>
+              </div>
+            </div>
+            <div class="tasks__item">
+              <div class="tasks__icon">
+                <img src="img/icons/logo-white.svg" alt="">
+              </div>
+              <div class="tasks__info">
+                <div class="tasks__target">Пригласить 5 друзей</div>
+                <div class="tasks__award">+500 000 RTX</div>
+              </div>
+            </div>
+            <div class="tasks__item">
+              <div class="tasks__icon">
+                <img src="img/icons/logo-white.svg" alt="">
+              </div>
+              <div class="tasks__info">
+                <div class="tasks__target">Пригласить 10 друзей</div>
+                <div class="tasks__award">+500 000 RTX</div>
+              </div>
+            </div>
+            <div class="tasks__item">
+              <div class="tasks__icon">
+                <img src="img/icons/logo-white.svg" alt="">
+              </div>
+              <div class="tasks__info">
+                <div class="tasks__target">Пригласить 100 друзей</div>
+                <div class="tasks__award">+500 000 RTX</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -408,9 +632,29 @@
         <div class="separator boost__line">
           <span>Улучшения</span>
         </div>
+        <div class="boost-item js-popupOpen" data-popup="bot-tapper">
+          <div class="boost__icon">
+            <img src="img/icons/bot-tapper.svg" alt="Bot Tapper">
+          </div>
+          <div class="boost__info">
+            <div class="boost__name">Bot Tapper</div>
+            <div class="boost__bonus">
+              <p>Не активен</p>
+            </div>
+            <!--
+              <div class="boost__bonus boost__bonus--active">
+                  <p>Работает</p>
+              </div>
+              -->
+          </div>
+          <div class="boost__status">
+            <div class="boost__value"></div>
+            <div class="income boost__price">5 000</div>
+          </div>
+        </div>
         <div class="boost-item js-popupOpen" data-popup="multitap">
           <div class="boost__icon">
-            <img src="img/icons/tap-border.svg" alt="Мультитап">
+            <img src="img/icons/tap.svg" alt="Мультитап">
           </div>
           <div class="boost__info">
             <div class="boost__name">Мультитап</div>
@@ -464,12 +708,12 @@
       <section class="profile js-sectionProfile hide">
         <div class="slider js-slider">
           <div class="slider-inner">
-            <div class="slider__slide js-sliderSlide">
+            <div class="slider__slide js-sliderSlide active">
               <div class="slider__slide-img">
                 <img src="img/avatars/hamster.png" alt="Аватар 1">
               </div>
             </div>
-            <div class="slider__slide js-sliderSlide">
+            <div class="slider__slide js-sliderSlide next">
               <div class="slider__slide-img">
                 <img src="img/avatars/hamster-light.png" alt="Аватар 2">
               </div>
@@ -578,7 +822,7 @@
         <div class="ref__title">Пригласите друзей!</div>
         <div class="ref__subtitle">
           <span>Вы и ваш друг получите бонусы!</span>
-          <div class="ref__subtitle-img js-popupOpen" data-popup="ref-rules">
+          <div class="ref__subtitle-img js-openSubsection" data-subsection="ref-rules">
             <img src="img/icons/question.svg" alt="">
           </div>
         </div>
@@ -637,8 +881,1140 @@
         </button>
         <!--<p class="ref__list-empty">У вас нет рефералов</p>-->
       </section>
+      <section class="prognosis js-sectionPrognosis hide">
+        <div class="prognosis-main js-prognosisMain">
+          <div class="prognosis-inner">
+            <div class="prognosis__header">
+              <button class="prognosis__back js-openTasks" type="button">Назад</button>
+              <div class="prognosis__status">Доступно</div>
+              <!-- <div class="prognosis__status prognosis__status--active">Доступно</div>-->
+              <!-- <div class="prognosis__status prognosis__status--timer">Откроется через: <span>09:58</span></div>-->
+            </div>
+            <div class="prognosis__info">
+              <div class="prognosis__info-head">
+                <div class="prognosis__title">Прогноз Bitcoin</div>
+                <div class="tooltip js-tooltipWrap prognosis__tooltip">
+                  <div class="tooltip__btn">
+                    <img src="img/icons/tooltip.svg" alt="Подсказка">
+                  </div>
+                  <div class="tooltip__text">В случае если ваш прогноз окажется не верным вы потеряете 1 000 RTx</div>
+                </div>
+              </div>
+              <div class="prognosis__text">Спрогнозируй изменение курса BTC на следующие 4h и получи <b>x2 от суммы!</b>
+              </div>
+            </div>
+            <div class="prognosis__history js-openPrognosisHistory">История прогнозов</div>
+            <div class="prognosis__currency">
+              <div class="prognosis__currency-icon">
+                <img src="img/icons/btc.svg" alt="Bitcoin">
+              </div>
+              <div class="prognosis__currency-name">Bitcoin </div>
+              <div class="prognosis__currency-text">Bitcoin (24ч) </div>
+              <div class="prognosis__currency-change">+3,45%</div>
+              <!-- <div class="prognosis__currency-change red">-3,45%</div>-->
+            </div>
+            <div class="prognosis__price">
+              <b class="prognosis__price-value">66 241,76</b>
+              <div class="tooltip js-tooltipWrap prognosis__tooltip">
+                <div class="tooltip__btn">
+                  <img src="img/icons/tooltip.svg" alt="Подсказка">
+                </div>
+                <div class="tooltip__text">Значение курса берется на сайте okx.com в торговой паре BTC/USDT спот.</div>
+              </div>
+            </div>
+            <div class="prognosis__last">
+              Предыдущее закрытие:<span>
+                <b>66 786,08</b>(+0,15%)
+              </span>
+              <!-- <span class="red"><b>66 786,08</b>(-0,15%)</span> -->
+            </div>
+            <div class="prognosis__toggle">
+              <input class="prognosis__toggle-radio" type="radio" id="prognosis-up" name="prognosis" value="up" checked>
+              <label for="prognosis-up">Вырастет</label>
+              <input class="prognosis__toggle-radio prognosis__toggle-radio--down" type="radio" id="prognosis-down" name="prognosis" value="down">
+              <label for="prognosis-down">Упадет</label>
+            </div>
+            <div class="prognosis__bet">
+              <div class="prognosis__bet-head">
+                <div class="prognosis__bet-title">Сумма:</div>
+                <div class="prognosis__bet-profit">Прибыль:<span class="js-betProfit">20 000 RTx </span>
+                </div>
+              </div>
+              <!-- <div class="prognosis__bet-head">
+                <div class="prognosis__bet-title">Ваш прогноз:</div>
+                    <div class="prognosis__bet-result">
+                        <span>50 000 RTx</span>
+                        <p>Вырастет </p>
+                    </div>
+                </div>    
+                -->
+              <!-- <div class="prognosis__bet-result">
+                  <span>50 000 RTx</span>
+                  <p class="red">Упадет </p>
+                </div>        
+                -->
+              <ul class="prognosis__bet-list js-betList">
+                <li class="prognosis__bet-item">
+                  <input class="prognosis__bet-btn js-betBtn" type="radio" id="bet-1" name="bet" value="10 000" checked>
+                  <label for="bet-1">10 000 RTx</label>
+                </li>
+                <li class="prognosis__bet-item">
+                  <input class="prognosis__bet-btn js-betBtn" type="radio" id="bet-2" name="bet" value="25 000">
+                  <label for="bet-2">25 000 RTx</label>
+                </li>
+                <li class="prognosis__bet-item">
+                  <input class="prognosis__bet-btn js-betBtn" type="radio" id="bet-3" name="bet" value="50 000">
+                  <label for="bet-3">50 000 RTx</label>
+                </li>
+                <li class="prognosis__bet-item">
+                  <input class="prognosis__bet-btn js-betBtn" type="radio" id="bet-4" name="bet" value="100 000">
+                  <label for="bet-4">100 000 RTx</label>
+                </li>
+                <!-- Выключенная кнопка, может быть по атрибуту или классу
+                  <li class="prognosis__bet-item">
+                      <input class="prognosis__bet-btn" type="radio" id="bet-4" name="bet" value="100 000" disabled="">
+                      <label for="bet-4">100 000 RTx</label>
+                  </li>
+                  -->
+              </ul>
+            </div>
+            <button class="prognosis__btn" type="button">Сделать прогноз</button>
+            <!-- <button class="prognosis__btn" type="button" disabled="">Сделать прогноз</button>-->
+          </div>
+        </div>
+        <div class="prognosis-history js-prognosisHistory hide">
+          <div class="prognosis-inner">
+            <div class="prognosis__header">
+              <button class="prognosis__back js-backToPrognosis" type="button">Назад</button>
+            </div>
+            <div class="prognosis__info">
+              <div class="prognosis__title">История прогнозов</div>
+            </div>
+            <div class="prognosis__table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Направление</th>
+                    <th>Дата</th>
+                    <th>Результат</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="grow">Рост</td>
+                    <td>19.07.2024, 10:00</td>
+                    <td class="wait">Ожидает</td>
+                  </tr>
+                  <tr>
+                    <td class="fall">Падение</td>
+                    <td>19.07.2024, 10:00</td>
+                    <td class="plus">+ 1 000 RTx</td>
+                  </tr>
+                  <tr>
+                    <td class="fall">Падение </td>
+                    <td>19.07.2024, 10:00</td>
+                    <td class="refund">Возврат</td>
+                  </tr>
+                  <tr>
+                    <td class="grow">Рост </td>
+                    <td>19.07.2024, 10:00</td>
+                    <td class="minus">- 200 RTx</td>
+                  </tr>
+                  <tr>
+                    <td class="fall">Падение </td>
+                    <td>19.07.2024, 10:00</td>
+                    <td class="plus">+ 1 000 RTx</td>
+                  </tr>
+                  <tr>
+                    <td class="grow">Рост</td>
+                    <td>19.07.2024, 10:00</td>
+                    <td class="wait">Ожидает</td>
+                  </tr>
+                  <tr>
+                    <td class="fall">Падение</td>
+                    <td>19.07.2024, 10:00</td>
+                    <td class="plus">+ 1 000 RTx</td>
+                  </tr>
+                  <tr>
+                    <td class="fall">Падение </td>
+                    <td>19.07.2024, 10:00</td>
+                    <td class="refund">Возврат</td>
+                  </tr>
+                  <tr>
+                    <td class="grow">Рост </td>
+                    <td>19.07.2024, 10:00</td>
+                    <td class="minus">- 200 RTx</td>
+                  </tr>
+                  <tr>
+                    <td class="fall">Падение </td>
+                    <td>19.07.2024, 10:00</td>
+                    <td class="plus">+ 1 000 RTx</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <ol class="pagination">
+              <li class="pagination__item">
+                <button class="pagination__btn pagination__btn--back" type="button"></button>
+              </li>
+              <li class="pagination__item active">
+                <button class="pagination__btn" type="button">1</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">2</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">3</button>
+              </li>
+              <li class="pagination__item pagination__item--dots">...</li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">9</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn pagination__btn--next" type="button"></button>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <section class="wallet js-sectionWallet hide">
+        <div class="wallet-main js-walletMain">
+          <div class="wallet-head">
+            <div class="wallet__title">Активы</div>
+            <div class="wallet__verif">Верифицирован</div>
+            <!-- <div class="wallet__verif wallet__verif--timer">В процессе</div>-->
+            <!-- <a class="wallet__verif wallet__verif--noverif" href="#" target="_blank">Верификация</a>-->
+          </div>
+          <!--<div class="wallet__warning">Для получения доступа к кошельку необходимо пройти верификацию личности</div>-->
+          <div class="wallet__table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Название</th>
+                  <th>Сумма</th>
+                  <th>Действие</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="wallet__table-token">
+                      <img src="img/icons/rtx.svg" alt="RTX">
+                      <p>RTx</p>
+                    </div>
+                  </td>
+                  <td>
+                    <p>9 999 999,999</p>
+                    <p>₮9 999 999,999</p>
+                  </td>
+                  <td>
+                    <button type="button">Торговля</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="wallet__table-token">
+                      <img src="img/icons/usdt.svg" alt="USDT">
+                      <p>USDT</p>
+                    </div>
+                  </td>
+                  <td>
+                    <p>9 999 999,999</p>
+                    <p>₮9 999 999,999</p>
+                  </td>
+                  <td>
+                    <button type="button">Торговля</button>
+                    <!-- <button type="button" disabled="">Торговля</button>-->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="wallet__links">
+            <li class="wallet__link js-openWalletDeposit">Депозит</li>
+            <li class="wallet__link js-openWalletOutput">Вывод</li>
+            <li class="wallet__link js-openWalletHistory">История</li>
+            <!--<li class="wallet__link disabled">История</li>-->
+          </ul>
+          <div class="wallet__recent">
+            <div class="wallet__title">Недавние транзакции</div>
+            <ul class="wallet__recent-list">
+              <li class="wallet__recent-item">
+                <div class="wallet__recent-info">
+                  <span>Вывод</span>
+                  <span>-29 USDT </span>
+                </div>
+                <div class="wallet__recent-status">
+                  <span>2024-03-19 21:33:51 </span>
+                  <span>Выполнено</span>
+                </div>
+              </li>
+              <li class="wallet__recent-item">
+                <div class="wallet__recent-info">
+                  <span>Депозит</span>
+                  <span>-29 USDT </span>
+                </div>
+                <div class="wallet__recent-status">
+                  <span>2024-03-19 21:33:51 </span>
+                  <span>Выполнено</span>
+                </div>
+              </li>
+              <li class="wallet__recent-item">
+                <div class="wallet__recent-info">
+                  <span>Заявка на вывод RTx</span>
+                  <span>-29 USDT </span>
+                </div>
+                <div class="wallet__recent-status">
+                  <span>2024-03-19 21:33:51 </span>
+                  <span>Выполнено</span>
+                </div>
+              </li>
+              <li class="wallet__recent-item">
+                <div class="wallet__recent-info">
+                  <span>Заявка на вывод RTx</span>
+                  <span>-29 USDT </span>
+                </div>
+                <div class="wallet__recent-status">
+                  <span>2024-03-19 21:33:51 </span>
+                  <span>Выполнено</span>
+                </div>
+              </li>
+              <li class="wallet__recent-item">
+                <div class="wallet__recent-info">
+                  <span>Заявка на вывод RTx</span>
+                  <span>-29 USDT </span>
+                </div>
+                <div class="wallet__recent-status">
+                  <span>2024-03-19 21:33:51 </span>
+                  <span class="process">В процессе</span>
+                </div>
+              </li>
+            </ul>
+            <button class="wallet__recent-link js-openWalletHistory" type="button">См. все транзакции </button>
+          </div>
+        </div>
+        <div class="wallet-deposit js-walletDeposit hide">
+          <div class="wallet__title">Депозит</div>
+          <div class="wallet__form js-form">
+            <div class="wallet__input input__block">
+              <div class="input__label">Выберите криптовалюту</div>
+              <div class="input__wrap">
+                <div class="input__field input__field--flex">
+                  <img src="img/icons/usdt.svg" alt="USDT">
+                  <p>USDT</p>
+                </div>
+              </div>
+            </div>
+            <div class="wallet__input input__block">
+              <div class="input__label">Сеть</div>
+              <div class="input__wrap js-inputWrap">
+                <div class="input__field js-inputField js-transferTarget" data-transfer="network">
+                  <span>Выберите сеть вывода средств</span>
+                </div>
+                <div class="input__btns">
+                  <button class="input__clear js-inputClear" type="button" aria-label="Очистить"></button>
+                  <button class="input__btn js-openSubsection" type="button" data-subsection="select-network">Выбрать</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wallet__address">
+            <div class="input__label">Адрес депозита:</div>
+            <div class="wallet__address-inner">
+              <div class="wallet__qr">
+                <div class="wallet__qr-img">
+                  <img src="img/qr.svg" alt="">
+                </div>
+                <div class="wallet__qr-label">TRON (TRC-20)</div>
+              </div>
+              <div class="wallet__address-value js-copyWrap">
+                <div class="wallet__address-text js-copyText">0xdcaa8332ef9c72f903851e58ffe1e814a6a7e1ec</div>
+                <div class="wallet__address-copy js-copyBtn">
+                  <img src="img/icons/copy-2.svg" alt="Copy">
+                </div>
+              </div>
+              <div class="wallet__address-footer">
+                <div class="wallet__address-sum">Мин. сумма депозита: <b>1 USDT</b>
+                </div>
+                <div class="wallet__address-warning">Депозит менее 1 USDT зачислен не будет </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wallet-output js-walletOutput hide">
+          <div class="wallet__title">Вывод</div>
+          <div class="warning">В настоящее время выводы заблокированы. Окончание блокировки: 23.04.2024, 16:24</div>
+          <div class="wallet__form js-form">
+            <div class="wallet__input input__block">
+              <div class="input__label">Выберите криптовалюту</div>
+              <div class="input__wrap">
+                <div class="input__field input__field--flex">
+                  <img src="img/icons/usdt.svg" alt="USDT">
+                  <p>USDT</p>
+                </div>
+              </div>
+            </div>
+            <div class="wallet__input input__block">
+              <div class="input__label">Адрес</div>
+              <div class="input__wrap js-inputWrap">
+                <input class="input__field js-inputField" type="text" placeholder="Введите или выберите адрес вывода">
+                <div class="input__btns">
+                  <button class="input__clear js-inputClear" type="button" aria-label="Очистить"></button>
+                  <button class="input__btn js-inputPaste" type="button">Вставить</button>
+                </div>
+              </div>
+            </div>
+            <div class="wallet__input input__block">
+              <div class="input__label">Сеть</div>
+              <div class="input__wrap js-inputWrap">
+                <div class="input__field js-inputField js-transferTarget" data-transfer="network-output">
+                  <span>Выберите сеть вывода средств</span>
+                </div>
+                <div class="input__btns">
+                  <button class="input__clear js-inputClear" type="button" aria-label="Очистить"></button>
+                  <button class="input__btn js-openSubsection" type="button" data-subsection="select-network-output">Выбрать</button>
+                </div>
+              </div>
+            </div>
+            <div class="warning wallet__warning-block">В настоящее время выводы в выбранной криптовалюте недоступны. Если у вас остались вопросы, то свяжитесь со службой поддержки help@riwatex.com</div>
+            <ul class="wallet__funds">
+              <li class="wallet__funds-item">
+                <span>Доступно:</span>
+                <b>0 USDT</b>
+              </li>
+              <li class="wallet__funds-item">
+                <span>Минимальная сумма вывода:</span>
+                <b>2 USDT</b>
+              </li>
+              <li class="wallet__funds-item">
+                <span>Комиссия за вывод:</span>
+                <b>1 USDT</b>
+              </li>
+            </ul>
+            <div class="wallet__input-wrap">
+              <div class="wallet__input-head">
+                <span>Сумма</span>
+                <div class="wallet__input-balance">Доступный баланс: <b>0 USDT </b>
+                </div>
+              </div>
+              <div class="wallet__input-field">
+                <button class="wallet__input-all" type="button">Вывести все</button>
+                <input class="input__field" type="text" placeholder="Мин. сумма вывода: 3">
+              </div>
+              <div class="wallet__input-result">
+                <span>Вы получите</span>
+                <b>-- USDT </b>
+              </div>
+              <div class="wallet__input-hint">
+                <p>Комиссия: </p>
+                <span>1 USDT</span>
+                <div class="tooltip js-tooltipWrap wallet__input-tooltip ">
+                  <div class="tooltip__btn">
+                    <img src="img/icons/tooltip.svg" alt="Подсказка">
+                  </div>
+                  <div class="tooltip__text">Тут какое-то описание, не знаю длинное или нет</div>
+                </div>
+              </div>
+              <button class="wallet__btn btn js-popupOpen" type="button" data-popup="toncoin">Отправить </button>
+            </div>
+          </div>
+          <div class="wallet__recent">
+            <div class="wallet__title">Недавние выводы средств</div>
+            <ul class="wallet__history">
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">ETH<span>(ERC20)</span>
+                  </div>
+                  <div class="wallet__history-tag wallet__history-tag--yellow">Ожидает</div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Адрес вывода:</div>
+                    <div class="wallet__history-value js-copyWrap">
+                      <p class="wallet__history-address">f5c350...9f02f5</p>
+                      <span class="hide js-copyText">f5c350f5c350f5c3509f02f5</span>
+                      <a class="wallet__history-link" href="#" target="_blank">
+                        <img src="img/icons/link.svg" alt="">
+                      </a>
+                      <button class="js-copyBtn wallet__history-copy" type="button">
+                        <img src="img/icons/copy-2.svg" alt="">
+                      </button>
+                    </div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Комиссия:</div>
+                    <div class="wallet__history-value">0</div>
+                  </div>
+                </div>
+                <div class="wallet__history-footer">
+                  <button class="wallet__history-cancel" type="button">Отменить вывод </button>
+                  <div class="wallet__history-time">01:39</div>
+                </div>
+              </li>
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">ETH<span>(ERC20)</span>
+                  </div>
+                  <div class="wallet__history-tag wallet__history-tag--yellow">Ожидает</div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Адрес вывода:</div>
+                    <div class="wallet__history-value js-copyWrap">
+                      <p class="wallet__history-address">f5c350...9f02f5</p>
+                      <span class="hide js-copyText">f5c350f5c350f5c3509f02f5</span>
+                      <a class="wallet__history-link" href="#" target="_blank">
+                        <img src="img/icons/link.svg" alt="">
+                      </a>
+                      <button class="js-copyBtn wallet__history-copy" type="button">
+                        <img src="img/icons/copy-2.svg" alt="">
+                      </button>
+                    </div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Комиссия:</div>
+                    <div class="wallet__history-value">0</div>
+                  </div>
+                </div>
+                <div class="wallet__history-footer">
+                  <button class="wallet__history-cancel" type="button">Отменить вывод </button>
+                  <div class="wallet__history-time">01:39</div>
+                </div>
+              </li>
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">ETH<span>(ERC20)</span>
+                  </div>
+                  <div class="wallet__history-tag wallet__history-tag--yellow">Ожидает</div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Адрес вывода:</div>
+                    <div class="wallet__history-value js-copyWrap">
+                      <p class="wallet__history-address">f5c350...9f02f5</p>
+                      <span class="hide js-copyText">f5c350f5c350f5c3509f02f5</span>
+                      <a class="wallet__history-link" href="#" target="_blank">
+                        <img src="img/icons/link.svg" alt="">
+                      </a>
+                      <button class="js-copyBtn wallet__history-copy" type="button">
+                        <img src="img/icons/copy-2.svg" alt="">
+                      </button>
+                    </div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Комиссия:</div>
+                    <div class="wallet__history-value">0</div>
+                  </div>
+                </div>
+                <div class="wallet__history-footer">
+                  <button class="wallet__history-cancel" type="button">Отменить вывод </button>
+                  <div class="wallet__history-time">01:39</div>
+                </div>
+              </li>
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">ETH<span>(ERC20)</span>
+                  </div>
+                  <div class="wallet__history-tag wallet__history-tag--yellow">Ожидает</div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Адрес вывода:</div>
+                    <div class="wallet__history-value js-copyWrap">
+                      <p class="wallet__history-address">f5c350...9f02f5</p>
+                      <span class="hide js-copyText">f5c350f5c350f5c3509f02f5</span>
+                      <a class="wallet__history-link" href="#" target="_blank">
+                        <img src="img/icons/link.svg" alt="">
+                      </a>
+                      <button class="js-copyBtn wallet__history-copy" type="button">
+                        <img src="img/icons/copy-2.svg" alt="">
+                      </button>
+                    </div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Комиссия:</div>
+                    <div class="wallet__history-value">0</div>
+                  </div>
+                </div>
+                <div class="wallet__history-footer">
+                  <button class="wallet__history-cancel" type="button">Отменить вывод </button>
+                  <div class="wallet__history-time">01:39</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button class="wallet__recent-link js-openWalletHistory" type="button">См. все транзакции </button>
+        </div>
+        <div class="wallet-history js-walletHistory hide">
+          <div class="wallet__title">История транзакций</div>
+          <div class="wallet__tabs">
+            <input class="js-walletTab" type="radio" id="wallet-tab1" name="wallet-tab" value="deposit" checked>
+            <label for="wallet-tab1">Депозит</label>
+            <input class="js-walletTab" type="radio" id="wallet-tab2" name="wallet-tab" value="output">
+            <label for="wallet-tab2">Вывод</label>
+          </div>
+          <div class="wallet__tab js-walletContent" data-tab="deposit">
+            <ul class="wallet__history">
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">TRON <span>(TRC-20)</span>
+                  </div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                  <div class="wallet__history-tag wallet__history-tag--green">Успешно</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Идентификатор транзакции (TxID):</div>
+                    <div class="wallet__history-value">123</div>
+                  </div>
+                </div>
+              </li>
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">TRON <span>(TRC-20)</span>
+                  </div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                  <div class="wallet__history-tag wallet__history-tag--red">Отклонена</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Идентификатор транзакции (TxID):</div>
+                    <div class="wallet__history-value">123</div>
+                  </div>
+                </div>
+              </li>
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">TRON <span>(TRC-20)</span>
+                  </div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                  <div class="wallet__history-tag wallet__history-tag--yellow">В обработке</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Идентификатор транзакции (TxID):</div>
+                    <div class="wallet__history-value">123</div>
+                  </div>
+                </div>
+              </li>
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">TRON <span>(TRC-20)</span>
+                  </div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                  <div class="wallet__history-tag wallet__history-tag--green">Успешно</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Идентификатор транзакции (TxID):</div>
+                    <div class="wallet__history-value">123</div>
+                  </div>
+                </div>
+              </li>
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">TRON <span>(TRC-20)</span>
+                  </div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                  <div class="wallet__history-tag wallet__history-tag--red">Отклонена</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Идентификатор транзакции (TxID):</div>
+                    <div class="wallet__history-value">123</div>
+                  </div>
+                </div>
+              </li>
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">TRON <span>(TRC-20)</span>
+                  </div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                  <div class="wallet__history-tag wallet__history-tag--yellow">В обработке</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Идентификатор транзакции (TxID):</div>
+                    <div class="wallet__history-value">123</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ol class="pagination">
+              <li class="pagination__item">
+                <button class="pagination__btn pagination__btn--back" type="button"></button>
+              </li>
+              <li class="pagination__item active">
+                <button class="pagination__btn" type="button">1</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">2</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">3</button>
+              </li>
+              <li class="pagination__item pagination__item--dots">...</li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">9</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn pagination__btn--next" type="button"></button>
+              </li>
+            </ol>
+          </div>
+          <div class="wallet__tab js-walletContent hide" data-tab="output">
+            <ul class="wallet__history">
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">ETH <span>(ERC20)</span>
+                  </div>
+                  <div class="wallet__history-tag wallet__history-tag--green">Успешно</div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Адрес вывода:</div>
+                    <div class="wallet__history-value js-copyWrap">
+                      <p class="wallet__history-address">f5c350...9f02f5</p>
+                      <span class="hide js-copyText">f5c350f5c350f5c3509f02f5</span>
+                      <a class="wallet__history-link" href="#" target="_blank">
+                        <img src="img/icons/link.svg" alt="">
+                      </a>
+                      <button class="js-copyBtn wallet__history-copy" type="button">
+                        <img src="img/icons/copy-2.svg" alt="">
+                      </button>
+                    </div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Комиссия:</div>
+                    <div class="wallet__history-value">0</div>
+                  </div>
+                </div>
+              </li>
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">ETH<span>(ERC20)</span>
+                  </div>
+                  <div class="wallet__history-tag wallet__history-tag--red">Ошибка</div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Адрес вывода:</div>
+                    <div class="wallet__history-value js-copyWrap">
+                      <p class="wallet__history-address">f5c350...9f02f5</p>
+                      <span class="hide js-copyText">f5c350f5c350f5c3509f02f5</span>
+                      <a class="wallet__history-link" href="#" target="_blank">
+                        <img src="img/icons/link.svg" alt="">
+                      </a>
+                      <button class="js-copyBtn wallet__history-copy" type="button">
+                        <img src="img/icons/copy-2.svg" alt="">
+                      </button>
+                    </div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Комиссия:</div>
+                    <div class="wallet__history-value">0</div>
+                  </div>
+                </div>
+                <div class="wallet__history-footer">
+                  <button class="wallet__history-cancel" type="button">Отменить вывод </button>
+                  <div class="wallet__history-time">01:39</div>
+                </div>
+              </li>
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">ETH<span>(ERC20)</span>
+                  </div>
+                  <div class="wallet__history-tag wallet__history-tag--yellow">Ожидает</div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Адрес вывода:</div>
+                    <div class="wallet__history-value js-copyWrap">
+                      <p class="wallet__history-address">f5c350...9f02f5</p>
+                      <span class="hide js-copyText">f5c350f5c350f5c3509f02f5</span>
+                      <a class="wallet__history-link" href="#" target="_blank">
+                        <img src="img/icons/link.svg" alt="">
+                      </a>
+                      <button class="js-copyBtn wallet__history-copy" type="button">
+                        <img src="img/icons/copy-2.svg" alt="">
+                      </button>
+                    </div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Комиссия:</div>
+                    <div class="wallet__history-value">0</div>
+                  </div>
+                </div>
+                <div class="wallet__history-footer">
+                  <button class="wallet__history-cancel" type="button">Отменить вывод </button>
+                  <div class="wallet__history-time">01:39</div>
+                </div>
+              </li>
+              <li class="wallet__history-item">
+                <div class="wallet__history-head">
+                  <div class="wallet__history-currency">
+                    <img src="img/icons/usdt.svg" alt="USDT">
+                    <p>USDT</p>
+                  </div>
+                  <div class="wallet__history-tag">ETH<span>(ERC20)</span>
+                  </div>
+                  <div class="wallet__history-tag wallet__history-tag--yellow">Ожидает</div>
+                  <div class="wallet__history-tag">10.04.2024, 12:09</div>
+                </div>
+                <div class="wallet__history-body">
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Сумма:</div>
+                    <div class="wallet__history-value">999 999 999.9999:</div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Адрес вывода:</div>
+                    <div class="wallet__history-value js-copyWrap">
+                      <p class="wallet__history-address">f5c350...9f02f5</p>
+                      <span class="hide js-copyText">f5c350f5c350f5c3509f02f5</span>
+                      <a class="wallet__history-link" href="#" target="_blank">
+                        <img src="img/icons/link.svg" alt="">
+                      </a>
+                      <button class="js-copyBtn wallet__history-copy" type="button">
+                        <img src="img/icons/copy-2.svg" alt="">
+                      </button>
+                    </div>
+                  </div>
+                  <div class="wallet__history-info">
+                    <div class="wallet__history-label">Комиссия:</div>
+                    <div class="wallet__history-value">0</div>
+                  </div>
+                </div>
+                <div class="wallet__history-footer">
+                  <button class="wallet__history-cancel" type="button">Отменить вывод </button>
+                  <div class="wallet__history-time">01:39</div>
+                </div>
+              </li>
+            </ul>
+            <ol class="pagination">
+              <li class="pagination__item">
+                <button class="pagination__btn pagination__btn--back" type="button"></button>
+              </li>
+              <li class="pagination__item active">
+                <button class="pagination__btn" type="button">1</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">2</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">3</button>
+              </li>
+              <li class="pagination__item pagination__item--dots">...</li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">9</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn pagination__btn--next" type="button"></button>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <div class="subsections js-subsections">
+        <div class="subsection js-subsection hide" id="select-network">
+          <div class="subsection-inner">
+            <div class="subsection-head">
+              <div class="subsection__title">Выберите сеть депозита</div>
+            </div>
+            <div class="subsection-body">
+              <div class="warning">Убедитесь, что выбранная вами криптовалюта и сеть депозита совпадают с информацией на биржевой платформе, с которой вы выводите средства. В противном случае ваши средства не будут зачислены и не смогут быть возвращены.</div>
+              <div class="subsection__selecting js-customSelecting">
+                <div class="subsection__option js-customOption">
+                  <div class="js-copiedContent">
+                    <p>TRON</p>
+                    <span>TRC-20</span>
+                  </div>
+                </div>
+                <div class="subsection__option js-customOption">
+                  <div class="js-copiedContent">
+                    <p>TON</p>
+                    <span>USDT-TON</span>
+                  </div>
+                </div>
+              </div>
+              <button class="subsection__btn btn js-transferContent" type="button" data-transfer="network">Выбрать </button>
+            </div>
+          </div>
+        </div>
+        <div class="subsection js-subsection hide" id="select-network-output">
+          <div class="subsection-inner">
+            <div class="subsection-head">
+              <div class="subsection__title">Выберите сеть вывода средств</div>
+            </div>
+            <div class="subsection-body">
+              <div class="warning">Убедитесь, что ваш адрес вывода и сеть совпадают, иначе активы могут быть потеряны.</div>
+              <div class="subsection__selecting js-customSelecting">
+                <div class="subsection__option js-customOption">
+                  <div class="js-copiedContent">
+                    <p>TRON</p>
+                    <span>TRC-20</span>
+                  </div>
+                  <dl class="subsection__option-details">
+                    <dt>Ожидается получение:</dt>
+                    <dd>≈ 2мин 2сек</dd>
+                    <dt>Комиссия:</dt>
+                    <dd>≈1 USDT(≈0.99USD)</dd>
+                  </dl>
+                </div>
+                <div class="subsection__option">
+                  <div class="js-copiedContent">
+                    <p>TON</p>
+                    <span>USDT-TON</span>
+                  </div>
+                  <div class="subsection__option-warning">В настоящее время
+                    <br>выводы недоступны
+                  </div>
+                </div>
+              </div>
+              <button class="subsection__btn btn js-transferContent" type="button" data-transfer="network-output">Выбрать </button>
+            </div>
+          </div>
+        </div>
+        <div class="subsection js-subsection hide" id="ref-rules">
+          <div class="subsection-inner">
+            <div class="subsection__title">Правила получения бонусов</div>
+            <div class="subsection-body">
+              <div class="subsection__text">Приглашая своих друзей, вы получаете дополнительные монеты RTx от их тапов, в соответствии с вашим уровнем</div>
+              <div class="subsection__ref-table">
+                <div class="subsection__ref-head">
+                  <span>Уровень</span>
+                  <span>% отчис.</span>
+                  <span>Макс. рефералов</span>
+                </div>
+                <div class="subsection__ref-row">
+                  <span>Hamster</span>
+                  <span>0</span>
+                  <span>50</span>
+                </div>
+                <div class="subsection__ref-row">
+                  <span>Hamster Light</span>
+                  <span>0,1%</span>
+                  <span>100</span>
+                </div>
+                <div class="subsection__ref-row subsection__ref-row--active">
+                  <span>Hamster Mid</span>
+                  <span>0,2%</span>
+                  <span>200</span>
+                </div>
+                <div class="subsection__ref-row">
+                  <span>Hamster Master</span>
+                  <span>0,3%</span>
+                  <span>500</span>
+                </div>
+                <div class="subsection__ref-row">
+                  <span>Shark Light</span>
+                  <span>1%</span>
+                  <span>1 000</span>
+                </div>
+                <div class="subsection__ref-row">
+                  <span>Shark Mid</span>
+                  <span>1,5%</span>
+                  <span>2 000</span>
+                </div>
+                <div class="subsection__ref-row">
+                  <span>Shark Master</span>
+                  <span>1,7%</span>
+                  <span>5 000</span>
+                </div>
+                <div class="subsection__ref-row">
+                  <span>Whale Light</span>
+                  <span>2%</span>
+                  <span>10 000</span>
+                </div>
+                <div class="subsection__ref-row">
+                  <span>Whale Mid</span>
+                  <span>2,5%</span>
+                  <span>20 000</span>
+                </div>
+                <div class="subsection__ref-row">
+                  <span>Whale</span>
+                  <span>3%</span>
+                  <span>50 000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="subsection js-subsection hide" id="rules-awards">
+          <div class="subsection-inner">
+            <div class="subsection__title">Правила получения наград</div>
+            <div class="subsection-body">
+              <div class="subsection__text">Битва рефералов проходит каждые 2 недели. Текущая битва завершается: <b>04.06.2024, 00:00</b>
+              </div>
+              <div class="subsection__text">Призы за битву рефералов распределяются следующим образом:</div>
+              <ol class="subsection__awards-table">
+                <li class="subsection__awards-item">
+                  <div class="subsection__awards-text">1 место</div>
+                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTx</div>
+                </li>
+                <li class="subsection__awards-item">
+                  <div class="subsection__awards-text">2 место</div>
+                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTx</div>
+                </li>
+                <li class="subsection__awards-item">
+                  <div class="subsection__awards-text">3 место</div>
+                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTx</div>
+                </li>
+                <li class="subsection__awards-item">
+                  <div class="subsection__awards-text">4 место</div>
+                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTx</div>
+                </li>
+                <li class="subsection__awards-item">
+                  <div class="subsection__awards-text">5 место</div>
+                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTx</div>
+                </li>
+                <li class="subsection__awards-item">
+                  <div class="subsection__awards-text">6 место</div>
+                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTx</div>
+                </li>
+                <li class="subsection__awards-item">
+                  <div class="subsection__awards-text">7 место</div>
+                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTx</div>
+                </li>
+                <li class="subsection__awards-item">
+                  <div class="subsection__awards-text">8 место</div>
+                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTx</div>
+                </li>
+                <li class="subsection__awards-item">
+                  <div class="subsection__awards-text">9 место</div>
+                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTx</div>
+                </li>
+                <li class="subsection__awards-item">
+                  <div class="subsection__awards-text">10 место</div>
+                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTx</div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <nav class="nav js-nav">
+      <ul class="nav__tabs nav__tabs--tasks js-tabs" data-tabs="tasks">
+        <li class="nav__tab active js-tab" data-tab="social">Social</li>
+        <li class="nav__tab js-tab" data-tab="earn">Earn</li>
+        <li class="nav__tab js-tab" data-tab="ref">Ref</li>
+      </ul>
+      <ul class="nav__tabs nav__tabs--top js-tabs" data-tabs="stat">
+        <li class="nav__tab active js-tab" data-tab="top-list">Топ игроков</li>
+        <li class="nav__tab js-tab" data-tab="referrals">Битва рефералов</li>
+        <li class="nav__tab js-tab" data-tab="stat-screen">Статистика</li>
+      </ul>
       <ul class="nav__list js-navList">
         <li class="nav__item js-navItem" data-nav="ref">
           <div class="nav__icon">
@@ -660,12 +2036,12 @@
           </div>
           <div class="nav__text">Tap</div>
         </li>
-        <li class="nav__item js-navItem" data-nav="top">
+        <li class="nav__item js-navItem" data-nav="trade">
           <div class="nav__icon">
-            <img src="img/icons/nav-top.svg" alt="Top">
-            <img class="active" src="img/icons/nav-top-active.svg" alt="Top">
+            <img src="img/icons/nav-trade.svg" alt="Top">
+            <img class="active" src="img/icons/nav-trade-active.svg" alt="Top">
           </div>
-          <div class="nav__text">Top</div>
+          <div class="nav__text">Trade</div>
         </li>
         <li class="nav__item js-navItem" data-nav="stat">
           <div class="nav__icon">
@@ -676,71 +2052,18 @@
         </li>
       </ul>
     </nav>
-    <div class="popup js-popup hide" id="rules-awards">
-      <div class="popup-inner">
-        <div class="popup-inner__wrap">
-          <div class="popup__close js-popupClose"></div>
-          <div class="popup__title">Правила
-            <br> получения наград
-          </div>
-          <div class="popup__award-text">Битва рефералов проходит каждые 2 недели. Текущая битва завершается: <b>04.06.2024, 00:00</b>
-          </div>
-          <div class="popup__award-text">Призы за битву рефералов распределяются следующим образом:</div>
-          <ol class="popup__awards-table">
-            <li class="popup__awards-item">
-              <div class="popup__awards-text">1 место</div>
-              <div class="income popup__awards-number">5 000 000</div>
-            </li>
-            <li class="popup__awards-item">
-              <div class="popup__awards-text">2 место</div>
-              <div class="income popup__awards-number">5 000 000</div>
-            </li>
-            <li class="popup__awards-item">
-              <div class="popup__awards-text">3 место</div>
-              <div class="income popup__awards-number">5 000 000</div>
-            </li>
-            <li class="popup__awards-item">
-              <div class="popup__awards-text">4 место</div>
-              <div class="income popup__awards-number">5 000 000</div>
-            </li>
-            <li class="popup__awards-item">
-              <div class="popup__awards-text">5 место</div>
-              <div class="income popup__awards-number">5 000 000</div>
-            </li>
-            <li class="popup__awards-item">
-              <div class="popup__awards-text">6 место</div>
-              <div class="income popup__awards-number">5 000 000</div>
-            </li>
-            <li class="popup__awards-item">
-              <div class="popup__awards-text">7 место</div>
-              <div class="income popup__awards-number">5 000 000</div>
-            </li>
-            <li class="popup__awards-item">
-              <div class="popup__awards-text">8 место</div>
-              <div class="income popup__awards-number">5 000 000</div>
-            </li>
-            <li class="popup__awards-item">
-              <div class="popup__awards-text">9 место</div>
-              <div class="income popup__awards-number">5 000 000</div>
-            </li>
-            <li class="popup__awards-item">
-              <div class="popup__awards-text">10 место</div>
-              <div class="income popup__awards-number">5 000 000</div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </div>
     <div class="popup js-popup hide" id="update-zeus">
       <div class="popup-inner">
         <div class="popup-inner__wrap">
           <div class="popup__close js-popupClose"></div>
           <div class="popup__img">
-            <img src="img/icons/zeus.svg" alt="">
+            <img src="img/icons/zeus-border.svg" alt="">
           </div>
           <div class="popup__title">Tapping Zeus</div>
           <div class="popup__text">Получайте 33 RTx за тап в течение 15 секунд</div>
-          <div class="popup__subtext">Осталось на сегодня: 5 /5</div>
+          <div class="popup__box">
+            <div class="popup__highlighted">Осталось на сегодня: 5 /5</div>
+          </div>
           <button class="popup__btn" type="button">Активировать</button>
         </div>
       </div>
@@ -755,10 +2078,46 @@
           <div class="popup__title">Мультитап</div>
           <div class="popup__text">Увеличивает доход за каждый тап на +1</div>
           <div class="popup__buy">
-            <div class="income popup__price">5 000 000</div>
+            <div class="income popup__price">5 000</div>
+            <!-- <div class="income popup__price popup__price--border">5 000</div>-->
             <p>1 lvl</p>
           </div>
           <button class="popup__btn" type="button">Получить</button>
+          <!--<button class="popup__btn" type="button" disabled="">Недостаточно монет</button> Или можно класс disabled-->
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="bot-tapper">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__img">
+            <img src="img/icons/bot-tapper.svg" alt="Bot tapper">
+          </div>
+          <div class="popup__title">Bot Tapper</div>
+          <div class="popup__text">При максимальном запасе энергии бот продолжает зарабатывать RTx токены!</div>
+          <div class="popup__buy">
+            <div class="income popup__price">50 000</div>
+            <p>Навсегда</p>
+          </div>
+          <button class="popup__btn" type="button">Купить</button>
+          <!--<button class="popup__btn" type="button" disabled="">Неостаточно монет</button> Или можно класс disabled-->
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="tapper-income">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__img">
+            <img src="img/icons/bot-tapper.svg" alt="Bot tapper">
+          </div>
+          <div class="popup__title">Bot Tapper</div>
+          <div class="popup__text">Пока Вас не было Bot Tapper заработал:</div>
+          <div class="popup__box">
+            <div class="income popup__task-award">50 000</div>
+          </div>
+          <button class="popup__btn popup__btn--coins" type="button">Получить</button>
           <!--<button class="popup__btn" type="button" disabled="">Неостаточно монет</button> Или можно класс disabled-->
         </div>
       </div>
@@ -769,6 +2128,7 @@
           <div class="popup__close js-popupClose"></div>
           <div class="popup__title">Множитель BTC</div>
           <div class="popup__text">Множитель BTC позволяет получать больше RTx за тап. Достигнул уровня Shark Light количество монет будет зависеть от волатильности BTC за последние 4 часа. </div>
+          <div class="popup__text">Например, если цена BTC в период с 00:00 до 04:00 (UTC) изменилась на +0,78%, то в период с 04:00 до 08:00 (UTC) пользователи будут получать за каждый тап 1,78 RTx.</div>
         </div>
       </div>
     </div>
@@ -776,9 +2136,7 @@
       <div class="popup-inner">
         <div class="popup-inner__wrap popup-inner__wrap--full">
           <div class="popup__close js-popupClose"></div>
-          <div class="popup__title">Ежедневная
-            <br>награда
-          </div>
+          <div class="popup__title">Ежедневная награда</div>
           <div class="popup__text">Забирайте монеты за ежедневный вход в игру без пропусков. Кнопку “Получить” нужно нажимать каждый день, иначе счетчик дней начнется заново</div>
           <ol class="popup__daily-list">
             <li class="popup__daily-item popup__daily-item--prev">
@@ -788,7 +2146,7 @@
               </div>
               <div class="popup__daily-award">700</div>
             </li>
-            <li class="popup__daily-item popup__daily-item--active">
+            <li class="popup__daily-item">
               <div class="popup__daily-title">День 3</div>
               <div class="popup__daily-img">
                 <img src="img/coin.png" alt="">
@@ -816,10 +2174,14 @@
           </div>
           <div class="popup__title">Подписка на Telegram-канал</div>
           <div class="popup__box">
-            <a class="popup__btn-link" href="#" target="_blank">Подписаться</a>
+            <a class="popup__btn-link" href="#" target="_blank">Подписаться на Riwatex</a>
+            <!--<div class="popup__task-complete"">Вы уже подписались!</div>-->
           </div>
-          <div class="income popup__task-award">250 000</div>
+          <div class="popup__box">
+            <div class="income popup__task-award">250 000</div>
+          </div>
           <button class="popup__btn" type="button" onclick="createNotification('warning', 'Вы не выполнили условия', 3)">Проверить</button>
+          <!--<button class="popup__btn popup__btn--done" type="button" disabled>Выполнено</button>-->
         </div>
       </div>
     </div>
@@ -831,84 +2193,67 @@
             <img src="img/icons/friend1.svg" alt="">
           </div>
           <div class="popup__title">Пригласить 1 друга</div>
-          <div class="income popup__task-award">500 000</div>
-          <div class="popup__task-complete">
-            <img src="img/icons/check.svg" alt="">
-            <span>Выполнено</span>
+          <div class="popup__box">
+            <a class="popup__btn-link" href="#" target="_blank">Подписаться на Riwatex</a>
+            <!--<div class="popup__task-complete">Награда получена!</div>-->
           </div>
+          <div class="popup__box">
+            <div class="income popup__task-award">500 000</div>
+          </div>
+          <button class="popup__btn" type="button" onclick="createNotification('warning', 'Вы не выполнили условия', 30)">Проверить</button>
         </div>
       </div>
     </div>
-    <div class="popup js-popup hide" id="ref-rules">
+    <div class="popup js-popup hide" id="toncoin">
       <div class="popup-inner">
         <div class="popup-inner__wrap">
           <div class="popup__close js-popupClose"></div>
-          <div class="popup__title">Правила
-            <br> получения бонусов
+          <div class="popup__title">Toncoin (TON): Важная информация</div>
+          <div class="popup__subtext">В связи с перегруженностью сети TONCOIN обработка запросов на вывод средств может занять больше времени.</div>
+          <div class="popup__check">
+            <input type="checkbox" id="familiar" name="familiar">
+            <label for="familiar">Я ознакомлен(а) с вышеуказанной информацией</label>
           </div>
-          <div class="popup__text">Приглашая своих друзей, вы получаете дополнительные монеты RTx от их тапов, в соответствии с вашим уровнем</div>
-          <div class="popup__ref-table">
-            <div class="popup__ref-head">
-              <span>Уровень</span>
-              <span>% отчис.</span>
-              <span>Макс. рефералов</span>
-            </div>
-            <div class="popup__ref-row">
-              <span>Hamster</span>
-              <span>0</span>
-              <span>50</span>
-            </div>
-            <div class="popup__ref-row">
-              <span>Hamster Light</span>
-              <span>0,1%</span>
-              <span>100</span>
-            </div>
-            <div class="popup__ref-row popup__ref-row--active">
-              <span>Hamster Mid</span>
-              <span>0,2%</span>
-              <span>200</span>
-            </div>
-            <div class="popup__ref-row">
-              <span>Hamster Master</span>
-              <span>0,3%</span>
-              <span>500</span>
-            </div>
-            <div class="popup__ref-row">
-              <span>Shark Light</span>
-              <span>1%</span>
-              <span>1 000</span>
-            </div>
-            <div class="popup__ref-row">
-              <span>Shark Mid</span>
-              <span>1,5%</span>
-              <span>2 000</span>
-            </div>
-            <div class="popup__ref-row">
-              <span>Shark Master</span>
-              <span>1,7%</span>
-              <span>5 000</span>
-            </div>
-            <div class="popup__ref-row">
-              <span>Whale Light</span>
-              <span>2%</span>
-              <span>10 000</span>
-            </div>
-            <div class="popup__ref-row">
-              <span>Whale Mid</span>
-              <span>2,5%</span>
-              <span>20 000</span>
-            </div>
-            <div class="popup__ref-row">
-              <span>Whale</span>
-              <span>3%</span>
-              <span>50 000</span>
-            </div>
+          <div class="popup__footer">
+            <button class="popup__btn js-popupOpen" type="button" data-popup="output-submit">Подтвердить</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="nav__light"></div>
-    <div class="nav__border"></div>
+    <div class="popup js-popup hide" id="application-ready">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__title">Подтверждение</div>
+          <div class="popup__text">
+            <b>Заявка создана!</b>
+          </div>
+          <div class="popup__subtext">Вы можете отменить ее в течение 1 минуты</div>
+          <div class="popup__footer">
+            <button class="popup__btn js-popupClose" type="button">Перейти к заявке</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="output-submit">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__title">Готово</div>
+          <div class="popup__subtext">Вы уверены что хотите отправить
+            <br>
+            <b>100 USDT</b> на адрес:
+          </div>
+          <div class="popup__subtext">
+            <b>TVzKKSG3pqAdC8yb8pFMvzXoEpSCZGPXXx</b>
+            <br>по сети TRC-20
+          </div>
+          <div class="popup__footer">
+            <button class="popup__btn js-popupOpen" type="button" data-popup="application-ready">Подтвердить</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 
