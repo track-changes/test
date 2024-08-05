@@ -97,8 +97,52 @@
             </div>
           </div>
         </div>
+        <div id="stars-container">
+          <div id="stars"></div>
+          <div id="stars2"></div>
+          <div id="stars3"></div>
+        </div>
       </section>
-      <section class="top js-sectionTrade hide"></section>
+      <section class="trade js-sectionTrade hide">
+        <div id="stars-container">
+          <div id="stars"></div>
+          <div id="stars2"></div>
+          <div id="stars3"></div>
+        </div>
+        <div class="trade-soon">
+          <div class="trade-soon__title">
+            <img src="img/trade/title.svg" alt="coming soon">
+          </div>
+          <div class="trade-soon__subtitle">September 2024</div>
+          <div class="trade-soon__phone">
+            <div class="trade-soon__trade">
+              <div class="trade-soon__block js-tradeBlock">
+                <div class="trade-soon__label">Buy</div>
+                <div class="trade-soon__currency">
+                  <div class="trade-soon__icon">
+                    <img src="img/trade/rtx.svg" alt="RTX">
+                  </div>
+                  <div class="trade-soon__name">RTX</div>
+                  <div class="trade-soon__price">1</div>
+                </div>
+              </div>
+              <button class="trade-soon__btn js-changePlaces" type="button" area-label="Поменять местами">
+                <img src="img/trade/btn.svg" alt="">
+              </button>
+              <div class="trade-soon__block js-tradeBlock">
+                <div class="trade-soon__label">Sell</div>
+                <div class="trade-soon__currency">
+                  <div class="trade-soon__icon">
+                    <img src="img/trade/usdt.svg" alt="USDT">
+                  </div>
+                  <div class="trade-soon__name">USDT</div>
+                  <div class="trade-soon__price">0,0000173</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="stat js-sectionStat hide js-tabsWrap" data-tabs="stat">
         <div class="stat__content stat__content--left js-tabContent" data-tab="top-list">
           <div class="top__head">
@@ -556,7 +600,7 @@
                 <div class="tasks__award">Получи X2 от суммы!</div>
               </div>
               <div class="tasks__status">Доступно</div>
-              <!-- <div class="tasks__status tasks__status--active">Доступно</div>-->
+              <!-- <div class="tasks__status tasks__status--active">Прогноз сделан</div>-->
               <!--  <div class="tasks__status tasks__status--block">
                     Откроется через:<span>9:58</span>
                 </div>
@@ -615,12 +659,11 @@
         </div>
         <div class="boost-item js-popupOpen" data-popup="update-zeus">
           <div class="boost__icon">
-            <img src="img/icons/zeus-border.svg" alt="Tapping Zeus">
+            <img src="img/icons/zeus-boost.svg" alt="Tapping Zeus">
           </div>
           <div class="boost__info">
             <div class="boost__name">Tapping Zeus</div>
             <div class="boost__bonus">
-              <img src="img/coin.png" alt="Монета">
               <b>33&nbsp</b>
               <span>/ тап на 15 сек.</span>
             </div>
@@ -648,8 +691,7 @@
               -->
           </div>
           <div class="boost__status">
-            <div class="boost__value"></div>
-            <div class="income boost__price">5 000</div>
+            <div class="boost__price">5 000 RTX</div>
           </div>
         </div>
         <div class="boost-item js-popupOpen" data-popup="multitap">
@@ -659,14 +701,13 @@
           <div class="boost__info">
             <div class="boost__name">Мультитап</div>
             <div class="boost__bonus">
-              <img src="img/coin.png" alt="Монета">
               <b>+ 1&nbsp</b>
               <span>/ тап </span>
             </div>
           </div>
           <div class="boost__status">
             <div class="boost__value">1 lvl</div>
-            <div class="income boost__price">5 000</div>
+            <div class="boost__price">5 000 RTX</div>
           </div>
         </div>
         <div class="boost-item blocked">
@@ -683,7 +724,7 @@
           </div>
           <div class="boost__status">
             <div class="boost__value">1 lvl</div>
-            <div class="income boost__price">3 000</div>
+            <div class="boost__price">3 000 RTX</div>
           </div>
         </div>
         <div class="boost-item blocked">
@@ -701,7 +742,7 @@
           </div>
           <div class="boost__status">
             <div class="boost__value">1 lvl</div>
-            <div class="income boost__price">10 000</div>
+            <div class="boost__price">10 00 RTX</div>
           </div>
         </div>
       </section>
@@ -804,7 +845,7 @@
             <div class="profile__item">
               <div class="profile__item-title">Макс. рефералов</div>
               <div class="profile__item-text">
-                <img src="img/icons/nav-ref-active.svg" alt="">
+                <img src="img/icons/ref.svg" alt="">
                 <span>50</span>
               </div>
             </div>
@@ -815,6 +856,16 @@
                 <span>0</span>
               </div>
             </div>
+          </div>
+          <div class="profile__link">
+            <div class="profile__link-icon">
+              <img src="img/icons/getgems.svg" alt="getgems">
+            </div>
+            <div class="profile__link-info">
+              <div class="profile__link-name">NFT Collection Riwatex </div>
+              <div class="profile__link-text">https://getgems.io/riwatex</div>
+            </div>
+            <a class="profile__link-btn" href="https://getgems.io/riwatex" target="_blank">Open</a>
           </div>
         </div>
       </section>
@@ -977,9 +1028,20 @@
                   </li>
                   -->
               </ul>
+              <div class="prognosis__interval">
+                Интервал: <span>9:00 - 13:00</span>
+              </div>
             </div>
-            <button class="prognosis__btn" type="button">Сделать прогноз</button>
+            <button class="prognosis__btn" type="button">
+              Сделать прогноз <span>29:58</span>
+            </button>
             <!-- <button class="prognosis__btn" type="button" disabled="">Сделать прогноз</button>-->
+            <!--  <div class="prognosis__waiting">
+                  <span>Результат прогноза через:</span>
+                  <b>239:58</b>
+              </div>
+              
+              -->
           </div>
         </div>
         <div class="prognosis-history js-prognosisHistory hide">
@@ -2057,7 +2119,7 @@
         <div class="popup-inner__wrap">
           <div class="popup__close js-popupClose"></div>
           <div class="popup__img">
-            <img src="img/icons/zeus-border.svg" alt="">
+            <img src="img/icons/zeus-boost.svg" alt="">
           </div>
           <div class="popup__title">Tapping Zeus</div>
           <div class="popup__text">Получайте 33 RTx за тап в течение 15 секунд</div>
@@ -2228,7 +2290,7 @@
           <div class="popup__text">
             <b>Заявка создана!</b>
           </div>
-          <div class="popup__subtext">Вы можете отменить ее в течение 1 минуты</div>
+          <div class="popup__text">Вы можете отменить ее в течение 1 минуты</div>
           <div class="popup__footer">
             <button class="popup__btn js-popupClose" type="button">Перейти к заявке</button>
           </div>
