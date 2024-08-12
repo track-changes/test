@@ -2333,5 +2333,97 @@
     <div class="nav__light"></div>
   </div>
 </body>
+<script>
+     window.Telegram.WebApp.disableVerticalSwipes();
+
+window.addEventListener('load', function() {
+
+    const totalOptions = {
+        decimalPlaces: 2,
+        duration: 2,
+        separator: ' ',
+    }
+    const countUpTotal = new CountUp('tap-total', 110000000, totalOptions);
+    countUpTotal.update(10000000);
+    const tapCoin = document.querySelector('.js-tapCoin');
+    
+    if (tapCoin) {
+        document.querySelector('.js-tapCoin').addEventListener('click', function(event) {
+            const tapCoinWrap = document.querySelector('.js-tapCoinWrap');
+            let plus = (Math.random() * (10 - 0.01) + 0.01).toFixed(2);
+            plus = +plus
+            let tapTotal = document.getElementById('tap-total');
+            let tapTotalText = tapTotal.textContent;
+            tapTotalText = tapTotalText.replace(/\s/g, '');
+            tapTotalText = +tapTotalText
+            let newTapTotalText = tapTotalText + plus;
+            newTapTotalText = newTapTotalText.toFixed(2);
+            countUpTotal.update(newTapTotalText);
+            const coinText = document.createElement('div');
+            coinText.classList.add('tap__coin-text');
+            coinText.innerText = `+${plus}`;
+            tapCoinWrap.appendChild(coinText);
+            coinText.style.top = (event.clientY - 40) + 'px';
+            coinText.style.left = (event.clientX - 0) + 'px'; 
+            setTimeout(() => {
+                coinText.classList.add('fade-out');
+                setTimeout(() => {
+                    coinText.remove(); 
+                }, 1000); 
+            }, 100); 
+        });
+        
+        tapCoin.addEventListener('touchstart', function(event) {
+            event.preventDefault();
+            const tapCoinWrap = document.querySelector('.js-tapCoinWrap');
+        
+            let interactionCount = event.touches.length;
+            if (interactionCount > 5) {
+                interactionCount = 5;
+            }
+            for (let i = 0; i < interactionCount; i++) {
+                let plus = (Math.random() * (10 - 0.01) + 0.01).toFixed(2);
+                plus = +plus
+                const coinText = document.createElement('div');
+                coinText.classList.add('tap__coin-text');
+                coinText.innerText = `+${plus}`;
+                tapCoinWrap.appendChild(coinText);
+        
+                let tapTotal = document.getElementById('tap-total');
+                let tapTotalText = tapTotal.textContent;
+                tapTotalText = tapTotalText.replace(/\s/g, '');
+                tapTotalText = +tapTotalText
+                let newTapTotalText = tapTotalText + plus;
+                newTapTotalText = newTapTotalText.toFixed(2);
+                countUpTotal.update(newTapTotalText);
+                
+                coinText.style.top = (event.touches[i].clientY - 40) + 'px';
+                coinText.style.left = (event.touches[i].clientX - 0) + 'px'; 
+        
+                setTimeout(() => {
+                    coinText.classList.add('fade-out');
+                    setTimeout(() => {
+                        coinText.remove(); 
+                    }, 1000); 
+                }, 100); 
+            }
+        });
+    }
+    
+    
+    document.querySelector('.tap__total').addEventListener('click', function(event) {
+        let wrapper = document.getElementById('wrapper')
+        if (wrapper.classList.contains("tapping")) {
+            hotGreen();
+        } else if (wrapper.classList.contains("hot-green")) {
+            hotRed();
+        } else if (wrapper.classList.contains("hot-red")) {
+            tappingZeus();
+        } else if (wrapper.classList.contains("zeus")) {
+            showTap();
+        }
+    });
+});
+  </script>
 
 </html>
