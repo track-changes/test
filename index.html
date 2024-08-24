@@ -46,7 +46,7 @@
           <div class="header__stat wallet js-openWallet">Кошелек</div>
           <div class="header__stat coin">+1,55</div>
           <div class="header__stat up">10 000</div>
-          <button class="header__settings js-openSettings" type="button" aria-label="Настройки"> </button>
+          <button class="header__language" type="button">En</button>
         </div>
       </div>
     </header>
@@ -458,6 +458,13 @@
               <div class="stat__item-label">Всего игроков:</div>
               <div class="stat__item-value">33 867 806</div>
             </div>
+            <div class="stat__item">
+              <div class="stat__item-icon">
+                <img src="img/icons/users-check.svg" alt="">
+              </div>
+              <div class="stat__item-label">Всего игроков:</div>
+              <div class="stat__item-value">33 867 806</div>
+            </div>
           </div>
           <div class="stat__info">Информация обновляется каждый час</div>
         </div>
@@ -580,7 +587,7 @@
             <div class="separator tasks__line">
               <span>Список заданий</span>
             </div>
-            <div class="tasks__item tasks__item--nocheck js-openPredict">
+            <div class="tasks__item tasks__item--nocheck js-openPrognosis">
               <div class="tasks__icon">
                 <img src="img/icons/forecast.svg" alt="Прогнозы">
               </div>
@@ -939,111 +946,111 @@
         </button>
         <!--<p class="ref__list-empty">У вас нет рефералов</p>-->
       </section>
-      <section class="predict js-sectionPredict hide">
-        <div class="predict-main js-predictMain">
-          <div class="predict-inner">
-            <div class="predict__header">
-              <button class="predict__back js-openTasks" type="button">Назад</button>
-              <div class="predict__status">Доступно</div>
-              <!-- <div class="predict__status predict__status--active">Доступно</div>-->
-              <!-- <div class="predict__status predict__status--timer">Откроется через: <span>09:58</span></div>-->
+      <section class="prognosis js-sectionPrognosis hide">
+        <div class="prognosis-main js-prognosisMain">
+          <div class="prognosis-inner">
+            <div class="prognosis__header">
+              <button class="prognosis__back js-openTasks" type="button">Назад</button>
+              <div class="prognosis__status">Доступно</div>
+              <!-- <div class="prognosis__status prognosis__status--active">Доступно</div>-->
+              <!-- <div class="prognosis__status prognosis__status--timer">Откроется через: <span>09:58</span></div>-->
             </div>
-            <div class="predict__info">
-              <div class="predict__info-head">
-                <div class="predict__title">Прогноз Bitcoin</div>
-                <div class="tooltip js-tooltipWrap predict__tooltip">
+            <div class="prognosis__info">
+              <div class="prognosis__info-head">
+                <div class="prognosis__title">Прогноз Bitcoin</div>
+                <div class="tooltip js-tooltipWrap prognosis__tooltip">
                   <div class="tooltip__btn">
                     <img src="img/icons/tooltip.svg" alt="Подсказка">
                   </div>
                   <div class="tooltip__text">В случае если ваш прогноз окажется не верным вы потеряете 1 000 RTx</div>
                 </div>
               </div>
-              <div class="predict__text">Спрогнозируй изменение курса BTC на следующие 4h и получи <b>x2 от суммы!</b>
+              <div class="prognosis__text">Спрогнозируй изменение курса BTC на следующие 4h и получи <b>x2 от суммы!</b>
               </div>
             </div>
-            <div class="predict__history js-openPredictHistory">История прогнозов</div>
-            <div class="predict__currency">
-              <div class="predict__currency-icon">
+            <div class="prognosis__history js-openPrognosisHistory">История прогнозов</div>
+            <div class="prognosis__currency">
+              <div class="prognosis__currency-icon">
                 <img src="img/icons/btc.svg" alt="Bitcoin">
               </div>
-              <div class="predict__currency-name">Bitcoin </div>
-              <div class="predict__currency-text">Bitcoin (24ч) </div>
-              <div class="predict__currency-change">+3,45%</div>
-              <!-- <div class="predict__currency-change red">-3,45%</div>-->
+              <div class="prognosis__currency-name">Bitcoin </div>
+              <div class="prognosis__currency-text">Bitcoin (24ч) </div>
+              <div class="prognosis__currency-change">+3,45%</div>
+              <!-- <div class="prognosis__currency-change red">-3,45%</div>-->
             </div>
-            <div class="predict__price">
-              <b class="predict__price-value">66 241,76</b>
-              <div class="tooltip js-tooltipWrap predict__tooltip">
+            <div class="prognosis__price">
+              <b class="prognosis__price-value">66 241,76</b>
+              <div class="tooltip js-tooltipWrap prognosis__tooltip">
                 <div class="tooltip__btn">
                   <img src="img/icons/tooltip.svg" alt="Подсказка">
                 </div>
                 <div class="tooltip__text">Значение курса берется на сайте okx.com в торговой паре BTC/USDT спот.</div>
               </div>
             </div>
-            <div class="predict__last">
+            <div class="prognosis__last">
               Предыдущее закрытие:<span>
                 <b>66 786,08</b>(+0,15%)
               </span>
               <!-- <span class="red"><b>66 786,08</b>(-0,15%)</span> -->
             </div>
-            <div class="predict__toggle">
-              <input class="predict__toggle-radio" type="radio" id="predict-up" name="predict" value="up" checked>
-              <label for="predict-up">Вырастет</label>
-              <input class="predict__toggle-radio predict__toggle-radio--down" type="radio" id="predict-down" name="predict" value="down">
-              <label for="predict-down">Упадет</label>
+            <div class="prognosis__toggle">
+              <input class="prognosis__toggle-radio" type="radio" id="prognosis-up" name="prognosis" value="up" checked>
+              <label for="prognosis-up">Вырастет</label>
+              <input class="prognosis__toggle-radio prognosis__toggle-radio--down" type="radio" id="prognosis-down" name="prognosis" value="down">
+              <label for="prognosis-down">Упадет</label>
             </div>
-            <div class="predict__bet">
-              <div class="predict__bet-head">
-                <div class="predict__bet-title">Сумма:</div>
-                <div class="predict__bet-profit">Прибыль:<span class="js-betProfit">20 000 RTx </span>
+            <div class="prognosis__bet">
+              <div class="prognosis__bet-head">
+                <div class="prognosis__bet-title">Сумма:</div>
+                <div class="prognosis__bet-profit">Прибыль:<span class="js-betProfit">20 000 RTx </span>
                 </div>
               </div>
-              <!-- <div class="predict__bet-head">
-                <div class="predict__bet-title">Ваш прогноз:</div>
-                    <div class="predict__bet-result">
+              <!-- <div class="prognosis__bet-head">
+                <div class="prognosis__bet-title">Ваш прогноз:</div>
+                    <div class="prognosis__bet-result">
                         <span>50 000 RTx</span>
                         <p>Вырастет </p>
                     </div>
                 </div>    
                 -->
-              <!-- <div class="predict__bet-result">
+              <!-- <div class="prognosis__bet-result">
                   <span>50 000 RTx</span>
                   <p class="red">Упадет </p>
                 </div>        
                 -->
-              <ul class="predict__bet-list js-betList">
-                <li class="predict__bet-item">
-                  <input class="predict__bet-btn js-betBtn" type="radio" id="bet-1" name="bet" value="10 000" checked>
+              <ul class="prognosis__bet-list js-betList">
+                <li class="prognosis__bet-item">
+                  <input class="prognosis__bet-btn js-betBtn" type="radio" id="bet-1" name="bet" value="10 000" checked>
                   <label for="bet-1">10 000 RTx</label>
                 </li>
-                <li class="predict__bet-item">
-                  <input class="predict__bet-btn js-betBtn" type="radio" id="bet-2" name="bet" value="25 000">
+                <li class="prognosis__bet-item">
+                  <input class="prognosis__bet-btn js-betBtn" type="radio" id="bet-2" name="bet" value="25 000">
                   <label for="bet-2">25 000 RTx</label>
                 </li>
-                <li class="predict__bet-item">
-                  <input class="predict__bet-btn js-betBtn" type="radio" id="bet-3" name="bet" value="50 000">
+                <li class="prognosis__bet-item">
+                  <input class="prognosis__bet-btn js-betBtn" type="radio" id="bet-3" name="bet" value="50 000">
                   <label for="bet-3">50 000 RTx</label>
                 </li>
-                <li class="predict__bet-item">
-                  <input class="predict__bet-btn js-betBtn" type="radio" id="bet-4" name="bet" value="100 000">
+                <li class="prognosis__bet-item">
+                  <input class="prognosis__bet-btn js-betBtn" type="radio" id="bet-4" name="bet" value="100 000">
                   <label for="bet-4">100 000 RTx</label>
                 </li>
                 <!-- Выключенная кнопка, может быть по атрибуту или классу
-                  <li class="predict__bet-item">
-                      <input class="predict__bet-btn" type="radio" id="bet-4" name="bet" value="100 000" disabled="">
+                  <li class="prognosis__bet-item">
+                      <input class="prognosis__bet-btn" type="radio" id="bet-4" name="bet" value="100 000" disabled="">
                       <label for="bet-4">100 000 RTx</label>
                   </li>
                   -->
               </ul>
-              <div class="predict__interval">
+              <div class="prognosis__interval">
                 Интервал: <span>9:00 - 13:00</span>
               </div>
             </div>
-            <button class="predict__btn" type="button">
+            <button class="prognosis__btn" type="button">
               Сделать прогноз <span>29:58</span>
             </button>
-            <!-- <button class="predict__btn" type="button" disabled="">Сделать прогноз</button>-->
-            <!--  <div class="predict__waiting">
+            <!-- <button class="prognosis__btn" type="button" disabled="">Сделать прогноз</button>-->
+            <!--  <div class="prognosis__waiting">
                   <span>Результат прогноза через:</span>
                   <b>239:58</b>
               </div>
@@ -1051,15 +1058,15 @@
               -->
           </div>
         </div>
-        <div class="predict-history js-predictHistory hide">
-          <div class="predict-inner">
-            <div class="predict__header">
-              <button class="predict__back js-backToPredict" type="button">Назад</button>
+        <div class="prognosis-history js-prognosisHistory hide">
+          <div class="prognosis-inner">
+            <div class="prognosis__header">
+              <button class="prognosis__back js-backToPrognosis" type="button">Назад</button>
             </div>
-            <div class="predict__info">
-              <div class="predict__title">История прогнозов</div>
+            <div class="prognosis__info">
+              <div class="prognosis__title">История прогнозов</div>
             </div>
-            <div class="predict__table">
+            <div class="prognosis__table">
               <table>
                 <thead>
                   <tr>
@@ -1144,68 +1151,6 @@
               </li>
             </ol>
           </div>
-        </div>
-      </section>
-      <section class="settings js-sectionSettings hide">
-        <div class="settings-inner">
-          <h3 class="settings__title">Настройки</h3>
-          <div class="settings__blocks">
-            <div class="settings__block js-toggleSetting">
-              <div class="settings__description">
-                <div class="settings__name">Уведомления</div>
-                <div class="settings__text">Получать уведомления в Телеграм-боте RIwatex</div>
-              </div>
-              <div class="settings__action">
-                <div class="settings__status"> </div>
-              </div>
-            </div>
-            <div class="settings__block js-toggleSetting on">
-              <div class="settings__description">
-                <div class="settings__name">Виброотклик</div>
-                <div class="settings__text">Вибрация устройства при нажатиях</div>
-              </div>
-              <div class="settings__action">
-                <div class="settings__status"> </div>
-              </div>
-            </div>
-            <div class="settings__block">
-              <div class="settings__description">
-                <div class="settings__name">Язык</div>
-                <div class="settings__text">Выберите язык игры</div>
-              </div>
-              <div class="settings__action">
-                <button class="settings__language" type="button">RU</button>
-              </div>
-            </div>
-            <div class="settings__block">
-              <div class="settings__description">
-                <div class="settings__name">Статистика</div>
-                <div class="settings__text">Детальная статистика игры</div>
-              </div>
-              <div class="settings__action">
-                <button class="settings__btn js-openStat" type="button">Open</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="settings-footer">
-          <ul class="settings__links">
-            <li class="settings__link">
-              <a href="#" target="_blank">About us</a>
-            </li>
-            <li class="settings__link">
-              <a href="#" target="_blank">Privacy policy</a>
-            </li>
-            <li class="settings__link">
-              <button class="js-openSubsection" type="button" data-subsection="contacts">Contact us</button>
-            </li>
-            <li class="settings__link">
-              <a href="#" target="_blank">Terms of Service</a>
-            </li>
-            <li class="settings__link">
-              <a href="#" target="_blank">AML Policy</a>
-            </li>
-          </ul>
         </div>
       </section>
       <section class="wallet js-sectionWallet hide">
@@ -2312,75 +2257,6 @@
             </div>
           </div>
         </div>
-        <div class="subsection js-subsection hide" id="contacts">
-          <div class="subsection-inner">
-            <div class="subsection__title subsection__title--left">Contact us</div>
-            <div class="subsection-body">
-              <ul class="contacts-list">
-                <div class="contacts__item">
-                  <div class="contacts__img">
-                    <img src="img/icons/logo-white.svg" alt="Riwatex">
-                  </div>
-                  <div class="contacts__description">
-                    <h5 class="contacts__name">Site</h5>
-                    <p class="contacts__text">https://riwatex.app/</p>
-                  </div>
-                  <a class="contacts__link" href="https://riwatex.app/" target="_blank">Open</a>
-                </div>
-                <div class="contacts__item">
-                  <div class="contacts__img">
-                    <img src="img/icons/telegram.svg" alt="Telegram Channel">
-                  </div>
-                  <div class="contacts__description">
-                    <h5 class="contacts__name">Telegram Channel</h5>
-                    <p class="contacts__text">https://t.me/riwatex</p>
-                  </div>
-                  <a class="contacts__link" href="https://t.me/riwatex" target="_blank">Open</a>
-                </div>
-                <div class="contacts__item">
-                  <div class="contacts__img">
-                    <img src="img/icons/chat.svg" alt="Riwatex Chat">
-                  </div>
-                  <div class="contacts__description">
-                    <h5 class="contacts__name">Riwatex Chat</h5>
-                    <p class="contacts__text">https://t.me/riwatex_chat</p>
-                  </div>
-                  <a class="contacts__link" href="https://t.me/riwatex_chat" target="_blank">Open</a>
-                </div>
-                <div class="contacts__item">
-                  <div class="contacts__img">
-                    <img src="img/icons/support.svg" alt="Riwatex">
-                  </div>
-                  <div class="contacts__description">
-                    <h5 class="contacts__name">Riwatex Support</h5>
-                    <p class="contacts__text">https://riwatex.app/</p>
-                  </div>
-                  <a class="contacts__link" href="https://t.me/riwatex_support_bot" target="_blank">Open</a>
-                </div>
-                <div class="contacts__item">
-                  <div class="contacts__img">
-                    <img src="img/icons/youtube.svg" alt="YouTube">
-                  </div>
-                  <div class="contacts__description">
-                    <h5 class="contacts__name">YouTube</h5>
-                    <p class="contacts__text">https://www.youtube.com/channel/UC5E8FAVH6hHTiWRvg6QMsMg</p>
-                  </div>
-                  <a class="contacts__link" href="https://www.youtube.com/channel/UC5E8FAVH6hHTiWRvg6QMsMg" target="_blank">Open</a>
-                </div>
-                <div class="contacts__item">
-                  <div class="contacts__img">
-                    <img src="img/icons/getgems-white.svg" alt="Riwatex">
-                  </div>
-                  <div class="contacts__description">
-                    <h5 class="contacts__name">NFT Collection Riwatex</h5>
-                    <p class="contacts__text">https://getgems.io/riwatex</p>
-                  </div>
-                  <a class="contacts__link" href="https://getgems.io/riwatex" target="_blank">Open</a>
-                </div>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
     </main>
     <nav class="nav js-nav">
@@ -2422,12 +2298,12 @@
           </div>
           <div class="nav__text">Trade</div>
         </li>
-        <li class="nav__item js-navItem" data-nav="predict">
+        <li class="nav__item js-navItem" data-nav="stat">
           <div class="nav__icon">
-            <img src="img/icons/nav-predict.svg" alt="predict">
-            <img class="active" src="img/icons/nav-predict-active.svg" alt="predict">
+            <img src="img/icons/nav-stat.svg" alt="Stat">
+            <img class="active" src="img/icons/nav-stat-active.svg" alt="Stat">
           </div>
-          <div class="nav__text">Predict</div>
+          <div class="nav__text">Stat</div>
         </li>
       </ul>
     </nav>
@@ -2633,25 +2509,6 @@
         </div>
       </div>
     </div>
-    <div class="popup hide" id="popup-beta">
-      <div class="popup-inner">
-        <div class="popup-inner__wrap">
-          <div class="popup__title">This product is in beta</div>
-          <div class="popup__text">Once you enter a position, you cannot cancel or adjust it.</div>
-          <form class="popup__form">
-            <div class="popup__checkbox">
-              <input type="checkbox" name="risk" id="risk">
-              <label for="risk">I understand that I am using this product at my own risk. Any losses incurred due to my actions are my own responsibility</label>
-            </div>
-            <div class="popup__checkbox">
-              <input type="checkbox" name="risk" id="risk2">
-              <label for="risk2">I understand that this product is still in beta. I am participating at my own risk.</label>
-            </div>
-            <button class="popup__btn" type="button" disabled>Apply</button>
-          </form>
-        </div>
-      </div>
-    </div>
     <div class="nav__light"></div>
   </div>
 </body>
@@ -2743,13 +2600,6 @@ window.addEventListener('load', function() {
         } else if (wrapper.classList.contains("zeus")) {
             showTap();
         }
-    });
-    let toggleSetting = this.document.querySelectorAll('.js-toggleSetting');
-    
-    toggleSetting.forEach(toggle => {
-        toggle.addEventListener('click', function() {
-            toggle.classList.toggle('on');
-        })
     });
 });
   </script>
