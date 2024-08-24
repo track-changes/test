@@ -2937,8 +2937,8 @@ progress[value="100"] + * {
   cursor: pointer;
   z-index: 2;
   position: relative;
-  width: 282px;
-  height: 282px;
+  width: 320px;
+  height: 320px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
