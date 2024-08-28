@@ -65,6 +65,16 @@
           </div>
           <div class="tap__coin js-tapCoin">
             <img src="img/coin-rotate.png" alt="btc">
+            <img src="img/coins/coin1.png" alt="btc" style="display:none">
+            <img src="img/coins/coin2.png" alt="btc" style="display:none">
+            <img src="img/coins/coin3.png" alt="btc" style="display:none">
+            <img src="img/coins/coin4.png" alt="btc" style="display:none">
+            <img src="img/coins/coin5.png" alt="btc" style="display:none">
+            <img src="img/coins/coin6.png" alt="btc" style="display:none">
+            <img src="img/coins/coin7.png" alt="btc" style="display:none">
+            <img src="img/coins/coin8.png" alt="btc" style="display:none">
+            <img src="img/coins/coin9.png" alt="btc" style="display:none">
+            <img src="img/coins/coin10.png" alt="btc" style="display:none">
           </div>
         </div>
         <div class="tap__row">
@@ -941,76 +951,149 @@
       </section>
       <section class="predict js-sectionPredict hide">
         <div class="predict-main js-predictMain">
-          <div class="predict__header">
-            <div class="predict__title">Prediction</div>
-            <a class="predict__link" href="#" target="_blank">How to use</a>
-          </div>
-          <div class="predict__currency">
-            <div class="predict__currency-icon">
-              <img src="img/icons/btc.svg" alt="Bitcoin">
+          <div class="predict-info">
+            <div class="predict__header">
+              <div class="predict__title">Prediction</div>
+              <a class="predict__link" href="#" target="_blank">How to use</a>
             </div>
-            <div class="predict__currency-name">Bitcoin </div>
-            <div class="predict__currency-text">Bitcoin (24ч) </div>
+            <div class="predict__currency">
+              <div class="predict__currency-icon">
+                <img src="img/icons/btc.svg" alt="Bitcoin">
+              </div>
+              <div class="predict__currency-name">Bitcoin </div>
+              <div class="predict__currency-text">Bitcoin (24ч) </div>
+            </div>
+            <div class="predict__price">66 241,76</div>
+            <div class="predict__last">
+              Предыдущее закрытие:<span>
+                <b>66 786,08</b>(+0,15%)
+              </span>
+              <!-- <span class="red"><b>66 786,08</b>(-0,15%)</span> -->
+            </div>
           </div>
-          <div class="predict__price">66 241,76</div>
-          <div class="predict__last">
-            Предыдущее закрытие:<span>
-              <b>66 786,08</b>(+0,15%)
-            </span>
-            <!-- <span class="red"><b>66 786,08</b>(-0,15%)</span> -->
-          </div>
-          <div class="predict__amount">
-            <div class="predict__box">
-              <span>Сумма:</span>
-              <div class="predict__profit">Прибыль: <span class="js-betProfit">20 000 RTx </span>
+          <div class="predict-form">
+            <div class="predict__amount">
+              <div class="predict__box">
+                <span>Сумма:</span>
+                <div class="predict__profit">Прибыль: <span class="js-betProfit">20 000 RTx </span>
+                </div>
+              </div>
+              <div class="predict__input-box">
+                <input class="predict__input js-betAmount" type="text" inputmode="numeric" name="amount" id="amount" placeholder="Введите сумму">
+                <button class="predict__input-max js-amountMaxBtn" type="button">MAX</button>
+              </div>
+              <div class="predict__input-error js-amountError">Сумма должна быть кратна 1 000</div>
+              <div class="predict__range">
+                <div class="predict__range-input" id="range"></div>
+              </div>
+              <div class="predict__box">
+                <span>Доступно:</span>
+                <div class="predict__available">
+                  <span class="js-availableFounds">120 000 </span>RTX
+                </div>
+              </div>
+              <div class="predict__box">
+                <span>Баланс:</span>
+                <div class="predict__available">20 000 000 000,00 RTX</div>
               </div>
             </div>
-            <div class="predict__input-box">
-              <input class="predict__input js-betAmount" type="text" inputmode="numeric" name="amount" id="amount" placeholder="Введите сумму">
-              <button class="predict__input-max js-amountMaxBtn" type="button">MAX</button>
-            </div>
-            <div class="predict__input-error js-amountError">Сумма должна быть кратна 1 000</div>
-            <div class="predict__range">
-              <div class="predict__range-input" id="range"></div>
-            </div>
-            <div class="predict__box">
-              <span>Доступно:</span>
-              <div class="predict__available">
-                <span class="js-availableFounds">120000 </span>RTX
+            <div class="predict__bet">
+              <div class="predict__box">
+                <span>Интервал:</span>
+                <div class="predict__left">Осталось: <span class="js-betInterval">29:59</span>
+                </div>
               </div>
-            </div>
-            <div class="predict__box">
-              <span>Баланс:</span>
-              <div class="predict__available">20 000 000 000,00 RTX</div>
+              <ul class="predict__interval-list">
+                <li class="predict__interval-item">
+                  <input class="predict__interval-btn" type="radio" id="interval-1" name="interval" value="5m" checked>
+                  <label for="interval-1">5 мин</label>
+                </li>
+                <li class="predict__interval-item">
+                  <input class="predict__interval-btn js-betBtn" type="radio" id="interval-2" name="interval" value="1h">
+                  <label for="interval-2">1 час</label>
+                </li>
+                <li class="predict__interval-item">
+                  <input class="predict__interval-btn js-betBtn" type="radio" id="interval-3" name="interval" value="4h">
+                  <label for="interval-3">4 часа</label>
+                </li>
+              </ul>
+              <div class="predict__interval">
+                Интервал: <span>9:00 - 13:00</span>
+              </div>
+              <div class="predict__btns">
+                <button class="predict__btn" type="button" id="up" name="direction" value="up">Вырастет</button>
+                <button class="predict__btn predict__btn--down" type="button" id="down" name="direction" value="down">Упадет</button>
+              </div>
             </div>
           </div>
-          <div class="predict__bet">
-            <div class="predict__box">
-              <span>Интервал:</span>
-              <div class="predict__left">Осталось: <span class="js-betInterval">29:59</span>
-              </div>
-            </div>
-            <ul class="predict__interval-list">
-              <li class="predict__interval-item">
-                <input class="predict__interval-btn" type="radio" id="interval-1" name="interval" value="5m">
-                <label for="interval-1">5 мин</label>
+          <div class="predict__current">
+            <div class="predict__current-title js-openPredictCurrent">Ваши текущие прогнозы </div>
+            <ul class="predict-history__list js-predictCurrentList hide">
+              <li class="predict-history__item">
+                <div class="predict__currency predict__currency--nobg">
+                  <div class="predict__currency-icon">
+                    <img src="img/icons/btc.svg" alt="Bitcoin">
+                  </div>
+                  <div class="predict__currency-name">BTC </div>
+                  <div class="predict__currency-text">Bitcoin</div>
+                </div>
+                <div class="predict-history__time">
+                  <span>19.07.2024, 10:00</span>
+                  <button class="predict-history__export js-openSubsection" type="buttun" aria-label="export" data-subsection="predict-export"></button>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Направление:</div>
+                  <div class="predict-history__direction">Рост</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Результат:</div>
+                  <div class="predict-history__result predict-history__result--timer">Рост (+0,15%)</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Сумма:</div>
+                  <div class="predict-history__sum">10 000 RTX</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Интервал:</div>
+                  <div class="predict-history__interval">
+                    <b>5 мин</b>
+                    <span>(09:00 - 09:05)</span>
+                  </div>
+                </div>
               </li>
-              <li class="predict__interval-item">
-                <input class="predict__interval-btn js-betBtn" type="radio" id="interval-2" name="interval" value="1h">
-                <label for="interval-2">1 час</label>
-              </li>
-              <li class="predict__interval-item">
-                <input class="predict__interval-btn js-betBtn" type="radio" id="interval-3" name="interval" value="4h">
-                <label for="interval-3">4 часа</label>
+              <li class="predict-history__item">
+                <div class="predict__currency predict__currency--nobg">
+                  <div class="predict__currency-icon">
+                    <img src="img/icons/btc.svg" alt="Bitcoin">
+                  </div>
+                  <div class="predict__currency-name">BTC </div>
+                  <div class="predict__currency-text">Bitcoin</div>
+                </div>
+                <div class="predict-history__time">
+                  <span>19.07.2024, 10:00</span>
+                  <button class="predict-history__export js-openSubsection" type="buttun" aria-label="export" data-subsection="predict-export"></button>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Направление:</div>
+                  <div class="predict-history__direction predict-history__direction--down">Падение</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Результат:</div>
+                  <div class="predict-history__result predict-history__result--timer">Рост (+0,15%)</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Сумма:</div>
+                  <div class="predict-history__sum">10 000 RTX</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Интервал:</div>
+                  <div class="predict-history__interval">
+                    <b>5 мин</b>
+                    <span>(09:00 - 09:05)</span>
+                  </div>
+                </div>
               </li>
             </ul>
-            <div class="predict__interval">
-              Интервал: <span>9:00 - 13:00</span>
-            </div>
-            <div class="predict__btns">
-              <button class="predict__btn" type="button" id="predict-up" name="predict" value="up">Вырастет</button>
-              <button class="predict__btn predict__btn--down" type="button" id="predict-down" name="predict" value="down">Упадет</button>
-            </div>
           </div>
           <div class="predict__footer">
             <div class="predict__footer-item js-openPredictHistory">История прогнозов</div>
@@ -1018,72 +1101,278 @@
         </div>
         <div class="predict-history js-predictHistory hide">
           <div class="predict-inner">
-            <div class="predict__info">
-              <div class="predict__title">История прогнозов</div>
+            <div class="predict-history__title">История прогнозов</div>
+            <div class="predict__stats">
+              <div class="predict__stats-box">
+                <div class="predict__stats-label">Все заработано: </div>
+                <div class="predict__stats-value">+10 000 000,00 RTX</div>
+              </div>
+              <div class="predict__stats-box">
+                <div class="predict__stats-label">Статистика:</div>
+                <div class="predict__stats-indicators">
+                  <div class="predict__stats-up">2 218 </div>
+                  <div class="predict__stats-down">1 538</div>
+                </div>
+              </div>
             </div>
-            <div class="predict__table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Направление</th>
-                    <th>Дата</th>
-                    <th>Результат</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="grow">Рост</td>
-                    <td>19.07.2024, 10:00</td>
-                    <td class="wait">Ожидает</td>
-                  </tr>
-                  <tr>
-                    <td class="fall">Падение</td>
-                    <td>19.07.2024, 10:00</td>
-                    <td class="plus">+ 1 000 RTx</td>
-                  </tr>
-                  <tr>
-                    <td class="fall">Падение </td>
-                    <td>19.07.2024, 10:00</td>
-                    <td class="refund">Возврат</td>
-                  </tr>
-                  <tr>
-                    <td class="grow">Рост </td>
-                    <td>19.07.2024, 10:00</td>
-                    <td class="minus">- 200 RTx</td>
-                  </tr>
-                  <tr>
-                    <td class="fall">Падение </td>
-                    <td>19.07.2024, 10:00</td>
-                    <td class="plus">+ 1 000 RTx</td>
-                  </tr>
-                  <tr>
-                    <td class="grow">Рост</td>
-                    <td>19.07.2024, 10:00</td>
-                    <td class="wait">Ожидает</td>
-                  </tr>
-                  <tr>
-                    <td class="fall">Падение</td>
-                    <td>19.07.2024, 10:00</td>
-                    <td class="plus">+ 1 000 RTx</td>
-                  </tr>
-                  <tr>
-                    <td class="fall">Падение </td>
-                    <td>19.07.2024, 10:00</td>
-                    <td class="refund">Возврат</td>
-                  </tr>
-                  <tr>
-                    <td class="grow">Рост </td>
-                    <td>19.07.2024, 10:00</td>
-                    <td class="minus">- 200 RTx</td>
-                  </tr>
-                  <tr>
-                    <td class="fall">Падение </td>
-                    <td>19.07.2024, 10:00</td>
-                    <td class="plus">+ 1 000 RTx</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <ul class="predict-history__list">
+              <li class="predict-history__item">
+                <div class="predict__currency predict__currency--nobg">
+                  <div class="predict__currency-icon">
+                    <img src="img/icons/btc.svg" alt="Bitcoin">
+                  </div>
+                  <div class="predict__currency-name">BTC </div>
+                  <div class="predict__currency-text">Bitcoin</div>
+                </div>
+                <div class="predict-history__time">
+                  <span>19.07.2024, 10:00</span>
+                  <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Направление:</div>
+                  <div class="predict-history__direction">Рост</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Результат:</div>
+                  <div class="predict-history__result predict-history__result--timer">Рост (+0,15%)</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Сумма:</div>
+                  <div class="predict-history__sum">10 000 RTX</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Интервал:</div>
+                  <div class="predict-history__interval">
+                    <b>5 мин</b>
+                    <span>(09:00 - 09:05)</span>
+                  </div>
+                </div>
+              </li>
+              <li class="predict-history__item">
+                <div class="predict__currency predict__currency--nobg">
+                  <div class="predict__currency-icon">
+                    <img src="img/icons/btc.svg" alt="Bitcoin">
+                  </div>
+                  <div class="predict__currency-name">BTC </div>
+                  <div class="predict__currency-text">Bitcoin</div>
+                </div>
+                <div class="predict-history__time">
+                  <span>19.07.2024, 10:00</span>
+                  <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Направление:</div>
+                  <div class="predict-history__direction predict-history__direction--down">Падение</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Результат:</div>
+                  <div class="predict-history__result">+ 100 000</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Сумма:</div>
+                  <div class="predict-history__sum">10 000 RTX</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Интервал:</div>
+                  <div class="predict-history__interval">
+                    <b>5 мин</b>
+                    <span>(09:00 - 09:05)</span>
+                  </div>
+                </div>
+              </li>
+              <li class="predict-history__item">
+                <div class="predict__currency predict__currency--nobg">
+                  <div class="predict__currency-icon">
+                    <img src="img/icons/btc.svg" alt="Bitcoin">
+                  </div>
+                  <div class="predict__currency-name">BTC </div>
+                  <div class="predict__currency-text">Bitcoin</div>
+                </div>
+                <div class="predict-history__time">
+                  <span>19.07.2024, 10:00</span>
+                  <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Направление:</div>
+                  <div class="predict-history__direction predict-history__direction--down">Падение</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Результат:</div>
+                  <div class="predict-history__result">+ 100 000</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Сумма:</div>
+                  <div class="predict-history__sum">10 000 RTX</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Интервал:</div>
+                  <div class="predict-history__interval">
+                    <b>5 мин</b>
+                    <span>(09:00 - 09:05)</span>
+                  </div>
+                </div>
+              </li>
+              <li class="predict-history__item">
+                <div class="predict__currency predict__currency--nobg">
+                  <div class="predict__currency-icon">
+                    <img src="img/icons/btc.svg" alt="Bitcoin">
+                  </div>
+                  <div class="predict__currency-name">BTC </div>
+                  <div class="predict__currency-text">Bitcoin</div>
+                </div>
+                <div class="predict-history__time">
+                  <span>19.07.2024, 10:00</span>
+                  <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Направление:</div>
+                  <div class="predict-history__direction predict-history__direction--down">Падение</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Результат:</div>
+                  <div class="predict-history__result predict-history__result--red">- 100 000</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Сумма:</div>
+                  <div class="predict-history__sum">10 000 RTX</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Интервал:</div>
+                  <div class="predict-history__interval">
+                    <b>5 мин</b>
+                    <span>(09:00 - 09:05)</span>
+                  </div>
+                </div>
+              </li>
+              <li class="predict-history__item">
+                <div class="predict__currency predict__currency--nobg">
+                  <div class="predict__currency-icon">
+                    <img src="img/icons/btc.svg" alt="Bitcoin">
+                  </div>
+                  <div class="predict__currency-name">BTC </div>
+                  <div class="predict__currency-text">Bitcoin</div>
+                </div>
+                <div class="predict-history__time">
+                  <span>19.07.2024, 10:00</span>
+                  <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Направление:</div>
+                  <div class="predict-history__direction">Рост</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Результат:</div>
+                  <div class="predict-history__result predict-history__result--red">- 100 000</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Сумма:</div>
+                  <div class="predict-history__sum">10 000 RTX</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Интервал:</div>
+                  <div class="predict-history__interval">
+                    <b>5 мин</b>
+                    <span>(09:00 - 09:05)</span>
+                  </div>
+                </div>
+              </li>
+              <li class="predict-history__item">
+                <div class="predict__currency predict__currency--nobg">
+                  <div class="predict__currency-icon">
+                    <img src="img/icons/btc.svg" alt="Bitcoin">
+                  </div>
+                  <div class="predict__currency-name">BTC </div>
+                  <div class="predict__currency-text">Bitcoin</div>
+                </div>
+                <div class="predict-history__time">
+                  <span>19.07.2024, 10:00</span>
+                  <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Направление:</div>
+                  <div class="predict-history__direction">Рост</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Результат:</div>
+                  <div class="predict-history__result predict-history__result--red">- 100 000</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Сумма:</div>
+                  <div class="predict-history__sum">10 000 RTX</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Интервал:</div>
+                  <div class="predict-history__interval">
+                    <b>5 мин</b>
+                    <span>(09:00 - 09:05)</span>
+                  </div>
+                </div>
+              </li>
+              <li class="predict-history__item">
+                <div class="predict__currency predict__currency--nobg">
+                  <div class="predict__currency-icon">
+                    <img src="img/icons/btc.svg" alt="Bitcoin">
+                  </div>
+                  <div class="predict__currency-name">BTC </div>
+                  <div class="predict__currency-text">Bitcoin</div>
+                </div>
+                <div class="predict-history__time">
+                  <span>19.07.2024, 10:00</span>
+                  <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Направление:</div>
+                  <div class="predict-history__direction">Рост</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Результат:</div>
+                  <div class="predict-history__result predict-history__result--red">- 100 000</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Сумма:</div>
+                  <div class="predict-history__sum">10 000 RTX</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Интервал:</div>
+                  <div class="predict-history__interval">
+                    <b>5 мин</b>
+                    <span>(09:00 - 09:05)</span>
+                  </div>
+                </div>
+              </li>
+              <li class="predict-history__item">
+                <div class="predict__currency predict__currency--nobg">
+                  <div class="predict__currency-icon">
+                    <img src="img/icons/btc.svg" alt="Bitcoin">
+                  </div>
+                  <div class="predict__currency-name">BTC </div>
+                  <div class="predict__currency-text">Bitcoin</div>
+                </div>
+                <div class="predict-history__time">
+                  <span>19.07.2024, 10:00</span>
+                  <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Направление:</div>
+                  <div class="predict-history__direction">Рост</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Результат:</div>
+                  <div class="predict-history__result predict-history__result--red">- 100 000</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Сумма:</div>
+                  <div class="predict-history__sum">10 000 RTX</div>
+                </div>
+                <div class="predict-history__box">
+                  <div class="predict-history__label">Интервал:</div>
+                  <div class="predict-history__interval">
+                    <b>5 мин</b>
+                    <span>(09:00 - 09:05)</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
             <ol class="pagination">
               <li class="pagination__item">
                 <button class="pagination__btn pagination__btn--back" type="button"></button>
@@ -2343,6 +2632,62 @@
             </div>
           </div>
         </div>
+        <div class="subsection js-subsection hide" id="predict-export">
+          <div class="subsection-inner">
+            <div class="subsection__title subsection__title--left">Поделиться результатом</div>
+            <div class="subsection-body">
+              <div class="predict-share">
+                <div class="predict-share__card">
+                  <div class="predict-share__inner">
+                    <div class="predict-share__head">
+                      <div class="predict-share__logo">
+                        <img src="img/icons/logo-text.svg" alt="Riwatex">
+                      </div>
+                      <div class="predict-share__date">19.07.2024, 10:00 </div>
+                    </div>
+                    <div class="predict-share__user">
+                      <div class="predict-share__avatar">
+                        <img src="img/avatars/hamster.png" alt="Hamster">
+                      </div>
+                      <div class="predict-share__name">
+                        <b>Username</b>
+                        <span>(Имя Фамилия)</span>
+                      </div>
+                      <div class="predict-share__lvl">Hamster Light</div>
+                    </div>
+                    <div class="predict-share__info">
+                      <div class="predict__currency predict__currency--nobg">
+                        <div class="predict__currency-icon">
+                          <img src="img/icons/btc.svg" alt="Bitcoin">
+                        </div>
+                        <div class="predict__currency-name">BTC </div>
+                        <div class="predict__currency-text">Bitcoin</div>
+                      </div>
+                      <div class="predict-share__direction">
+                        <div class="predict-history__direction">Рост</div>
+                      </div>
+                    </div>
+                    <div class="predict-share__result">
+                      <div class="predict-history__label">Результат:</div>
+                      <div class="predict-history__result">+100 000 RTX</div>
+                    </div>
+                    <div class="predict-share__box">
+                      <div class="predict-history__label">Сумма:</div>
+                      <div class="predict-history__sum">10 000 RTX</div>
+                    </div>
+                    <div class="predict-share__box">
+                      <div class="predict-history__label">Интервал:</div>
+                      <div class="predict-history__interval">
+                        <b>5 мин</b>
+                        <span>(09:00 - 09:05)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <nav class="nav js-nav">
@@ -2620,7 +2965,7 @@
 <script>
      window.Telegram.WebApp.disableVerticalSwipes();
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const totalOptions = {
         decimalPlaces: 2,
         duration: 2,
@@ -2629,9 +2974,9 @@ window.addEventListener('load', function() {
     const countUpTotal = new CountUp('tap-total', 110000000, totalOptions);
     countUpTotal.update(10000000);
     const tapCoin = document.querySelector('.js-tapCoin');
-    
+
     if (tapCoin) {
-        document.querySelector('.js-tapCoin').addEventListener('click', function(event) {
+        document.querySelector('.js-tapCoin').addEventListener('click', function (event) {
             const tapCoinWrap = document.querySelector('.js-tapCoinWrap');
             let plus = (Math.random() * (10 - 0.01) + 0.01).toFixed(2);
             plus = +plus
@@ -2647,19 +2992,19 @@ window.addEventListener('load', function() {
             coinText.innerText = `+${plus}`;
             tapCoinWrap.appendChild(coinText);
             coinText.style.top = (event.clientY - 40) + 'px';
-            coinText.style.left = (event.clientX - 0) + 'px'; 
+            coinText.style.left = (event.clientX - 0) + 'px';
             setTimeout(() => {
                 coinText.classList.add('fade-out');
                 setTimeout(() => {
-                    coinText.remove(); 
-                }, 1000); 
-            }, 100); 
+                    coinText.remove();
+                }, 1000);
+            }, 100);
         });
-        
-        tapCoin.addEventListener('touchstart', function(event) {
+
+        tapCoin.addEventListener('touchstart', function (event) {
             event.preventDefault();
             const tapCoinWrap = document.querySelector('.js-tapCoinWrap');
-        
+
             let interactionCount = event.touches.length;
             if (interactionCount > 5) {
                 interactionCount = 5;
@@ -2671,7 +3016,7 @@ window.addEventListener('load', function() {
                 coinText.classList.add('tap__coin-text');
                 coinText.innerText = `+${plus}`;
                 tapCoinWrap.appendChild(coinText);
-        
+
                 let tapTotal = document.getElementById('tap-total');
                 let tapTotalText = tapTotal.textContent;
                 tapTotalText = tapTotalText.replace(/\s/g, '');
@@ -2679,22 +3024,22 @@ window.addEventListener('load', function() {
                 let newTapTotalText = tapTotalText + plus;
                 newTapTotalText = newTapTotalText.toFixed(2);
                 countUpTotal.update(newTapTotalText);
-                
+
                 coinText.style.top = (event.touches[i].clientY - 40) + 'px';
-                coinText.style.left = (event.touches[i].clientX - 0) + 'px'; 
-        
+                coinText.style.left = (event.touches[i].clientX - 0) + 'px';
+
                 setTimeout(() => {
                     coinText.classList.add('fade-out');
                     setTimeout(() => {
-                        coinText.remove(); 
-                    }, 1000); 
-                }, 100); 
+                        coinText.remove();
+                    }, 1000);
+                }, 100);
             }
         });
     }
-    
-    
-    document.querySelector('.tap__total').addEventListener('click', function(event) {
+
+
+/*     document.querySelector('.tap__total').addEventListener('click', function (event) {
         let wrapper = document.getElementById('wrapper')
         if (wrapper.classList.contains("tapping")) {
             hotGreen();
@@ -2705,13 +3050,33 @@ window.addEventListener('load', function() {
         } else if (wrapper.classList.contains("zeus")) {
             showTap();
         }
-    });
+    }); */
     let toggleSetting = this.document.querySelectorAll('.js-toggleSetting');
-    
+
     toggleSetting.forEach(toggle => {
-        toggle.addEventListener('click', function() {
+        toggle.addEventListener('click', function () {
             toggle.classList.toggle('on');
         })
+    });
+    let incomeElement = document.querySelector('.income.tap__total');
+    let coinImages = document.querySelectorAll('.tap__coin img');
+
+    let currentIndex = 0; // Индекс текущего изображения
+
+    incomeElement.addEventListener('click', function () {
+        // Скрываем текущее изображение
+        coinImages[currentIndex].style.display = 'none';
+
+        // Увеличиваем индекс, чтобы показать следующее изображение
+        currentIndex++;
+
+        // Если текущий индекс больше или равен количеству изображений, сбрасываем его
+        if (currentIndex >= coinImages.length) {
+            currentIndex = 0; // Возвращаем к первому изображению
+        }
+
+        // Показываем следующее изображение
+        coinImages[currentIndex].style.display = 'block';
     });
 });
   </script>
