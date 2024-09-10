@@ -105,38 +105,298 @@
         </div>
       </section>
       <section class="trade js-sectionTrade hide">
-        <div class="trade-soon">
-          <div class="trade-soon__title">
-            <img src="img/trade/title.svg" alt="coming soon">
+        <div class="trade-container js-swapMain">
+          <div class="trade-head">
+            <div class="trade__title">Trade RTX/USDT</div>
+            <button class="trade__timer" type="button" aria-label="Обновить таймер">4,99 s</button>
           </div>
-          <div class="trade-soon__subtitle">September 2024</div>
-          <div class="trade-soon__phone">
-            <div class="trade-soon__trade">
-              <div class="trade-soon__block js-tradeBlock">
-                <div class="trade-soon__label">Buy</div>
-                <div class="trade-soon__currency">
-                  <div class="trade-soon__icon">
-                    <img src="img/trade/rtx.svg" alt="RTX">
-                  </div>
-                  <div class="trade-soon__name">RTX</div>
-                  <div class="trade-soon__price">1</div>
+          <div class="trade-swap">
+            <div class="trade-swap__block js-swapBlockTop">
+              <div class="trade-swap__row">
+                <div class="trade-swap__label">You send</div>
+                <div class="trade-swap__balance js-swapBalance">10 000 000.24</div>
+              </div>
+              <div class="trade-swap__row">
+                <div class="trade-swap__currency js-swapCurrency">
+                  <img src="img/icons/rtx.svg" alt="RTX">
+                  <span>RTX</span>
+                </div>
+                <input class="trade-swap__input js-swapInput" type="text" placeholder="0" inputmode="decimal">
+              </div>
+              <div class="trade-swap__row">
+                <div class="trade-swap__label">Available to swap:</div>
+                <div class="trade-swap__available js-swapAvailable">100 000 000.00</div>
+              </div>
+            </div>
+            <button class="trade__swap js-changePlaces" type="button" area-label="Поменять местами">
+              <img src="img/icons/swap.svg" alt="">
+            </button>
+            <div class="trade-swap__block js-swapBlockBottom">
+              <div class="trade-swap__row">
+                <div class="trade-swap__label">You receive</div>
+                <div class="trade-swap__balance js-swapBalance">10 000.24</div>
+              </div>
+              <div class="trade-swap__row">
+                <div class="trade-swap__currency js-swapCurrency">
+                  <img src="img/icons/usdt.svg" alt="RTX">
+                  <span>USDT</span>
+                </div>
+                <input class="trade-swap__input js-swapInput" type="text" placeholder="0" inputmode="decimal">
+              </div>
+              <div class="trade-swap__row">
+                <div class="trade-swap__label">Available to swap:</div>
+                <div class="trade-swap__available js-swapAvailable">100 000.00</div>
+              </div>
+            </div>
+          </div>
+          <div class="trade-swap__wrap">
+            <dl class="trade-rates">
+              <dt class="trade-rates__label">1 RTX price</dt>
+              <dd class="trade-rates__value">≈0.000001576 USDT</dd>
+              <dt class="trade-rates__label">1 USDT price</dt>
+              <dd class="trade-rates__value">≈6.4666 RTX</dd>
+              <dt class="trade-rates__label">RTX->USDT Fee</dt>
+              <dd class="trade-rates__value">10%</dd>
+            </dl>
+            <button class="trade__btn" type="button">Swap</button>
+            <div class="trade__open-history js-openSwapHistory">Swap history</div>
+          </div>
+        </div>
+        <div class="trade-container js-swapHistory hide">
+          <div class="trade-head">
+            <div class="trade__title">Swap history</div>
+          </div>
+          <div class="trade-swap__history">
+            <div class="trade-swap__history-block">
+              <div class="trade-swap__result">
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/rtx.svg" alt="RTX">
+                  <span>10 000 000.00 RTX</span>
+                </div>
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/usdt.svg" alt="USDT">
+                  <span>10.1793 USDT</span>
                 </div>
               </div>
-              <button class="trade-soon__btn js-changePlaces" type="button" area-label="Поменять местами">
-                <img src="img/trade/btn.svg" alt="">
-              </button>
-              <div class="trade-soon__block js-tradeBlock">
-                <div class="trade-soon__label">Sell</div>
-                <div class="trade-soon__currency">
-                  <div class="trade-soon__icon">
-                    <img src="img/trade/usdt.svg" alt="USDT">
+              <div class="trade-swap__info">
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__text">
+                    Price: <span>1 USDT</span>
                   </div>
-                  <div class="trade-soon__name">USDT</div>
-                  <div class="trade-soon__price">0,0000173</div>
+                  <div class="trade-swap__text">
+                    Fee: <span>1 USDT</span>
+                  </div>
+                </div>
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__status trade-swap__status--yellow">Waiting</div>
+                  <div class="trade-swap__date">2024-03-19 21:33:51</div>
+                </div>
+              </div>
+            </div>
+            <div class="trade-swap__history-block">
+              <div class="trade-swap__result">
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/rtx.svg" alt="RTX">
+                  <span>10 000 000.00 RTX</span>
+                </div>
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/usdt.svg" alt="USDT">
+                  <span>10.1793 USDT</span>
+                </div>
+              </div>
+              <div class="trade-swap__info">
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__text">
+                    Price: <span>1 USDT</span>
+                  </div>
+                  <div class="trade-swap__text">
+                    Fee: <span>1 USDT</span>
+                  </div>
+                </div>
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__status trade-swap__status--red">Error</div>
+                  <div class="trade-swap__date">2024-03-19 21:33:51</div>
+                </div>
+              </div>
+            </div>
+            <div class="trade-swap__history-block">
+              <div class="trade-swap__result">
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/rtx.svg" alt="RTX">
+                  <span>10 000 000.00 RTX</span>
+                </div>
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/usdt.svg" alt="USDT">
+                  <span>10.1793 USDT</span>
+                </div>
+              </div>
+              <div class="trade-swap__info">
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__text">
+                    Price: <span>1 USDT</span>
+                  </div>
+                  <div class="trade-swap__text">
+                    Fee: <span>1 USDT</span>
+                  </div>
+                </div>
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__status">Success</div>
+                  <div class="trade-swap__date">2024-03-19 21:33:51</div>
+                </div>
+              </div>
+            </div>
+            <div class="trade-swap__history-block">
+              <div class="trade-swap__result">
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/rtx.svg" alt="RTX">
+                  <span>10 000 000.00 RTX</span>
+                </div>
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/usdt.svg" alt="USDT">
+                  <span>10.1793 USDT</span>
+                </div>
+              </div>
+              <div class="trade-swap__info">
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__text">
+                    Price: <span>1 USDT</span>
+                  </div>
+                  <div class="trade-swap__text">
+                    Fee: <span>1 USDT</span>
+                  </div>
+                </div>
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__status">Success</div>
+                  <div class="trade-swap__date">2024-03-19 21:33:51</div>
+                </div>
+              </div>
+            </div>
+            <div class="trade-swap__history-block">
+              <div class="trade-swap__result">
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/rtx.svg" alt="RTX">
+                  <span>10 000 000.00 RTX</span>
+                </div>
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/usdt.svg" alt="USDT">
+                  <span>10.1793 USDT</span>
+                </div>
+              </div>
+              <div class="trade-swap__info">
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__text">
+                    Price: <span>1 USDT</span>
+                  </div>
+                  <div class="trade-swap__text">
+                    Fee: <span>1 USDT</span>
+                  </div>
+                </div>
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__status">Success</div>
+                  <div class="trade-swap__date">2024-03-19 21:33:51</div>
+                </div>
+              </div>
+            </div>
+            <div class="trade-swap__history-block">
+              <div class="trade-swap__result">
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/rtx.svg" alt="RTX">
+                  <span>10 000 000.00 RTX</span>
+                </div>
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/usdt.svg" alt="USDT">
+                  <span>10.1793 USDT</span>
+                </div>
+              </div>
+              <div class="trade-swap__info">
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__text">
+                    Price: <span>1 USDT</span>
+                  </div>
+                  <div class="trade-swap__text">
+                    Fee: <span>1 USDT</span>
+                  </div>
+                </div>
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__status">Success</div>
+                  <div class="trade-swap__date">2024-03-19 21:33:51</div>
+                </div>
+              </div>
+            </div>
+            <div class="trade-swap__history-block">
+              <div class="trade-swap__result">
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/rtx.svg" alt="RTX">
+                  <span>10 000 000.00 RTX</span>
+                </div>
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/usdt.svg" alt="USDT">
+                  <span>10.1793 USDT</span>
+                </div>
+              </div>
+              <div class="trade-swap__info">
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__text">
+                    Price: <span>1 USDT</span>
+                  </div>
+                  <div class="trade-swap__text">
+                    Fee: <span>1 USDT</span>
+                  </div>
+                </div>
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__status">Success</div>
+                  <div class="trade-swap__date">2024-03-19 21:33:51</div>
+                </div>
+              </div>
+            </div>
+            <div class="trade-swap__history-block">
+              <div class="trade-swap__result">
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/rtx.svg" alt="RTX">
+                  <span>10 000 000.00 RTX</span>
+                </div>
+                <div class="trade-swap__result-box">
+                  <img src="img/icons/usdt.svg" alt="USDT">
+                  <span>10.1793 USDT</span>
+                </div>
+              </div>
+              <div class="trade-swap__info">
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__text">
+                    Price: <span>1 USDT</span>
+                  </div>
+                  <div class="trade-swap__text">
+                    Fee: <span>1 USDT</span>
+                  </div>
+                </div>
+                <div class="trade-swap__info-box">
+                  <div class="trade-swap__status">Success</div>
+                  <div class="trade-swap__date">2024-03-19 21:33:51</div>
                 </div>
               </div>
             </div>
           </div>
+          <ol class="pagination">
+            <li class="pagination__item">
+              <button class="pagination__btn pagination__btn--back" type="button"></button>
+            </li>
+            <li class="pagination__item active">
+              <button class="pagination__btn" type="button">1</button>
+            </li>
+            <li class="pagination__item">
+              <button class="pagination__btn" type="button">2</button>
+            </li>
+            <li class="pagination__item">
+              <button class="pagination__btn" type="button">3</button>
+            </li>
+            <li class="pagination__item pagination__item--dots">...</li>
+            <li class="pagination__item">
+              <button class="pagination__btn" type="button">9</button>
+            </li>
+            <li class="pagination__item">
+              <button class="pagination__btn pagination__btn--next" type="button"></button>
+            </li>
+          </ol>
         </div>
       </section>
       <section class="stat js-sectionStat hide js-tabsWrap" data-tabs="stat">
@@ -595,23 +855,23 @@
                 </div>
                 -->
             </div>
-            <div class="tasks__item tasks__item--nocheck">
+            <div class="tasks__item tasks__item--nocheck js-openSubsection" data-subsection="staking">
               <div class="tasks__icon">
                 <img src="img/icons/logo-white.svg" alt="RTX">
               </div>
               <div class="tasks__info">
                 <div class="tasks__target">Staking RTX</div>
               </div>
-              <div class="tasks__soon">Coming Soon</div>
+              <div class="tasks__status">Доступно</div>
             </div>
-            <div class="tasks__item tasks__item--nocheck">
+            <div class="tasks__item tasks__item--nocheck js-openSubsection" data-subsection="staking">
               <div class="tasks__icon">
                 <img src="img/icons/usdt-white.svg" alt="USDT">
               </div>
               <div class="tasks__info">
                 <div class="tasks__target">Staking USDT</div>
               </div>
-              <div class="tasks__soon">Coming Soon</div>
+              <div class="tasks__status">Доступно</div>
             </div>
           </div>
           <div class="tasks__content js-tabContent hide" data-tab="ref">
@@ -2783,6 +3043,168 @@
             </div>
           </div>
         </div>
+        <div class="subsection subsection--fullh js-subsection hide" id="staking">
+          <div class="subsection-inner subsection-inner--animate js-stakingMain">
+            <div class="subsection-body">
+              <div class="subsection__box">
+                <h5 class="staking__title">Staking RTX</h5>
+                <div class="staking__profit">До 8% APR</div>
+              </div>
+              <div class="staking__description">Стейкай RTX и получай дополнительный, пассивный доход</div>
+              <div class="staking__block">
+                <div class="staking__label">Текущая сумма в стейкинге:</div>
+                <p class="staking__sum">9 482 382.02 RTX</p>
+              </div>
+              <div class="staking__block">
+                <div class="staking__label">Заработано за все время:</div>
+                <p class="staking__earned">+5 837.22 RTX</p>
+              </div>
+              <div class="staking__btns">
+                <button class="staking__btn js-openStakingDeposit" type="button">Внести</button>
+                <button class="staking__btn staking__btn--down js-openStakingOutput" type="button">Вывести</button>
+              </div>
+              <div class="staking__balance">
+                Доступный баланс: <span>1 000 000.00 RTX</span>
+              </div>
+              <div class="staking__history">
+                <div class="staking__title staking__title--small">История начислений:</div>
+                <table class="staking__table">
+                  <thead class="staking__thead">
+                    <tr>
+                      <th>Дата</th>
+                      <th>Сумма</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="staking__date">07.08.2024, 14:55</td>
+                      <td class="staking__plus">+5.73825788 RTX</td>
+                    </tr>
+                    <tr>
+                      <td class="staking__date">07.08.2024, 14:55</td>
+                      <td class="staking__plus">+5.73825788 RTX</td>
+                    </tr>
+                    <tr>
+                      <td class="staking__date">07.08.2024, 14:55</td>
+                      <td class="staking__plus">+5.73825788 RTX</td>
+                    </tr>
+                    <tr>
+                      <td class="staking__date">07.08.2024, 14:55</td>
+                      <td class="staking__plus">+5.73825788 RTX</td>
+                    </tr>
+                    <tr>
+                      <td class="staking__date">07.08.2024, 14:55</td>
+                      <td class="staking__plus">+5.73825788 RTX</td>
+                    </tr>
+                    <tr>
+                      <td class="staking__date">07.08.2024, 14:55</td>
+                      <td class="staking__plus">+5.73825788 RTX</td>
+                    </tr>
+                    <tr>
+                      <td class="staking__date">07.08.2024, 14:55</td>
+                      <td class="staking__plus">+5.73825788 RTX</td>
+                    </tr>
+                    <tr>
+                      <td class="staking__date">07.08.2024, 14:55</td>
+                      <td class="staking__plus">+5.73825788 RTX</td>
+                    </tr>
+                    <!--<tr>
+                      <td colspan="2">
+                          <div class="staking__empty">
+                          <img src="img/icons/document-text.svg" alt="">
+                          <span>Нет данных </span>
+                          </div>
+                      </td>
+                      </tr>    
+                      -->
+                  </tbody>
+                </table>
+              </div>
+              <ol class="pagination">
+                <li class="pagination__item">
+                  <button class="pagination__btn pagination__btn--back" type="button"></button>
+                </li>
+                <li class="pagination__item active">
+                  <button class="pagination__btn" type="button">1</button>
+                </li>
+                <li class="pagination__item">
+                  <button class="pagination__btn" type="button">2</button>
+                </li>
+                <li class="pagination__item">
+                  <button class="pagination__btn" type="button">3</button>
+                </li>
+                <li class="pagination__item pagination__item--dots">...</li>
+                <li class="pagination__item">
+                  <button class="pagination__btn" type="button">9</button>
+                </li>
+                <li class="pagination__item">
+                  <button class="pagination__btn pagination__btn--next" type="button"></button>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="subsection-inner subsection-inner--animate js-stakingDeposit hide">
+            <div class="subsection-body js-stakingWrap">
+              <h5 class="staking__title">Staking RTX</h5>
+              <div class="staking__description">Стейкай RTX и получай дополнительный, пассивный доход</div>
+              <div class="staking__profit">До 8% APR</div>
+              <div class="staking__input-label">Количество RTX:</div>
+              <div class="staking__input-box">
+                <input class="staking__input js-stakingInput" type="text" inputmode="decimal" name="deposit" placeholder="Мин. 0.1">
+                <button class="staking__input-max js-stakingMaxBtn" type="button">MAX</button>
+              </div>
+              <div class="staking__input-error js-stakingInputError">Заполните поле</div>
+              <div class="staking__balance">
+                Доступный баланс: <span class="js-stakingAvailable">1 000 000.00 RTX</span>
+              </div>
+              <div class="staking__rules">
+                <div class="staking__label">Правила распределения наград:</div>
+                <div class="staking__rules-box">
+                  <ol class="staking__rules-list">
+                    <li class="staking__rules-item staking__rules-item--checked">
+                      <div class="staking__rules-description">
+                        <div class="staking__rules-name">Уровень 1</div>
+                        <div class="staking__rules-text">До 5 000 000 RTX</div>
+                      </div>
+                      <div class="staking__rules-award">5,00% </div>
+                    </li>
+                    <li class="staking__rules-item">
+                      <div class="staking__rules-description">
+                        <div class="staking__rules-name">Уровень 1</div>
+                        <div class="staking__rules-text">До 5 000 000 RTX</div>
+                      </div>
+                      <div class="staking__rules-award">5,00% </div>
+                    </li>
+                  </ol>
+                  <div class="staking__rules-result">Вы подписались на сумму <b>0 RTX</b>
+                  </div>
+                </div>
+              </div>
+              <div class="staking__controls">
+                <button class="staking__submit btn" type="button">Подписаться</button>
+              </div>
+            </div>
+          </div>
+          <div class="subsection-inner subsection-inner--animate js-stakingOutput hide">
+            <div class="subsection-body js-stakingWrap">
+              <h5 class="staking__title">Staking RTX</h5>
+              <div class="staking__description">Стейкай RTX и получай дополнительный, пассивный доход</div>
+              <div class="staking__profit">До 8% APR</div>
+              <div class="staking__input-label">Количество RTX:</div>
+              <div class="staking__input-box">
+                <input class="staking__input js-stakingInput" type="text" inputmode="decimal" name="output" placeholder="Мин. 0.1">
+                <button class="staking__input-max js-stakingMaxBtn" type="button">MAX</button>
+              </div>
+              <div class="staking__input-error js-stakingInputError">Заполните поле</div>
+              <div class="staking__balance">
+                Доступно для вывода: <span class="js-stakingAvailable">1 000 000.00 RTX</span>
+              </div>
+              <div class="staking__controls">
+                <button class="staking__submit btn" type="button">Вывести</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <nav class="nav js-nav">
@@ -3153,7 +3575,14 @@ window.addEventListener('load', function() {
             toggle.classList.toggle('on');
         })
     });
-});
+});function changePlaces() {
+    // Код для БД
+    
+    changeSwapInfo(); // функция замены значений
+}
+
+// Нажатие кнопки
+document.querySelector('.js-changePlaces').addEventListener('click', changePlaces);
   </script>
 
 </html>
