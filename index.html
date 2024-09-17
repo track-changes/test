@@ -1011,7 +1011,7 @@
                 Интервал: <span>9:00 - 13:00</span>
               </div>
               <div class="predict__btns">
-                <button class="predict__btn" type="button" id="up" name="direction" value="up">Вырастет</button>
+                <button class="predict__btn js-popupOpen" type="button" id="up" name="direction" value="up" data-popup="predict-submit">Вырастет</button>
                 <button class="predict__btn predict__btn--down" type="button" id="down" name="direction" value="down">Упадет</button>
               </div>
             </div>
@@ -3093,6 +3093,28 @@
           <div class="popup__footer">
             <button class="popup__btn" type="button">Confirm</button>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="predict-submit">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__title">Подтверждение прогноза</div>
+          <div class="popup-transaction__box">
+            <div class="popup-transaction__label">Направление:</div>
+            <div class="popup-transaction__value green">Рост</div>
+          </div>
+          <div class="popup-transaction__box">
+            <div class="popup-transaction__label">Интервал:</div>
+            <div class="popup-transaction__value">5 мин<span>(09:00 - 09:05)</span>
+            </div>
+          </div>
+          <div class="popup-transaction__box">
+            <div class="popup-transaction__label">Сумма:</div>
+            <div class="popup-transaction__value js-transactionSum">10 000 RTX</div>
+          </div>
+          <button class="popup__btn" type="button">Подтвердить</button>
         </div>
       </div>
     </div>
