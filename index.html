@@ -104,38 +104,712 @@
           </div>
         </div>
       </section>
-      <section class="trade js-sectionTrade hide">
-        <div class="trade-soon">
-          <div class="trade-soon__title">
-            <img src="img/trade/title.svg" alt="coming soon">
-          </div>
-          <div class="trade-soon__subtitle">September 2024</div>
-          <div class="trade-soon__phone">
-            <div class="trade-soon__trade">
-              <div class="trade-soon__block js-tradeBlock">
-                <div class="trade-soon__label">Buy</div>
-                <div class="trade-soon__currency">
-                  <div class="trade-soon__icon">
-                    <img src="img/trade/rtx.svg" alt="RTX">
-                  </div>
-                  <div class="trade-soon__name">RTX</div>
-                  <div class="trade-soon__price">1</div>
-                </div>
-              </div>
-              <button class="trade-soon__btn js-changePlaces" type="button" area-label="Поменять местами">
-                <img src="img/trade/btn.svg" alt="">
-              </button>
-              <div class="trade-soon__block js-tradeBlock">
-                <div class="trade-soon__label">Sell</div>
-                <div class="trade-soon__currency">
-                  <div class="trade-soon__icon">
-                    <img src="img/trade/usdt.svg" alt="USDT">
-                  </div>
-                  <div class="trade-soon__name">USDT</div>
-                  <div class="trade-soon__price">0,0000173</div>
-                </div>
+      <section class="trade js-sectionTrade hide js-tabsWrap" data-tabs="trade">
+        <div class="trade-tabs">
+          <div class="trade__content js-tabContent" data-tab="desk">
+            <div class="trade-head">
+              <div class="trade__title">Trade</div>
+              <button class="trade__btn js-openCreateOrder" type="button">Create order</button>
+            </div>
+            <div class="trade-switch">
+              <input class="trade__radio js-openCreateOrder" type="radio" name="trade-direction" id="trade-buy">
+              <label for="trade-buy">Buy</label>
+              <input class="trade__radio trade__radio--red js-openCreateOrder" type="radio" name="trade-direction" id="trade-sell" checked>
+              <label for="trade-sell">Sell</label>
+              <div class="trade__currency currency currency--bg">
+                <img src="img/icons/rtx.svg" alt="riwatex">
+                <b>RTX </b>
+                <span>Riwatex</span>
               </div>
             </div>
+            <ul class="trade-list">
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div class="trade__sum">
+                    0,0000000001 <small>USDT</small>
+                    <span>Sum (USDT)</span>
+                  </div>
+                  <button class="trade__action trade__action--red js-popupOpen" type="button" data-popup="deal">Sell RTX</button>
+                  <!-- <button class="trade__action js-popupOpen" type="button">Buy RTX</button>-->
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div class="trade__sum">
+                    0,0000000001 <small>USDT</small>
+                    <span>Sum (USDT)</span>
+                  </div>
+                  <button class="trade__action trade__action--red js-popupOpen" type="button" data-popup="deal">Sell RTX</button>
+                  <!-- <button class="trade__action js-popupOpen" type="button">Buy RTX</button>-->
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div class="trade__sum">
+                    0,0000000001 <small>USDT</small>
+                    <span>Sum (USDT)</span>
+                  </div>
+                  <button class="trade__action trade__action--red js-popupOpen" type="button" data-popup="deal">Sell RTX</button>
+                  <!-- <button class="trade__action js-popupOpen" type="button">Buy RTX</button>-->
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div class="trade__sum">
+                    0,0000000001 <small>USDT</small>
+                    <span>Sum (USDT)</span>
+                  </div>
+                  <button class="trade__action trade__action--red js-popupOpen" type="button" data-popup="deal">Sell RTX</button>
+                  <!-- <button class="trade__action js-popupOpen" type="button">Buy RTX</button>-->
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div class="trade__sum">
+                    0,0000000001 <small>USDT</small>
+                    <span>Sum (USDT)</span>
+                  </div>
+                  <button class="trade__action trade__action--red js-popupOpen" type="button" data-popup="deal">Sell RTX</button>
+                  <!-- <button class="trade__action js-popupOpen" type="button">Buy RTX</button>-->
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div class="trade__sum">
+                    0,0000000001 <small>USDT</small>
+                    <span>Sum (USDT)</span>
+                  </div>
+                  <button class="trade__action trade__action--red js-popupOpen" type="button" data-popup="deal">Sell RTX</button>
+                  <!-- <button class="trade__action js-popupOpen" type="button">Buy RTX</button>-->
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div class="trade__sum">
+                    0,0000000001 <small>USDT</small>
+                    <span>Sum (USDT)</span>
+                  </div>
+                  <button class="trade__action trade__action--red js-popupOpen" type="button" data-popup="deal">Sell RTX</button>
+                  <!-- <button class="trade__action js-popupOpen" type="button">Buy RTX</button>-->
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div class="trade__sum">
+                    0,0000000001 <small>USDT</small>
+                    <span>Sum (USDT)</span>
+                  </div>
+                  <button class="trade__action trade__action--red js-popupOpen" type="button" data-popup="deal">Sell RTX</button>
+                  <!-- <button class="trade__action js-popupOpen" type="button">Buy RTX</button>-->
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ol class="pagination">
+              <li class="pagination__item">
+                <button class="pagination__btn pagination__btn--back" type="button"></button>
+              </li>
+              <li class="pagination__item active">
+                <button class="pagination__btn" type="button">1</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">2</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">3</button>
+              </li>
+              <li class="pagination__item pagination__item--dots">...</li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">9</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn pagination__btn--next" type="button"></button>
+              </li>
+            </ol>
+          </div>
+          <div class="trade__content hide js-tabContent" data-tab="orders">
+            <div class="trade-head">
+              <div class="trade__title">My Orders</div>
+              <button class="trade__btn js-popupOpen" type="button" data-popup="order-cancel-all">Cancel All</button>
+            </div>
+            <div class="trade-switch">
+              <input class="trade__radio js-openCreateOrder" type="radio" name="orders" id="orders-all" checked>
+              <label for="orders-all">All</label>
+              <input class="trade__radio js-openCreateOrder" type="radio" name="orders" id="orders-buy">
+              <label for="orders-buy">Buy</label>
+              <input class="trade__radio trade__radio--red js-openCreateOrder" type="radio" name="orders" id="orders-sell">
+              <label for="orders-sell">Sell</label>
+              <div class="trade__currency currency currency--bg">
+                <img src="img/icons/rtx.svg" alt="riwatex">
+                <b>RTX </b>
+                <span>Riwatex</span>
+              </div>
+            </div>
+            <div class="trade-orders">
+              <div class="trade-orders__label">Orders limit:</div>
+              <div class="trade-orders__text">
+                <b>6 </b>
+                <span>/ 10</span>
+              </div>
+            </div>
+            <ul class="trade-list trade-list--transparent">
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div>
+                    <div class="trade__direction">Buy</div>
+                    <div class="trade__sum">
+                      0,0000000001 <small>USDT</small>
+                      <span>Sum (USDT)</span>
+                    </div>
+                  </div>
+                  <button class="trade__action trade__action--transparent js-popupOpen" type="button" data-popup="order-cancel">Cancel</button>
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div>
+                    <div class="trade__direction trade__direction--red">Sell</div>
+                    <div class="trade__sum">
+                      0,0000000001 <small>USDT</small>
+                      <span>Sum (USDT)</span>
+                    </div>
+                  </div>
+                  <button class="trade__action trade__action--transparent js-popupOpen" type="button" data-popup="order-cancel">Cancel</button>
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div>
+                    <div class="trade__direction">Buy</div>
+                    <div class="trade__sum">
+                      0,0000000001 <small>USDT</small>
+                      <span>Sum (USDT)</span>
+                    </div>
+                  </div>
+                  <button class="trade__action trade__action--transparent js-popupOpen" type="button" data-popup="order-cancel">Cancel</button>
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div>
+                    <div class="trade__direction trade__direction--red">Sell</div>
+                    <div class="trade__sum">
+                      0,0000000001 <small>USDT</small>
+                      <span>Sum (USDT)</span>
+                    </div>
+                  </div>
+                  <button class="trade__action trade__action--transparent js-popupOpen" type="button" data-popup="order-cancel">Cancel</button>
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div>
+                    <div class="trade__direction">Buy</div>
+                    <div class="trade__sum">
+                      0,0000000001 <small>USDT</small>
+                      <span>Sum (USDT)</span>
+                    </div>
+                  </div>
+                  <button class="trade__action trade__action--transparent js-popupOpen" type="button" data-popup="order-cancel">Cancel</button>
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade__item">
+                <div class="trade__box">
+                  <div>
+                    <div class="trade__direction trade__direction--red">Sell</div>
+                    <div class="trade__sum">
+                      0,0000000001 <small>USDT</small>
+                      <span>Sum (USDT)</span>
+                    </div>
+                  </div>
+                  <button class="trade__action trade__action--transparent js-popupOpen" type="button" data-popup="order-cancel">Cancel</button>
+                </div>
+                <div class="trade__info">
+                  <div class="trade__box">
+                    <div class="trade__value">
+                      <span>Amount (RTX):</span>
+                      <b>1 000 000</b>
+                    </div>
+                    <div class="trade__value">
+                      <span>Price per 1 RTX:</span>
+                      <b>0,0001</b>
+                    </div>
+                    <div class="trade__value trade__value--right">
+                      <span>Fee:</span>
+                      <b>1%</b>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="trade__content hide js-tabContent" data-tab="history">
+            <div class="trade-head">
+              <div class="trade__title">History</div>
+            </div>
+            <div class="trade-switch">
+              <input class="trade__radio js-openCreateOrder" type="radio" name="orders-history" id="history-all" checked>
+              <label for="history-all">All</label>
+              <input class="trade__radio js-openCreateOrder" type="radio" name="orders-history" id="history-buy">
+              <label for="history-buy">Buy</label>
+              <input class="trade__radio trade__radio--red js-openCreateOrder" type="radio" name="orders-history" id="history-sell">
+              <label for="history-sell">Sell</label>
+            </div>
+            <ul class="trade-history">
+              <li class="trade-history__item">
+                <div class="trade__box">
+                  <div class="trade-history__direction">Buy</div>
+                  <div class="trade__currency trade__currency--right currency">
+                    <img src="img/icons/rtx.svg" alt="riwatex">
+                    <b>10 000 000,00 RTX </b>
+                  </div>
+                </div>
+                <div class="trade-history__info">
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Price: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__status trade-history__status--yellow">Created</div>
+                  </div>
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Fee: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__date">2024-03-19 21:33:51</div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade-history__item">
+                <div class="trade__box">
+                  <div class="trade-history__direction trade-history__direction--red">Sell</div>
+                  <div class="trade__currency trade__currency--right currency">
+                    <img src="img/icons/rtx.svg" alt="riwatex">
+                    <b>10 000 000,00 RTX </b>
+                  </div>
+                </div>
+                <div class="trade-history__info">
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Price: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__status trade-history__status--red">Canceled</div>
+                  </div>
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Fee: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__date">2024-03-19 21:33:51</div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade-history__item">
+                <div class="trade__box">
+                  <div class="trade-history__direction trade-history__direction--red">Sell</div>
+                  <div class="trade__currency trade__currency--right currency">
+                    <img src="img/icons/rtx.svg" alt="riwatex">
+                    <b>10 000 000,00 RTX </b>
+                  </div>
+                </div>
+                <div class="trade-history__info">
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Price: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__status">Success</div>
+                  </div>
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Fee: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__date">2024-03-19 21:33:51</div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade-history__item">
+                <div class="trade__box">
+                  <div class="trade-history__direction">Buy</div>
+                  <div class="trade__currency trade__currency--right currency">
+                    <img src="img/icons/rtx.svg" alt="riwatex">
+                    <b>10 000 000,00 RTX </b>
+                  </div>
+                </div>
+                <div class="trade-history__info">
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Price: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__status trade-history__status--yellow">Created</div>
+                  </div>
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Fee: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__date">2024-03-19 21:33:51</div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade-history__item">
+                <div class="trade__box">
+                  <div class="trade-history__direction trade-history__direction--red">Sell</div>
+                  <div class="trade__currency trade__currency--right currency">
+                    <img src="img/icons/rtx.svg" alt="riwatex">
+                    <b>10 000 000,00 RTX </b>
+                  </div>
+                </div>
+                <div class="trade-history__info">
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Price: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__status trade-history__status--red">Canceled</div>
+                  </div>
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Fee: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__date">2024-03-19 21:33:51</div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade-history__item">
+                <div class="trade__box">
+                  <div class="trade-history__direction trade-history__direction--red">Sell</div>
+                  <div class="trade__currency trade__currency--right currency">
+                    <img src="img/icons/rtx.svg" alt="riwatex">
+                    <b>10 000 000,00 RTX </b>
+                  </div>
+                </div>
+                <div class="trade-history__info">
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Price: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__status">Success</div>
+                  </div>
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Fee: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__date">2024-03-19 21:33:51</div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade-history__item">
+                <div class="trade__box">
+                  <div class="trade-history__direction">Buy</div>
+                  <div class="trade__currency trade__currency--right currency">
+                    <img src="img/icons/rtx.svg" alt="riwatex">
+                    <b>10 000 000,00 RTX </b>
+                  </div>
+                </div>
+                <div class="trade-history__info">
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Price: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__status trade-history__status--yellow">Created</div>
+                  </div>
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Fee: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__date">2024-03-19 21:33:51</div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade-history__item">
+                <div class="trade__box">
+                  <div class="trade-history__direction trade-history__direction--red">Sell</div>
+                  <div class="trade__currency trade__currency--right currency">
+                    <img src="img/icons/rtx.svg" alt="riwatex">
+                    <b>10 000 000,00 RTX </b>
+                  </div>
+                </div>
+                <div class="trade-history__info">
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Price: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__status trade-history__status--red">Canceled</div>
+                  </div>
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Fee: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__date">2024-03-19 21:33:51</div>
+                  </div>
+                </div>
+              </li>
+              <li class="trade-history__item">
+                <div class="trade__box">
+                  <div class="trade-history__direction trade-history__direction--red">Sell</div>
+                  <div class="trade__currency trade__currency--right currency">
+                    <img src="img/icons/rtx.svg" alt="riwatex">
+                    <b>10 000 000,00 RTX </b>
+                  </div>
+                </div>
+                <div class="trade-history__info">
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Price: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__status">Success</div>
+                  </div>
+                  <div class="trade-history__box">
+                    <div class="trade-history__value">
+                      <span>Fee: </span>
+                      <b>1 USDT</b>
+                    </div>
+                    <div class="trade-history__date">2024-03-19 21:33:51</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ol class="pagination">
+              <li class="pagination__item">
+                <button class="pagination__btn pagination__btn--back" type="button"></button>
+              </li>
+              <li class="pagination__item active">
+                <button class="pagination__btn" type="button">1</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">2</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">3</button>
+              </li>
+              <li class="pagination__item pagination__item--dots">...</li>
+              <li class="pagination__item">
+                <button class="pagination__btn" type="button">9</button>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__btn pagination__btn--next" type="button"></button>
+              </li>
+            </ol>
           </div>
         </div>
       </section>
@@ -994,15 +1668,15 @@
               </div>
               <ul class="predict__interval-list">
                 <li class="predict__interval-item">
-                  <input class="predict__interval-btn" type="radio" id="interval-1" name="interval" value="5m" checked>
+                  <input class="predict__interval-btn js-intervalBtn" type="radio" id="interval-1" name="interval" value="5m" checked>
                   <label for="interval-1">5 мин</label>
                 </li>
                 <li class="predict__interval-item">
-                  <input class="predict__interval-btn js-betBtn" type="radio" id="interval-2" name="interval" value="1h">
+                  <input class="predict__interval-btn js-intervalBtn" type="radio" id="interval-2" name="interval" value="1h">
                   <label for="interval-2">1 час</label>
                 </li>
                 <li class="predict__interval-item">
-                  <input class="predict__interval-btn js-betBtn" type="radio" id="interval-3" name="interval" value="4h">
+                  <input class="predict__interval-btn js-intervalBtn" type="radio" id="interval-3" name="interval" value="4h">
                   <label for="interval-3">4 часа</label>
                 </li>
               </ul>
@@ -2805,6 +3479,11 @@
         <li class="nav__tab js-tab" data-tab="referrals">Битва рефералов</li>
         <li class="nav__tab js-tab" data-tab="stat-screen">Статистика</li>
       </ul>
+      <ul class="nav__tabs nav__tabs--trade js-tabs" data-tabs="trade">
+        <li class="nav__tab active js-tab" data-tab="desk">Desk</li>
+        <li class="nav__tab js-tab" data-tab="orders">My Orders</li>
+        <li class="nav__tab js-tab" data-tab="history">History</li>
+      </ul>
       <ul class="nav__list js-navList">
         <li class="nav__item js-navItem" data-nav="ref">
           <div class="nav__icon">
@@ -3072,8 +3751,6 @@
             <div class="popup-transaction__box">
               <div class="popup-transaction__label">Direction:</div>
               <div class="popup-transaction__direction">Buy</div>
-              <!-- Наверное не пригодится, но на всякий случай<div class="popup-transaction__direction popup-transaction__direction--red">Sell</div>
-                -->
             </div>
             <div class="popup-transaction__box">
               <div class="popup-transaction__label">Crypto:</div>
@@ -3107,6 +3784,51 @@
         </div>
       </div>
     </div>
+    <div class="popup js-popup hide" id="deal">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__title">Confirm Transaction</div>
+          <div class="popup-transaction">
+            <div class="popup-transaction__box">
+              <div class="popup-transaction__label">Direction:</div>
+              <div class="popup-transaction__direction popup-transaction__direction--red">Sell</div>
+            </div>
+            <div class="popup-transaction__box">
+              <div class="popup-transaction__label">Crypto:</div>
+              <div class="popup-transaction__currency currency">
+                <img src="img/icons/rtx.svg" alt="riwatex">
+                <b>RTX </b>
+                <span>Riwatex</span>
+              </div>
+            </div>
+            <div class="popup-transaction__info">
+              <div class="popup-transaction__box">
+                <div class="popup-transaction__label">Price per 1 RTX:</div>
+                <div class="popup-transaction__value js-transactionPrice" data-price="0.000001">0.000001 USDT</div>
+              </div>
+              <div class="popup-transaction__box">
+                <div class="popup-transaction__label">Amount (RTX):</div>
+                <div class="popup-transaction__value js-transactionAmount">0</div>
+              </div>
+              <div class="popup-transaction__box">
+                <div class="popup-transaction__label">Sum (USDT):</div>
+                <div class="popup-transaction__value js-transactionSum">0</div>
+              </div>
+            </div>
+            <div class="popup-transaction__info">
+              <div class="popup-transaction__box">
+                <div class="popup-transaction__label">Fee:</div>
+                <div class="popup-transaction__value">0,000001 USDT</div>
+              </div>
+            </div>
+          </div>
+          <div class="popup__footer">
+            <button class="popup__btn" type="button">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="popup js-popup hide" id="predict-submit">
       <div class="popup-inner">
         <div class="popup-inner__wrap">
@@ -3126,6 +3848,26 @@
             <div class="popup-transaction__value js-transactionSum">10 000 RTX</div>
           </div>
           <button class="popup__btn" type="button">Подтвердить</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="order-cancel-all">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__title">Confirmation</div>
+          <div class="popup__text">Do you really want to cancel all orders?</div>
+          <button class="popup__btn" type="button">Confirm</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="order-cancel">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__title">Confirmation</div>
+          <div class="popup__text">Do you really want to cancel this order?</div>
+          <button class="popup__btn" type="button">Confirm</button>
         </div>
       </div>
     </div>
