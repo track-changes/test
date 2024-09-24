@@ -57,6 +57,9 @@
         <div id="stars3"></div>
       </div>
       <section class="tap js-sectionTap hide">
+        <button class="tap__badge js-openBattle" type="button" aria-label="Открыть битву прогнозистов">
+          <img src="img/icons/badge.svg" alt="">
+        </button>
         <div class="income tap__total" id="tap-total">1 000 000 000<small>,00</small>
         </div>
         <div class="tap__coin-wrap js-tapCoinWrap">
@@ -315,120 +318,663 @@
             </li>
           </ol>
         </div>
-        <div class="stat__content hide js-tabContent" data-tab="referrals">
-          <div class="top__title">Приглашайте друзей</div>
-          <div class="top__subtitle">и получите возможность выиграть 5 000 000 RTX!</div>
-          <button class="top__rules js-openSubsection" type="button" data-subsection="rules-awards">Правила получения наград</button>
-          <div class="top__countdown">
-            <span class="top__countdown-text">До завершения турнира:</span>
-            <div class="top__countdown-numbers">
-              <span>12 д.</span>:<span>11 ч. </span>
+        <div class="top__player">
+          <div class="top__list-item">
+            <div class="top__list-img">
+              <img src="img/avatars/hamster.png" alt="">
+            </div>
+            <div class="top__list-info">
+              <div class="top__list-name">Имя Фамилия</div>
+              <div class="top__list-value">22,5K</div>
+            </div>
+            <div class="top__list-place">3 </div>
+          </div>
+        </div>
+        <div class="stat__content js-sectionBattle hide js-tabContent" data-tab="battle">
+          <div class="battle battle--bg js-battleMain">
+            <div class="battle__title battle__title--link">Battle of Predictors<a href="#" target="_blank">
+                <img src="img/icons/question.svg" alt="">
+              </a>
+            </div>
+            <div class="battle__info">
+              <div class="battle__number">
+                <img src="img/icons/trophy.svg" alt="">
+                <span>Battle No. 2</span>
+              </div>
+              <button class="battle__history js-openButtonHistory" type="button">
+                <img src="img/icons/history.svg" alt="">
+              </button>
+            </div>
+            <div class="battle__stat">
+              <div class="battle__label">Prize Pool:</div>
+              <div class="battle__price">
+                <img src="img/icons/fire2.svg" alt="">
+                <span>1 000 USDT</span>
+              </div>
+            </div>
+            <div class="battle__stats">
+              <div class="battle__stat">
+                <div class="battle__label">Entry price:</div>
+                <b class="battle__text">Free</b>
+              </div>
+              <div class="battle__stat">
+                <div class="battle__label">Participants:</div>
+                <b class="battle__text">900</b>
+              </div>
+            </div>
+            <div class="battle__countdown">
+              <div class="battle__countdown-timer">
+                <span class="battle__countdown-text">Trading ends in:</span>
+                <div class="battle__countdown-numbers">
+                  <span>0 h</span>:<span>59 m</span>:<span>59 s</span>
+                </div>
+              </div>
+              <button class="battle__countdown-btn btn js-popupOpen" type="button" data-popup="battle-join">Join the battle</button>
+            </div>
+            <div class="battle__prev">
+              <div class="battle__prev-img">
+                <img src="img/icons/trophy.svg" alt="">
+              </div>
+              <div class="battle__prev-text">
+                <div class="battle__prev-label">Previous winner:</div>
+                <div class="battle__prev-name">Battle No. 1</div>
+              </div>
+              <div class="battle__prev-result">
+                <div class="battle__prev-name">evgeniy</div>
+                <div class="battle__prev-price">+13.00 USDT</div>
+              </div>
+            </div>
+            <div class="battle__hint">Data is updated every 10 minutes</div>
+            <div class="battle__member">
+              <div class="battle__member-head">
+                <div class="battle__member-title">List of participants</div>
+                <div class="battle__member-count">
+                  Total:<b>221</b>
+                </div>
+              </div>
+              <ol class="battle__member-list">
+                <li class="battle__member-item">
+                  <div class="battle__member-info">
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-label">Result:</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="battle__member-item">
+                  <div class="battle__member-info">
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-label">Result:</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="battle__member-item">
+                  <div class="battle__member-info">
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-label">Result:</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="battle__member-item">
+                  <div class="battle__member-info">
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-label">Result:</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="battle__member-item">
+                  <div class="battle__member-info">
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-label">Result:</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="battle__member-item">
+                  <div class="battle__member-info">
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-label">Result:</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="battle__member-item">
+                  <div class="battle__member-info">
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-label">Result:</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="battle__member-item">
+                  <div class="battle__member-info">
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-label">Result:</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </li>
+              </ol>
             </div>
           </div>
-          <div class="top__info">Данные обновляются ежедневно в 06:00 (MSK)</div>
-          <div class="top__leader">
-            <div class="top__leader-img">
-              <img src="img/icons/trophy-cup.svg" alt="">
+          <div class="battle battle--border js-battleHistory hide">
+            <div class="battle__title">History of Battles</div>
+            <div class="battle__stats">
+              <div class="battle__stat">
+                <div class="battle__label">Total amount:</div>
+                <b class="battle__text">104</b>
+              </div>
+              <div class="battle__stat">
+                <div class="battle__label">Total prize pool:</div>
+                <b class="battle__text battle__text--fire">1 337,00 USDT</b>
+              </div>
             </div>
-            <div class="top__leader-text">
-              <div class="top__leader-label">Текущий лидер:</div>
-              <div class="top__leader-name">Имя Фамилия</div>
-              <div class="income top__leader-value">1 000 000 000<small>,00</small>
+            <div class="battle__list">
+              <div class="battle__item">
+                <div class="battle__item-box">
+                  <div class="battle__item-name">
+                    <img src="img/icons/trophy.svg" alt="">
+                    <span>Battle No. 10</span>
+                  </div>
+                  <div class="battle__item-date">20.09.2024, 21:00 </div>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__item-box">
+                    <div class="battle__item-stat battle__item-stat--players">104</div>
+                    <div class="battle__item-stat battle__item-stat--fire">101,00 USDT</div>
+                  </div>
+                  <button class="battle__item-link js-openBattleDetails" type="button">Details</button>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__member-info">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-profit">+120,22 USDT</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-label">Winner result:</div>
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="battle__item">
+                <div class="battle__item-box">
+                  <div class="battle__item-name">
+                    <img src="img/icons/trophy.svg" alt="">
+                    <span>Battle No. 9</span>
+                  </div>
+                  <div class="battle__item-date">20.09.2024, 21:00 </div>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__item-box">
+                    <div class="battle__item-stat battle__item-stat--players">104</div>
+                    <div class="battle__item-stat battle__item-stat--fire">101,00 USDT</div>
+                  </div>
+                  <button class="battle__item-link js-openBattleDetails" type="button">Details</button>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__member-info">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-profit">+120,22 USDT</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-label">Winner result:</div>
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="battle__item">
+                <div class="battle__item-box">
+                  <div class="battle__item-name">
+                    <img src="img/icons/trophy.svg" alt="">
+                    <span>Battle No. 8</span>
+                  </div>
+                  <div class="battle__item-date">20.09.2024, 21:00 </div>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__item-box">
+                    <div class="battle__item-stat battle__item-stat--players">104</div>
+                    <div class="battle__item-stat battle__item-stat--fire">101,00 USDT</div>
+                  </div>
+                  <button class="battle__item-link js-openBattleDetails" type="button">Details</button>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__member-info">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-profit">+120,22 USDT</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-label">Winner result:</div>
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="battle__item">
+                <div class="battle__item-box">
+                  <div class="battle__item-name">
+                    <img src="img/icons/trophy.svg" alt="">
+                    <span>Battle No. 7</span>
+                  </div>
+                  <div class="battle__item-date">20.09.2024, 21:00 </div>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__item-box">
+                    <div class="battle__item-stat battle__item-stat--players">104</div>
+                    <div class="battle__item-stat battle__item-stat--fire">101,00 USDT</div>
+                  </div>
+                  <button class="battle__item-link js-openBattleDetails" type="button">Details</button>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__member-info">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-profit">+120,22 USDT</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-label">Winner result:</div>
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="battle__item">
+                <div class="battle__item-box">
+                  <div class="battle__item-name">
+                    <img src="img/icons/trophy.svg" alt="">
+                    <span>Battle No. 6</span>
+                  </div>
+                  <div class="battle__item-date">20.09.2024, 21:00 </div>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__item-box">
+                    <div class="battle__item-stat battle__item-stat--players">104</div>
+                    <div class="battle__item-stat battle__item-stat--fire">101,00 USDT</div>
+                  </div>
+                  <button class="battle__item-link js-openBattleDetails" type="button">Details</button>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__member-info">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-profit">+120,22 USDT</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-label">Winner result:</div>
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="battle__item">
+                <div class="battle__item-box">
+                  <div class="battle__item-name">
+                    <img src="img/icons/trophy.svg" alt="">
+                    <span>Battle No. 5</span>
+                  </div>
+                  <div class="battle__item-date">20.09.2024, 21:00 </div>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__item-box">
+                    <div class="battle__item-stat battle__item-stat--players">104</div>
+                    <div class="battle__item-stat battle__item-stat--fire">101,00 USDT</div>
+                  </div>
+                  <button class="battle__item-link js-openBattleDetails" type="button">Details</button>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__member-info">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-profit">+120,22 USDT</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-label">Winner result:</div>
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="battle__item">
+                <div class="battle__item-box">
+                  <div class="battle__item-name">
+                    <img src="img/icons/trophy.svg" alt="">
+                    <span>Battle No. 4</span>
+                  </div>
+                  <div class="battle__item-date">20.09.2024, 21:00 </div>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__item-box">
+                    <div class="battle__item-stat battle__item-stat--players">104</div>
+                    <div class="battle__item-stat battle__item-stat--fire">101,00 USDT</div>
+                  </div>
+                  <button class="battle__item-link js-openBattleDetails" type="button">Details</button>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__member-info">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-profit">+120,22 USDT</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-label">Winner result:</div>
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="battle__item">
+                <div class="battle__item-box">
+                  <div class="battle__item-name">
+                    <img src="img/icons/trophy.svg" alt="">
+                    <span>Battle No. 3</span>
+                  </div>
+                  <div class="battle__item-date">20.09.2024, 21:00 </div>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__item-box">
+                    <div class="battle__item-stat battle__item-stat--players">104</div>
+                    <div class="battle__item-stat battle__item-stat--fire">101,00 USDT</div>
+                  </div>
+                  <button class="battle__item-link js-openBattleDetails" type="button">Details</button>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__member-info">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-profit">+120,22 USDT</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-label">Winner result:</div>
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="battle__item">
+                <div class="battle__item-box">
+                  <div class="battle__item-name">
+                    <img src="img/icons/trophy.svg" alt="">
+                    <span>Battle No. 2</span>
+                  </div>
+                  <div class="battle__item-date">20.09.2024, 21:00 </div>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__item-box">
+                    <div class="battle__item-stat battle__item-stat--players">104</div>
+                    <div class="battle__item-stat battle__item-stat--fire">101,00 USDT</div>
+                  </div>
+                  <button class="battle__item-link js-openBattleDetails" type="button">Details</button>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__member-info">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-profit">+120,22 USDT</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-label">Winner result:</div>
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="battle__item">
+                <div class="battle__item-box">
+                  <div class="battle__item-name">
+                    <img src="img/icons/trophy.svg" alt="">
+                    <span>Battle No. 1</span>
+                  </div>
+                  <div class="battle__item-date">20.09.2024, 21:00 </div>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__item-box">
+                    <div class="battle__item-stat battle__item-stat--players">104</div>
+                    <div class="battle__item-stat battle__item-stat--fire">101,00 USDT</div>
+                  </div>
+                  <button class="battle__item-link js-openBattleDetails" type="button">Details</button>
+                </div>
+                <div class="battle__item-box">
+                  <div class="battle__member-info">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-name">Name Surname</div>
+                    <div class="battle__member-profit">+120,22 USDT</div>
+                  </div>
+                  <div class="battle__member-stat">
+                    <div class="battle__member-label">Winner result:</div>
+                    <div class="battle__member-progress battle__member-progress--green">+300%</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <ol class="top__list">
-            <li class="top__list-item">
-              <div class="top__list-img">
-                <img src="img/avatars/hamster-master.png" alt="">
+          <div class="battle battle--border js-battleDetails hide">
+            <div class="battle__member-head">
+              <div class="battle__member-title">Battle No. 9</div>
+              <div class="battle__member-count battle__member-count--yellow">The battle is over</div>
+            </div>
+            <div class="battle__stats">
+              <div class="battle__stat">
+                <div class="battle__label">Participants:</div>
+                <b class="battle__text">104</b>
               </div>
-              <div class="top__list-info">
-                <div class="top__list-name">Имя Фамилия</div>
-                <div class="top__list-value">22,5K</div>
+              <div class="battle__stat">
+                <div class="battle__label">Total prize pool:</div>
+                <b class="battle__text battle__text--fire">1 337,00 USDT</b>
               </div>
-              <div class="top__list-place">2 </div>
-            </li>
-            <li class="top__list-item">
-              <div class="top__list-img">
-                <img src="img/avatars/shark-mid.png" alt="">
+              <div class="battle__stat battle__stat--right">
+                <div class="battle__label">20.09.24, 21:00</div>
+                <div class="battle__label">21.09.24, 21:00</div>
               </div>
-              <div class="top__list-info">
-                <div class="top__list-name">Имя Фамилия</div>
-                <div class="top__list-value">22,5K</div>
-              </div>
-              <div class="top__list-place">3 </div>
-            </li>
-            <li class="top__list-item">
-              <div class="top__list-img">
-                <img src="img/avatars/shark-master.png" alt="">
-              </div>
-              <div class="top__list-info">
-                <div class="top__list-name">Имя Фамилия</div>
-                <div class="top__list-value">22,5K</div>
-              </div>
-              <div class="top__list-place">4 </div>
-            </li>
-            <li class="top__list-item">
-              <div class="top__list-img">
-                <img src="img/avatars/hamster-master.png" alt="">
-              </div>
-              <div class="top__list-info">
-                <div class="top__list-name">Имя Фамилия</div>
-                <div class="top__list-value">22,5K</div>
-              </div>
-              <div class="top__list-place">2 </div>
-            </li>
-            <li class="top__list-item">
-              <div class="top__list-img">
-                <img src="img/avatars/shark-mid.png" alt="">
-              </div>
-              <div class="top__list-info">
-                <div class="top__list-name">Имя Фамилия</div>
-                <div class="top__list-value">22,5K</div>
-              </div>
-              <div class="top__list-place">3 </div>
-            </li>
-            <li class="top__list-item">
-              <div class="top__list-img">
-                <img src="img/avatars/shark-master.png" alt="">
-              </div>
-              <div class="top__list-info">
-                <div class="top__list-name">Имя Фамилия</div>
-                <div class="top__list-value">22,5K</div>
-              </div>
-              <div class="top__list-place">4 </div>
-            </li>
-            <li class="top__list-item">
-              <div class="top__list-img">
-                <img src="img/avatars/hamster-master.png" alt="">
-              </div>
-              <div class="top__list-info">
-                <div class="top__list-name">Имя Фамилия</div>
-                <div class="top__list-value">22,5K</div>
-              </div>
-              <div class="top__list-place">2 </div>
-            </li>
-            <li class="top__list-item">
-              <div class="top__list-img">
-                <img src="img/avatars/shark-mid.png" alt="">
-              </div>
-              <div class="top__list-info">
-                <div class="top__list-name">Имя Фамилия</div>
-                <div class="top__list-value">22,5K</div>
-              </div>
-              <div class="top__list-place">3 </div>
-            </li>
-            <li class="top__list-item">
-              <div class="top__list-img">
-                <img src="img/avatars/shark-master.png" alt="">
-              </div>
-              <div class="top__list-info">
-                <div class="top__list-name">Имя Фамилия</div>
-                <div class="top__list-value">22,5K</div>
-              </div>
-              <div class="top__list-place">4 </div>
-            </li>
-          </ol>
+            </div>
+            <ol class="battle__member-list">
+              <li class="battle__member-item">
+                <div class="battle__member-info">
+                  <div class="battle__member-name">Name Surname</div>
+                  <div class="battle__member-box">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="battle__member-stat">
+                  <div class="battle__member-progress battle__member-progress--green">+100 USDT</div>
+                  <div class="battle__member-label">+300%</div>
+                </div>
+              </li>
+              <li class="battle__member-item">
+                <div class="battle__member-info">
+                  <div class="battle__member-name">Name Surname</div>
+                  <div class="battle__member-box">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="battle__member-stat">
+                  <div class="battle__member-progress battle__member-progress--green">+100 USDT</div>
+                  <div class="battle__member-label">+300%</div>
+                </div>
+              </li>
+              <li class="battle__member-item">
+                <div class="battle__member-info">
+                  <div class="battle__member-name">Name Surname</div>
+                  <div class="battle__member-box">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="battle__member-stat">
+                  <div class="battle__member-progress battle__member-progress--green">+100 USDT</div>
+                  <div class="battle__member-label">+300%</div>
+                </div>
+              </li>
+              <li class="battle__member-item">
+                <div class="battle__member-info">
+                  <div class="battle__member-name">Name Surname</div>
+                  <div class="battle__member-box">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="battle__member-stat">
+                  <div class="battle__member-progress battle__member-progress--green">+100 USDT</div>
+                  <div class="battle__member-label">+300%</div>
+                </div>
+              </li>
+              <li class="battle__member-item">
+                <div class="battle__member-info">
+                  <div class="battle__member-name">Name Surname</div>
+                  <div class="battle__member-box">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="battle__member-stat">
+                  <div class="battle__member-progress battle__member-progress--green">+100 USDT</div>
+                  <div class="battle__member-label">+300%</div>
+                </div>
+              </li>
+              <li class="battle__member-item">
+                <div class="battle__member-info">
+                  <div class="battle__member-name">Name Surname</div>
+                  <div class="battle__member-box">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="battle__member-stat">
+                  <div class="battle__member-progress battle__member-progress--green">+100 USDT</div>
+                  <div class="battle__member-label">+300%</div>
+                </div>
+              </li>
+              <li class="battle__member-item">
+                <div class="battle__member-info">
+                  <div class="battle__member-name">Name Surname</div>
+                  <div class="battle__member-box">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="battle__member-stat">
+                  <div class="battle__member-progress battle__member-progress--green">+100 USDT</div>
+                  <div class="battle__member-label">+300%</div>
+                </div>
+              </li>
+              <li class="battle__member-item">
+                <div class="battle__member-info">
+                  <div class="battle__member-name">Name Surname</div>
+                  <div class="battle__member-box">
+                    <div class="battle__member-label">Result:</div>
+                    <div class="battle__member-indicators">
+                      <div class="battle__member-up">2 218</div>
+                      <div class="battle__member-down">1 538</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="battle__member-stat">
+                  <div class="battle__member-progress battle__member-progress--green">+100 USDT</div>
+                  <div class="battle__member-label">+300%</div>
+                </div>
+              </li>
+            </ol>
+          </div>
         </div>
         <div class="stat__content stat__content--last hide js-tabContent" data-tab="stat-screen">
           <div class="stat__text">Общий баланс RTX</div>
@@ -455,23 +1001,11 @@
               <div class="stat__item-icon">
                 <img src="img/icons/calendar-outline.svg" alt="Календарь">
               </div>
-              <div class="stat__item-label">Всего игроков:</div>
+              <div class="stat__item-label">Игроков сегодня:</div>
               <div class="stat__item-value">33 867 806</div>
             </div>
           </div>
           <div class="stat__info">Информация обновляется каждый час</div>
-        </div>
-        <div class="top__player">
-          <div class="top__list-item">
-            <div class="top__list-img">
-              <img src="img/avatars/hamster.png" alt="">
-            </div>
-            <div class="top__list-info">
-              <div class="top__list-name">Имя Фамилия</div>
-              <div class="top__list-value">22,5K</div>
-            </div>
-            <div class="top__list-place">3 </div>
-          </div>
         </div>
       </section>
       <section class="ref js-sectionRef hide">
@@ -876,69 +1410,6 @@
           </div>
         </div>
       </section>
-      <section class="ref js-sectionRef hide">
-        <div class="ref__title">Пригласите друзей!</div>
-        <div class="ref__subtitle">
-          <span>Вы и ваш друг получите бонусы!</span>
-          <div class="ref__subtitle-img js-openSubsection" data-subsection="ref-rules">
-            <img src="img/icons/question.svg" alt="">
-          </div>
-        </div>
-        <div class="ref__box">
-          <div class="ref__count">
-            <div class="ref__count-title">Всего рефералов:</div>
-            <div class="ref__count-value">
-              <span>0 </span>
-              <span>/ 50</span>
-            </div>
-          </div>
-          <div class="ref__earned js-openTop">
-            <div class="ref__earned-title">Заработано рефералами</div>
-            <div class="income ref__earned-value">1 000 000 000<small>,00</small>
-            </div>
-          </div>
-        </div>
-        <div class="ref__link js-copyWrap">
-          <div class="ref__link-left">
-            <div class="ref__link-title">Ссылка:</div>
-            <div class="ref__link-text js-copyText">https://t.me/tapswap_mirror_1_bot?start=r_6982614608 </div>
-          </div>
-          <div class="ref__link-copy js-copyBtn"></div>
-        </div>
-        <!--<div class="ref__list-warning">Вы достигли максимального количества рефералов на текущем уровне. Чтобы увеличить лимит продолжайте тапать!</div>-->
-        <div class="ref__list-title">Список рефералов:</div>
-        <div class="ref__info">Информация обновляется каждые 20 минут</div>
-        <div class="ref__list-item">
-          <div class="ref__list-img">
-            <img src="img/avatars/whale-light.png" alt="">
-          </div>
-          <div class="ref__list-user">
-            <div class="ref__list-name">Имя Фамилия</div>
-            <div class="ref__list-info">
-              <div class="ref__list-status">Hamster</div>
-              <div class="ref__list-value">22,5K</div>
-            </div>
-          </div>
-          <div class="income ref__list-earned">+55К</div>
-        </div>
-        <div class="ref__list-item">
-          <div class="ref__list-img">
-            <img src="img/avatars/whale.png" alt="">
-          </div>
-          <div class="ref__list-user">
-            <div class="ref__list-name">Имя Фамилия</div>
-            <div class="ref__list-info">
-              <div class="ref__list-status">Hamster</div>
-              <div class="ref__list-value">22,5K</div>
-            </div>
-          </div>
-          <div class="income ref__list-earned">+55К</div>
-        </div>
-        <button class="ref__share" type="button" onclick="window.location.href = 'tg://msg?text=Текст%20для%20поделиться'">
-          <span>Пригласить друга</span>
-        </button>
-        <!--<p class="ref__list-empty">У вас нет рефералов</p>-->
-      </section>
       <section class="predict js-sectionPredict hide">
         <div class="predict-main js-predictMain">
           <div class="predict-info">
@@ -1047,23 +1518,24 @@
                         </div>
                       </div>
                     </div>
-                  <li class="predict__card predict__card--load itc-slider-item">
-                    <div class="predict__card-head">
-                      <div class="predict__card-status">Live</div>
-                      <div class="predict__card-ratio">2.00x</div>
-                    </div>
-                    <div class="predict__card-body">
-                      <div class="predict__card-img">
-                        <img src="img/icons/logo-gray.svg" alt="">
-                      </div>
-                      <div class="predict__card-load">Calculating</div>
-                      <div class="predict__card-dots">
-                        <span>.</span>
-                        <span>.</span>
-                        <span>.</span>
-                      </div>
-                    </div>
-                  </li>
+                    <!--<li class="predict__card predict__card--load">
+                          <div class="predict__card-head">
+                              <div class="predict__card-status">Live</div>
+                              <div class="predict__card-ratio">2.00x</div>
+                          </div>
+                          <div class="predict__card-body">
+                              <div class="predict__card-img">
+                                  <img src="img/icons/logo-gray.svg" alt="">
+                              </div>
+                              <div class="predict__card-load">Calculating</div>
+                                  <div class="predict__card-dots">
+                                  <span>.</span>
+                                  <span>.</span>
+                                  <span>.</span>
+                              </div>
+                          </div>
+                      </li>
+                      -->
                   </li>
                 </ul>
               </div>
@@ -2564,58 +3036,6 @@
             </div>
           </div>
         </div>
-        <div class="subsection js-subsection hide" id="rules-awards">
-          <div class="subsection-inner">
-            <div class="subsection__title">Правила получения наград</div>
-            <div class="subsection-body">
-              <div class="subsection__text">Битва рефералов проходит каждые 2 недели. Текущая битва завершается: <b>04.06.2024, 00:00</b>
-              </div>
-              <div class="subsection__text">Призы за битву рефералов распределяются следующим образом:</div>
-              <ol class="subsection__awards-table">
-                <li class="subsection__awards-item">
-                  <div class="subsection__awards-text">1 место</div>
-                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTX</div>
-                </li>
-                <li class="subsection__awards-item">
-                  <div class="subsection__awards-text">2 место</div>
-                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTX</div>
-                </li>
-                <li class="subsection__awards-item">
-                  <div class="subsection__awards-text">3 место</div>
-                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTX</div>
-                </li>
-                <li class="subsection__awards-item">
-                  <div class="subsection__awards-text">4 место</div>
-                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTX</div>
-                </li>
-                <li class="subsection__awards-item">
-                  <div class="subsection__awards-text">5 место</div>
-                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTX</div>
-                </li>
-                <li class="subsection__awards-item">
-                  <div class="subsection__awards-text">6 место</div>
-                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTX</div>
-                </li>
-                <li class="subsection__awards-item">
-                  <div class="subsection__awards-text">7 место</div>
-                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTX</div>
-                </li>
-                <li class="subsection__awards-item">
-                  <div class="subsection__awards-text">8 место</div>
-                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTX</div>
-                </li>
-                <li class="subsection__awards-item">
-                  <div class="subsection__awards-text">9 место</div>
-                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTX</div>
-                </li>
-                <li class="subsection__awards-item">
-                  <div class="subsection__awards-text">10 место</div>
-                  <div class="income subsection__awards-number">50 USDT + 5 000 000 RTX</div>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
         <div class="subsection js-subsection hide" id="contacts">
           <div class="subsection-inner">
             <div class="subsection__title subsection__title--left">Contact us</div>
@@ -2765,7 +3185,7 @@
       </ul>
       <ul class="nav__tabs nav__tabs--top js-tabs" data-tabs="stat">
         <li class="nav__tab active js-tab" data-tab="top-list">Топ игроков</li>
-        <li class="nav__tab js-tab" data-tab="referrals">Битва рефералов</li>
+        <li class="nav__tab js-tab" data-tab="battle">Битва рефералов</li>
         <li class="nav__tab js-tab" data-tab="stat-screen">Статистика</li>
       </ul>
       <ul class="nav__list js-navList">
@@ -3078,8 +3498,7 @@
           <div class="popup__title">Подтверждение прогноза</div>
           <div class="popup-transaction__box">
             <div class="popup-transaction__label">Направление:</div>
-            <div class="popup-transaction__value popup-transaction__value--green">Рост</div>
-            <!--<div class="popup-transaction__value popup-transaction__value--red">Падение</div>-->
+            <div class="popup-transaction__value green">Рост</div>
           </div>
           <div class="popup-transaction__box">
             <div class="popup-transaction__label">Интервал:</div>
@@ -3091,6 +3510,38 @@
             <div class="popup-transaction__value js-transactionSum">10 000 RTX</div>
           </div>
           <button class="popup__btn" type="button">Подтвердить</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup js-popup hide" id="battle-join">
+      <div class="popup-inner">
+        <div class="popup-inner__wrap">
+          <div class="popup__close js-popupClose"></div>
+          <div class="popup__title">Confirm Transaction</div>
+          <div class="popup-transaction">
+            <div class="popup-transaction__box">
+              <div class="popup-transaction__label">Your balance:</div>
+              <div class="popup-transaction__value js-transactionPrice">10,37 USDT</div>
+            </div>
+            <div class="popup-transaction__box">
+              <div class="popup-transaction__label">Entry price:</div>
+              <div class="popup-transaction__value">Free</div>
+              <!--<div class="popup-transaction__value popup-transaction__value--red"> 1 USDT </div>-->
+            </div>
+          </div>
+          <div class="popup-transaction__info">
+            <div class="popup__text">By clicking "Confirm," you agree to the
+              <br>
+              <a href="#" target="_blank">tournament rules</a>
+              <br> This action cannot be undone.
+            </div>
+            <!--<div class="popup__text"> By clicking "Confirm," you agree to the tournament rules and acknowledge a deduction of 1 USDT as an entry fee. <span class="yellow">This action cannot be undone.</span></div>-->
+            <div class="popup__footer">
+              <!--<button class="popup__btn error" type="button">Not enough USDT</button>-->
+              <button class="popup__btn" type="button">Confirm</button>
+              <button class="popup__btn popup__btn--transparent js-openDeposit" type="button">Deposit USDT</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
