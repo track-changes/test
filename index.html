@@ -3660,7 +3660,10 @@ window.addEventListener('load', function() {
     
     // Вызов функции animateLiveLine с двумя параметрами
     animateLiveLine(fiveMinutesAgo, fiveMinutesLater);
-    alert('Версия для проверки качества картинки2')
+    document.addEventListener('click', function(event) {
+        alert(event.target)
+        console.log(event.target)
+    })
 });
   </script>
 
