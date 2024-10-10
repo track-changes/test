@@ -1431,11 +1431,43 @@
             <div class="predict__header">
               <div class="predict__title">Prediction</div>
               <a class="predict__link" href="#" target="_blank"></a>
-              <div class="predict__currency">
-                <div class="predict__currency-icon">
-                  <img src="img/icons/btc.svg" alt="Bitcoin">
+              <div class="predict__select itc-select js-select">
+                <button class="itc-select__toggle" type="button" name="cryptocurrency" value="ton" data-select="toggle" data-index="1">
+                  <img src="img/icons/ton.svg" alt="Ton">
+                  <span>TON</span>
+                </button>
+                <div class="itc-select__dropdown">
+                  <ul class="itc-select__options">
+                    <li class="itc-select__option itc-select__option_selected" data-select="option" data-value="btc" data-index="0">
+                      <img src="img/icons/btc.svg" alt="BTC">
+                      <span>BTC</span>
+                    </li>
+                    <li class="itc-select__option" data-select="option" data-value="ton" data-index="1">
+                      <img src="img/icons/ton.svg" alt="Ton">
+                      <span>TON</span>
+                    </li>
+                    <li class="itc-select__option" data-select="option" data-value="eth" data-index="2">
+                      <img src="img/icons/eth.svg" alt="ETH">
+                      <span>ETH</span>
+                    </li>
+                    <li class="itc-select__option" data-select="option" data-value="pepe" data-index="3">
+                      <img src="img/icons/pepe.svg" alt="PEPE">
+                      <span>PEPE</span>
+                    </li>
+                    <li class="itc-select__option" data-select="option" data-value="not" data-index="4">
+                      <img src="img/icons/not.svg" alt="NOT">
+                      <span>NOT</span>
+                    </li>
+                    <li class="itc-select__option" data-select="option" data-value="dogs" data-index="5">
+                      <img src="img/icons/dogs.svg" alt="DOGS">
+                      <span>DOGS</span>
+                    </li>
+                    <li class="itc-select__option" data-select="option" data-value="sol" data-index="6">
+                      <img src="img/icons/sol.svg" alt="SOL">
+                      <span>SOL</span>
+                    </li>
+                  </ul>
                 </div>
-                <div class="predict__currency-name">BTC </div>
               </div>
             </div>
             <div class="predict__text">
@@ -1516,10 +1548,13 @@
                   </li>
                   <li class="predict__card predict__card--live itc-slider-item">
                     <div class="predict__card-head">
-                      <div class="predict__card-status">
-                        Live</div>
-                      <div class="predict__card-timer predict__card-timer--yellow">04:59</div>
-                      <div class="predict__card-ratio">2.00x</div>
+                      <div class="predict__card-status predict__card-status--yellow">04:59</div>
+                      <!--<div class="predict__card-ratio">1.88x</div>-->
+                      <div class="predict__card-ratio predict__card-ratio--double">
+                        <span>1.88x</span>
+                        <span>1.88x</span>
+                      </div>
+                      <!--Пока не нужен <div class="predict__card-ratio predict__card-ratio--fire">2.00x</div>-->
                       <div class="predict__card-line js-predictLiveLine"></div>
                     </div>
                     <div class="predict__card-body">
@@ -1546,12 +1581,20 @@
                   <li class="predict__card predict__card--center itc-slider-item">
                     <div class="predict__card-head">
                       <div class="predict__card-status">Soon</div>
-                      <div class="predict__card-ratio">2.00x</div>
                     </div>
                     <div class="predict__card-body">
                       <div class="predict__card-box">
-                        <div class="predict__card-label">Your:</div>
-                        <div class="predict__card-predict predict__card-predict--red">100 000 000 RTX</div>
+                        <!--<div class="predict__card-label">Your:</div>-->
+                        <div class="predict__card-label predict__card-label--green">Open for prediction</div>
+                        <!--<div class="predict__card-predict predict__card-predict--red">
+                          <span>100.1 TON</span>
+                          <span class="down">1.88x</span>
+                          </div>
+                          -->
+                        <div class="predict__card-predict predict__card-predict--red">
+                          <span>100.1 TON</span>
+                          <span class="up">1.88x</span>
+                        </div>
                       </div>
                       <div class="predict__card-box">
                         <div class="predict__card-label">Next Interval:</div>
@@ -1636,15 +1679,16 @@
                     <img src="img/icons/btc.svg" alt="Bitcoin">
                   </div>
                   <div class="predict__currency-name">BTC </div>
-                  <div class="predict-history__direction js-predictDirection">
-                    <img src="img/icons/trend-up-green.svg" alt="Падение">
-                    <span>Рост</span>
-                  </div>
                 </div>
                 <div class="predict-history__time">
                   <span class="js-predictDate">19.07.2024, 10:00</span>
                   <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
                 </div>
+                <div class="predict-history__direction predict-history__direction--red js-predictDirection">
+                  <img src="img/icons/trend-down.svg" alt="Падение">
+                  <span>Падение</span>
+                </div>
+                <div class="predict-history__text">1.88x</div>
                 <div class="predict-history__box">
                   <div class="predict-history__label">Locked price:</div>
                   <div class="predict-history__sum">60 000.00</div>
@@ -1673,15 +1717,16 @@
                     <img src="img/icons/btc.svg" alt="Bitcoin">
                   </div>
                   <div class="predict__currency-name">BTC </div>
-                  <div class="predict-history__direction predict-history__direction--red js-predictDirection">
-                    <img src="img/icons/trend-down.svg" alt="Падение">
-                    <span>Падение</span>
-                  </div>
                 </div>
                 <div class="predict-history__time">
                   <span class="js-predictDate">19.07.2024, 10:00</span>
                   <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
                 </div>
+                <div class="predict-history__direction predict-history__direction--red js-predictDirection">
+                  <img src="img/icons/trend-down.svg" alt="Падение">
+                  <span>Падение</span>
+                </div>
+                <div class="predict-history__text">1.88x</div>
                 <div class="predict-history__box">
                   <div class="predict-history__label">Locked price:</div>
                   <div class="predict-history__sum">60 000.00</div>
@@ -1712,15 +1757,16 @@
                     <img src="img/icons/btc.svg" alt="Bitcoin">
                   </div>
                   <div class="predict__currency-name">BTC </div>
-                  <div class="predict-history__direction predict-history__direction--red js-predictDirection">
-                    <img src="img/icons/trend-down.svg" alt="Падение">
-                    <span>Падение</span>
-                  </div>
                 </div>
                 <div class="predict-history__time">
                   <span class="js-predictDate">19.07.2024, 10:00</span>
                   <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
                 </div>
+                <div class="predict-history__direction predict-history__direction--red js-predictDirection">
+                  <img src="img/icons/trend-down.svg" alt="Падение">
+                  <span>Падение</span>
+                </div>
+                <div class="predict-history__text">1.88x</div>
                 <div class="predict-history__box">
                   <div class="predict-history__label">Locked price:</div>
                   <div class="predict-history__sum">60 000.00</div>
@@ -1751,15 +1797,16 @@
                     <img src="img/icons/btc.svg" alt="Bitcoin">
                   </div>
                   <div class="predict__currency-name">BTC </div>
-                  <div class="predict-history__direction predict-history__direction--red js-predictDirection">
-                    <img src="img/icons/trend-down.svg" alt="Падение">
-                    <span>Падение</span>
-                  </div>
                 </div>
                 <div class="predict-history__time">
                   <span class="js-predictDate">19.07.2024, 10:00</span>
                   <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
                 </div>
+                <div class="predict-history__direction predict-history__direction--red js-predictDirection">
+                  <img src="img/icons/trend-down.svg" alt="Падение">
+                  <span>Падение</span>
+                </div>
+                <div class="predict-history__text">1.88x</div>
                 <div class="predict-history__box">
                   <div class="predict-history__label">Locked price:</div>
                   <div class="predict-history__sum">60 000.00</div>
@@ -1790,15 +1837,16 @@
                     <img src="img/icons/btc.svg" alt="Bitcoin">
                   </div>
                   <div class="predict__currency-name">BTC </div>
-                  <div class="predict-history__direction js-predictDirection">
-                    <img src="img/icons/trend-up-green.svg" alt="Падение">
-                    <span>Рост</span>
-                  </div>
                 </div>
                 <div class="predict-history__time">
                   <span class="js-predictDate">19.07.2024, 10:00</span>
                   <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
                 </div>
+                <div class="predict-history__direction js-predictDirection">
+                  <img src="img/icons/trend-up-green.svg" alt="Падение">
+                  <span>Рост</span>
+                </div>
+                <div class="predict-history__text">1.88x</div>
                 <div class="predict-history__box">
                   <div class="predict-history__label">Locked price:</div>
                   <div class="predict-history__sum">60 000.00</div>
@@ -1829,15 +1877,16 @@
                     <img src="img/icons/btc.svg" alt="Bitcoin">
                   </div>
                   <div class="predict__currency-name">BTC </div>
-                  <div class="predict-history__direction js-predictDirection">
-                    <img src="img/icons/trend-up-green.svg" alt="Падение">
-                    <span>Рост</span>
-                  </div>
                 </div>
                 <div class="predict-history__time">
                   <span class="js-predictDate">19.07.2024, 10:00</span>
                   <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
                 </div>
+                <div class="predict-history__direction js-predictDirection">
+                  <img src="img/icons/trend-up-green.svg" alt="Падение">
+                  <span>Рост</span>
+                </div>
+                <div class="predict-history__text">1.88x</div>
                 <div class="predict-history__box">
                   <div class="predict-history__label">Locked price:</div>
                   <div class="predict-history__sum">60 000.00</div>
@@ -1868,15 +1917,16 @@
                     <img src="img/icons/btc.svg" alt="Bitcoin">
                   </div>
                   <div class="predict__currency-name">BTC </div>
-                  <div class="predict-history__direction js-predictDirection">
-                    <img src="img/icons/trend-up-green.svg" alt="Падение">
-                    <span>Рост</span>
-                  </div>
                 </div>
                 <div class="predict-history__time">
                   <span class="js-predictDate">19.07.2024, 10:00</span>
                   <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
                 </div>
+                <div class="predict-history__direction js-predictDirection">
+                  <img src="img/icons/trend-up-green.svg" alt="Падение">
+                  <span>Рост</span>
+                </div>
+                <div class="predict-history__text">1.88x</div>
                 <div class="predict-history__box">
                   <div class="predict-history__label">Locked price:</div>
                   <div class="predict-history__sum">60 000.00</div>
@@ -1907,15 +1957,16 @@
                     <img src="img/icons/btc.svg" alt="Bitcoin">
                   </div>
                   <div class="predict__currency-name">BTC </div>
-                  <div class="predict-history__direction js-predictDirection">
-                    <img src="img/icons/trend-up-green.svg" alt="Падение">
-                    <span>Рост</span>
-                  </div>
                 </div>
                 <div class="predict-history__time">
                   <span class="js-predictDate">19.07.2024, 10:00</span>
                   <button class="js-openSubsection predict-history__export" type="buttun" aria-label="export" data-subsection="predict-export"></button>
                 </div>
+                <div class="predict-history__direction js-predictDirection">
+                  <img src="img/icons/trend-up-green.svg" alt="Падение">
+                  <span>Рост</span>
+                </div>
+                <div class="predict-history__text">1.88x</div>
                 <div class="predict-history__box">
                   <div class="predict-history__label">Locked price:</div>
                   <div class="predict-history__sum">60 000.00</div>
@@ -3538,19 +3589,31 @@
       <div class="popup-inner">
         <div class="popup-inner__wrap">
           <div class="popup__close js-popupClose"></div>
-          <div class="popup__title">Подтверждение прогноза</div>
+          <div class="popup__title">Confirm prediction</div>
           <div class="popup-transaction__box">
-            <div class="popup-transaction__label">Направление:</div>
-            <div class="popup-transaction__value green">Рост</div>
-          </div>
-          <div class="popup-transaction__box">
-            <div class="popup-transaction__label">Интервал:</div>
-            <div class="popup-transaction__value">5 мин<span>(09:00 - 09:05)</span>
+            <div class="popup-transaction__label">Crypto:</div>
+            <div class="popup-transaction__crypto">
+              <img src="img/icons/btc.svg" alt="Bitcoin">
+              <b>BTC </b>
+              <span>Bitcoin</span>
             </div>
           </div>
           <div class="popup-transaction__box">
-            <div class="popup-transaction__label">Сумма:</div>
-            <div class="popup-transaction__value js-transactionSum">10 000 RTX</div>
+            <div class="popup-transaction__label">Direction:</div>
+            <div class="popup-transaction__predict">
+              <!--<span class="green"> Rise </span>-->
+              <span class="red">Fall</span>
+              <span>1.88x</span>
+            </div>
+          </div>
+          <div class="popup-transaction__box">
+            <div class="popup-transaction__label">Interval:</div>
+            <div class="popup-transaction__value">5 min<span>(09:00 - 09:05)</span>
+            </div>
+          </div>
+          <div class="popup-transaction__box">
+            <div class="popup-transaction__label">Sum:</div>
+            <div class="popup-transaction__value js-transactionSum">0.1 TON</div>
           </div>
           <button class="popup__btn" type="button">Подтвердить</button>
         </div>
