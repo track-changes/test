@@ -1949,21 +1949,21 @@
           <div class="wallet__title">Депозит</div>
           <div class="wallet__text">Deposit TON from your TON Wallet</div>
           <div class="wallet__form js-form">
-            <div class="wallet__input input__block">
+            <div class="wallet__input input__block js-cryptoSelect">
               <div class="input__label">Выберите криптовалюту</div>
               <div class="input__wrap">
                 <div class="itc-select js-select">
                   <button class="itc-select__toggle" type="button" name="cryptocurrency" value="ton" data-select="toggle" data-index="1">
                     <img src="img/icons/ton-logo.svg" alt="Ton">
-                    <span>USDT</span>
+                    <span>TON</span>
                   </button>
                   <div class="itc-select__dropdown">
                     <ul class="itc-select__options">
-                      <li class="itc-select__option itc-select__option_selected" data-select="option" data-value="usdt" data-index="0">
+                      <li class="itc-select__option" data-select="option" data-value="usdt" data-index="0">
                         <img src="img/icons/usdt.svg" alt="usdt">
                         <span>USDT</span>
                       </li>
-                      <li class="itc-select__option" data-select="option" data-value="ton" data-index="1">
+                      <li class="itc-select__option itc-select__option_selected" data-select="option" data-value="ton" data-index="1">
                         <img src="img/icons/ton-logo.svg" alt="Ton">
                         <span>TON</span>
                       </li>
@@ -2017,43 +2017,48 @@
               </div>
             </div>
             <div class="wallet__wrap js-walletTon">
-              <button class="wallet__btn wallet__btn--ton btn" type="button">
-                <img src="img/icons/ton-logo.svg" alt="">
-                <span>Connect Wallet </span>
-              </button>
-              <button class="wallet__btn btn" type="button">Deposit from TON Wallet</button>
-              <div class="wallet__balance">
-                <div class="wallet__balance-currency">
-                  <img src="img/icons/ton-logo.svg" alt="Ton">
-                  <span class="js-depositMax" data-deposit-max="1126.5">1 126.5 TON</span>
-                </div>
-                <div class="wallet__balance-block js-copyWrap">
-                  <div class="wallet__balance-address js-copyText" data-copy="UQC4vgasdasddAas12srWz">UQC4vg...srWz</div>
-                  <button class="wallet__balance-copy js-copyBtn" type="button" aria-label="copy"> </button>
-                  <button class="wallet__balance-btn" type="button">Disconnect</button>
-                </div>
+              <div class="wallet__step" data-step="deposit-ton-start">
+                <!-- <button class="wallet__btn wallet__btn--ton btn" type="button">
+                      <img src="img/icons/ton-logo.svg" alt="">
+                      <span>Connect Wallet </span>
+                  </button>
+                  -->
+                <button class="js-openWalletStep wallet__btn btn" type="button" data-step-open="deposit-ton-input">Deposit from TON Wallet</button>
               </div>
-              <div class="wallet__input">
-                <div class="wallet__input-field">
-                  <button class="wallet__input-all js-walletBtnMax" type="button">MAX</button>
-                  <input class="input__field js-walletDepositTonInput" type="text" placeholder="0" inputmode="decimal">
+              <div class="wallet__step hide" data-step="deposit-ton-input">
+                <div class="wallet__balance">
+                  <div class="wallet__balance-currency">
+                    <img src="img/icons/ton-logo.svg" alt="Ton">
+                    <span class="js-depositMax" data-deposit-max="1126.5">1 126.5 TON</span>
+                  </div>
+                  <div class="wallet__balance-block js-copyWrap">
+                    <div class="wallet__balance-address js-copyText" data-copy="UQC4vgasdasddAas12srWz">UQC4vg...srWz</div>
+                    <button class="wallet__balance-copy js-copyBtn" type="button" aria-label="copy"> </button>
+                    <button class="wallet__balance-btn" type="button">Disconnect</button>
+                  </div>
                 </div>
+                <div class="wallet__input">
+                  <div class="wallet__input-field">
+                    <button class="wallet__input-all js-walletBtnMax" type="button">MAX</button>
+                    <input class="input__field js-walletDepositTonInput" type="text" placeholder="0" inputmode="decimal">
+                  </div>
+                </div>
+                <button class="wallet__btn btn js-depositTonBtn" type="button" disabled>Deposit <span class="js-depositTonBtnText"></span>
+                </button>
               </div>
-              <button class="wallet__btn btn js-depositTonBtn" type="button" disabled>Deposit <span class="js-depositTonBtnText"></span>
-              </button>
-            </div>
-            <div class="wallet__wrap wallet__wrap--center">
-              <div class="wallet__img">
-                <img src="img/icons/ton-logo.svg" alt="">
+              <div class="wallet__processing js-depositResult hide" data-step="deposit-ton-processing">
+                <div class="wallet__img">
+                  <img src="img/icons/ton-logo.svg" alt="">
+                </div>
+                <div class="wallet__title">Processing ...</div>
+                <div class="wallet__text">Your payment of 20.0 TON will be automatically confirmed after it is credited</div>
+                <button class="wallet__btn btn js-closeDepositResult" type="button">Back to wallet</button>
               </div>
-              <div class="wallet__title">Processing ...</div>
-              <div class="wallet__text">Your payment of 20.0 TON will be automatically confirmed after it is credited</div>
-              <button class="wallet__btn btn js-openWalletMain" type="button">Back to wallet</button>
             </div>
           </div>
         </div>
         <div class="wallet-output js-walletOutput hide">
-          <div class="wallet-output__step" data-step="cryptocurrency">
+          <div class="wallet__step" data-step="cryptocurrency">
             <div class="wallet__title">Cryptocurrency</div>
             <div class="wallet__text">Select a cryptocurrency to withdraw</div>
             <ul class="wallet__currencies">
@@ -2098,7 +2103,7 @@
               </li>
             </ul>
           </div>
-          <div class="wallet-output__step hide" data-step="network">
+          <div class="wallet__step hide" data-step="network">
             <div class="wallet__title">Withdraw network</div>
             <div class="wallet__text">Select a withdraw network</div>
             <div class="wallet__selecting">
@@ -2126,7 +2131,7 @@
             </div>
             <div class="wallet__warning">Make sure that your withdrawal address and network match, otherwise your assets may be lost.</div>
           </div>
-          <div class="wallet-output__step hide" data-step="address">
+          <div class="wallet__step hide" data-step="address">
             <div class="wallet__title">Withdraw address</div>
             <div class="wallet__text">Please provide the withdrawal address</div>
             <div class="wallet__input">
@@ -2137,7 +2142,7 @@
             <button class="js-openWalletStep wallet__btn btn" type="button" data-step-open="summary">Confirm</button>
             <div class="wallet__warning">Make sure that your withdrawal address and network match, otherwise your assets may be lost.</div>
           </div>
-          <div class="wallet-output__step hide" data-step="summary">
+          <div class="wallet__step hide" data-step="summary">
             <div class="wallet__title">Withdraw summary</div>
             <div class="wallet__text">Specify the withdrawal amount</div>
             <div class="wallet__input">
@@ -2162,7 +2167,7 @@
             </ul>
             <button class="js-openWalletStep wallet__btn btn" type="button" data-step-open="confirm">Withdraw</button>
           </div>
-          <div class="wallet-output__step hide" data-step="confirm">
+          <div class="wallet__step hide" data-step="confirm">
             <div class="wallet__title">Confirm transaction</div>
             <div class="wallet__text">Check the information</div>
             <div class="wallet__sum">
@@ -2184,7 +2189,7 @@
             </ul>
             <button class="js-openWalletStep wallet__btn btn" type="button" data-step-open="result-usdt">Confirm</button>
           </div>
-          <div class="wallet-output__step hide" data-step="result-usdt">
+          <div class="wallet__step hide" data-step="result-usdt">
             <div class="wallet__wrap wallet__wrap--center">
               <div class="wallet__img">
                 <img src="img/icons/usdt.svg" alt="">
@@ -2197,14 +2202,14 @@
               <button class="wallet__btn btn js-openWalletMain" type="button">Back to wallet</button>
             </div>
           </div>
-          <div class="wallet-output__step hide" data-step="ton-network">
+          <div class="wallet__step hide" data-step="ton-network">
             <button class="js-openWalletStep wallet__btn wallet__btn--ton btn" type="button" data-step-open="ton-address">
               <img src="img/icons/ton-logo.svg" alt="">
               <span>On wallet UQC4vg...srWz</span>
             </button>
             <button class="js-openWalletStep wallet__btn btn wallet__btn--transparent" type="button" data-step-open="ton-address">On other adress</button>
           </div>
-          <div class="wallet-output__step hide" data-step="ton-address">
+          <div class="wallet__step hide" data-step="ton-address">
             <div class="wallet__title">Withdraw address</div>
             <div class="wallet__text">Please provide the withdrawal address</div>
             <div class="wallet__input">
@@ -2220,7 +2225,7 @@
             <button class="js-openWalletStep wallet__btn btn" type="button" data-step-open="ton-summary">Confirm</button>
             <div class="wallet__warning">Make sure that your withdrawal address and network match, otherwise your assets may be lost. </div>
           </div>
-          <div class="wallet-output__step hide" data-step="ton-summary">
+          <div class="wallet__step hide" data-step="ton-summary">
             <div class="wallet__title">Withdraw summary</div>
             <div class="wallet__text">Specify the withdrawal amount</div>
             <div class="wallet__input">
@@ -2245,7 +2250,7 @@
             </ul>
             <button class="js-openWalletStep wallet__btn btn" type="button" data-step-open="ton-confirm">Withdraw</button>
           </div>
-          <div class="wallet-output__step hide" data-step="ton-confirm">
+          <div class="wallet__step hide" data-step="ton-confirm">
             <div class="wallet__title">Confirm transaction</div>
             <div class="wallet__text">Check the information</div>
             <div class="wallet__sum">
@@ -2271,7 +2276,7 @@
             </ul>
             <button class="js-openWalletStep wallet__btn btn" type="button" data-step-open="result-ton">Confirm</button>
           </div>
-          <div class="wallet-output__step hide" data-step="result-ton">
+          <div class="wallet__step hide" data-step="result-ton">
             <div class="wallet__wrap wallet__wrap--center">
               <div class="wallet__img">
                 <img src="img/icons/ton-logo.svg" alt="">
