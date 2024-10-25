@@ -3148,6 +3148,17 @@
      window.Telegram.WebApp.disableVerticalSwipes();
 
 window.addEventListener('load', function() {
+    preloader.start();
+    
+    setTimeout(() => {
+        preloader.stop();
+        createNotification('default', 'Short notification', 2);
+        createNotification('default', 'Long notification', 2, 'Notification’s description');
+        createNotification('warning', 'Short notification!', 2); 
+        createNotification('success', 'Successful prediction ', 2, '+70'); 
+        createNotification('unsuccess', 'Unsuccessful prediction ', 2, '-15'); 
+        
+    }, 5000);
     let toggleSetting = this.document.querySelectorAll('.js-toggleSetting');
     
     toggleSetting.forEach(toggle => {
@@ -3187,12 +3198,6 @@ window.addEventListener('load', function() {
             scrollToTop();
         }, 350);
     })
-    const customNotification1 = createNotification('default', 'Short notification', 2);
-    const customNotification2 = createNotification('default', 'Long notification', 2, 'Notification’s description');
-    const customNotification3 = createNotification('warning', 'Short notification!', 2); 
-    const customNotification4 = createNotification('success', 'Successful prediction ', 2, '+70'); 
-    const customNotification5 = createNotification('unsuccess', 'Unsuccessful prediction ', 2, '-15'); 
-    
     let farmingBtn = document.querySelector('.farming__btn');
     farmingBtn.addEventListener('click', function() {
         startConfettiAnimation()
