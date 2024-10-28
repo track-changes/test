@@ -26,7 +26,6 @@
           <div class="header__inner">
             <button class="header__btn header__btn--settings js-openSettings" type="button" aria-label="settings"></button>
             <div class="header__right">
-              <button class="header__btn header__btn--battle js-openBattle" type="button" aria-label="settings"></button>
               <button class="header__btn header__btn--user js-openUser" type="button" aria-label="settings"></button>
             </div>
           </div>
@@ -116,72 +115,6 @@
               </div>
               <button class="user__btn" type="button" disabled>Done</button>
             </div>
-          </section>
-          <div id="stars-container">
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
-          </div>
-          <section class="trade js-sectionTrade hide">
-            <div class="trade-box">
-              <div class="trade-head">
-                <div class="trade-head__currency">
-                  <b>BTCUSDT.P</b>
-                  <span>+3,60 %</span>
-                  <!--<span class="red">-1%</span>-->
-                </div>
-                <div class="trade-head__label">Coming Soon</div>
-              </div>
-              <div class="trade-direction">
-                <div class="trade-direction__radio">
-                  <input type="radio" name="direction" value="buy" id="trade-buy" checked>
-                  <label for="trade-buy">Buy</label>
-                </div>
-                <div class="trade-direction__radio">
-                  <input type="radio" name="direction" value="sell" id="trade-sell">
-                  <label for="trade-sell">Sell </label>
-                </div>
-              </div>
-              <div class="trade-range">
-                <div id="trade-range"></div>
-              </div>
-              <div class="trade-info">
-                <span>Max. position:</span>
-                <b>100 000.00 USDT</b>
-              </div>
-            </div>
-            <div class="trade-calc js-tradeCalc">
-              <div class="trade-calc__data">
-                <div class="trade-calc__wrap js-tradeInputWrap">
-                  <label class="trade-calc__label">Entry price (USDT):</label>
-                  <input class="trade-calc__input js-tradeInput" type="text" inputmode="numeric" name="entry" placeholder="0">
-                </div>
-                <div class="trade-calc__wrap js-tradeInputWrap">
-                  <label class="trade-calc__label">Exit price (USDT):</label>
-                  <input class="trade-calc__input js-tradeInput" type="text" inputmode="numeric" name="exit" placeholder="0">
-                </div>
-                <div class="trade-calc__wrap js-tradeInputWrap">
-                  <label class="trade-calc__label">Amount (BTC):</label>
-                  <input class="trade-calc__input js-tradeInput" type="text" inputmode="numeric" name="amount" placeholder="0">
-                </div>
-              </div>
-              <div class="trade-calc__result">
-                <div class="trade-calc__title">Result:</div>
-                <div class="trade-calc__box">
-                  <div class="trade-calc__label trade-calc__label--underline">Initial margin:</div>
-                  <div class="trade-calc__text js-tradeResultMargin">1 000.00 USDT</div>
-                </div>
-                <div class="trade-calc__box">
-                  <div class="trade-calc__label trade-calc__label--underline">PNL:</div>
-                  <div class="trade-calc__text js-tradeResultPln">20 000.00 USDT</div>
-                </div>
-                <div class="trade-calc__box">
-                  <div class="trade-calc__label trade-calc__label--underline">PNL, %:</div>
-                  <div class="trade-calc__text js-tradeResultPlnPercent">2 000.00 %</div>
-                </div>
-              </div>
-            </div>
-            <button class="trade__btn btn js-tradeBtn" type="button">Calculate</button>
           </section>
           <div class="battle__wrapper js-sectionBattle hide">
             <div class="battle js-battleMain">
@@ -1046,7 +979,7 @@
                 <div id="stars5"></div>
                 <div id="stars6"></div>
               </div>
-              <div class="farming__sum coin">2 129,37</div>
+              <div class="farming__sum coin" id="farmingSum">2 129,37</div>
               <button class="farming__btn btn" type="button">
                 <span>Start Farming</span>
               </button>
@@ -2933,9 +2866,9 @@
               <div class="nav__icon" style="mask-image: url(img/icons/nav-predict.svg)"></div>
               <div class="nav__text">Predict</div>
             </li>
-            <li class="nav__item js-navItem" data-nav="trade">
-              <div class="nav__icon" style="mask-image: url(img/icons/nav-trade.svg)"></div>
-              <div class="nav__text">Trade</div>
+            <li class="nav__item js-navItem" data-nav="battle">
+              <div class="nav__icon" style="mask-image: url(img/icons/nav-battle.svg)"></div>
+              <div class="nav__text">Battle</div>
             </li>
             <li class="nav__item js-navItem" data-nav="wallet">
               <div class="nav__icon" style="mask-image: url(img/icons/nav-wallet.svg)"> </div>
@@ -3148,8 +3081,17 @@
      window.Telegram.WebApp.disableVerticalSwipes();
 
 window.addEventListener('load', function() {
+    let farmingSum = document.getElementById('farmingSum');
+    const totalOptions = {
+        decimalPlaces: 4,
+        duration: 1.5,
+        separator: ' ',
+        useEasing: false
+    }
+    const countUpTotal = new CountUp('farmingSum', 1200, totalOptions);
+    countUpTotal.update(1200.0001);
+
     preloader.start();
-    
     setTimeout(() => {
         preloader.stop();
         createNotification('default', 'Short notification', 2);
@@ -3157,10 +3099,14 @@ window.addEventListener('load', function() {
         createNotification('warning', 'Short notification!', 2); 
         createNotification('success', 'Successful prediction ', 2, '+70'); 
         createNotification('unsuccess', 'Unsuccessful prediction ', 2, '-15'); 
-        
+        setInterval(function() { 
+            let sum = farmingSum.textContent;
+            sum = parseFloat(sum.replace(' ', ''));
+            let newSum = sum + 0.0034;
+            countUpTotal.update(newSum);
+        }, 1000)
     }, 5000);
     let toggleSetting = this.document.querySelectorAll('.js-toggleSetting');
-    
     toggleSetting.forEach(toggle => {
         toggle.addEventListener('click', function() {
             toggle.classList.toggle('on');
@@ -3200,7 +3146,7 @@ window.addEventListener('load', function() {
     })
     let farmingBtn = document.querySelector('.farming__btn');
     farmingBtn.addEventListener('click', function() {
-        startConfettiAnimation()
+        startConfettiAnimation();
     })
     let predictBtnDown = document.querySelector('.predict__btn--down');
     predictBtnDown.addEventListener('click', function() {
