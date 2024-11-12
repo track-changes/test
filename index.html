@@ -979,17 +979,17 @@
                 <div id="stars5"></div>
                 <div id="stars6"></div>
               </div>
-              <div class="farming__sum coin" id="farmingSum">2 129,37</div>
+              <div class="farming__sum coin" id="farmingSum">2 129.370</div>
               <button class="farming__btn btn" type="button">
                 <span>Start Farming</span>
               </button>
               <button class="farming__btn farming__btn--gray btn" type="button">
-                <span>Farming: <strong id="farmingValue">100,0002</strong>
+                <span>Farming: <strong id="farmingValue">100,002</strong>
                 </span>
                 <span class="gray">8h 59m</span>
               </button>
-              <button class="farming__btn btn" type="button">
-                <span>Claim: 250 RTXM</span>
+              <button class="farming__btn btn js-testCountUp" type="button">
+                <span>Claim: 100 RTXM</span>
               </button>
               <button class="farming__btn btn" type="button" disabled="">It is necessary to make a Prediction</button>
             </div>
@@ -2997,31 +2997,62 @@
      window.Telegram.WebApp.disableVerticalSwipes();
 
 window.addEventListener('load', function() {
-    let farmingValue = document.getElementById('farmingValue');
-    const totalOptions = {
-        decimalPlaces: 4,
+    const farmingSumElement = document.getElementById('farmingSum');
+    const farmingValueElement = document.getElementById('farmingValue');
+
+    let startFarmingValue = 0.001;
+    let startFarmingSum = 100.001;
+
+    const farmingValueOptions = {
+        decimalPlaces: 3,
         duration: 1,
         separator: ' ',
         useEasing: false
-    }
-    const countUpTotal = new CountUp('farmingValue', 1200, totalOptions);
-    countUpTotal.update(300.0001);
+    };
+
+    const farmingSumOptions = {
+        decimalPlaces: 3,
+        duration: 3,
+        separator: ' ',
+        useEasing: false
+    };
+    const countUpFarmingSum = new CountUp(farmingSumElement, startFarmingSum, farmingSumOptions);
+    const countUpFarmingValue = new CountUp(farmingValueElement, startFarmingValue, farmingValueOptions);
+
+    const updateFarmingValue = () => {
+        startFarmingValue += 0.0034;
+        countUpFarmingValue.update(startFarmingValue);
+    };
+
+    const startValueUpdate = () => {
+        return setInterval(updateFarmingValue, 1000);
+    };
 
     preloader.start();
+
     setTimeout(() => {
-        preloader.stop();
         createNotification('default', 'Short notification', 2);
         createNotification('default', 'Long notification', 2, 'Notification’s description');
         createNotification('warning', 'Short notification!', 2); 
         createNotification('success', 'Successful prediction ', 2, '+70'); 
         createNotification('unsuccess', 'Unsuccessful prediction ', 2, '-15'); 
-        setInterval(function() { 
-            let sum = farmingValue.textContent;
-            sum = parseFloat(sum.replace(' ', ''));
-            let newSum = sum + 0.0034;
-            countUpTotal.update(newSum);
-        }, 1000)
-    }, 5000);
+        const farmingValueInterval = startValueUpdate();
+
+        document.querySelector('.js-testCountUp').addEventListener('click', () => {
+            startFarmingSum += 100;
+            countUpFarmingSum.update(startFarmingSum);
+        });
+
+        preloader.stop();
+    }, 3000);
+
+    document.querySelector('.js-navItem[data-nav="farming"]').addEventListener('click', () => {
+        preloaderSmall.start();
+        setTimeout(() => {
+            preloaderSmall.stop();
+        }, 3000);
+    });
+
     let toggleSetting = this.document.querySelectorAll('.js-toggleSetting');
     toggleSetting.forEach(toggle => {
         toggle.addEventListener('click', function() {
