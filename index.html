@@ -87,7 +87,7 @@
           <section class="user js-sectionUser hide">
             <div class="user-info">
               <div class="user__avatar">
-                <img src="img/hamster.png" alt="">
+                <img src="img/test.jpg" alt="">
               </div>
               <div class="user__text">
                 <div class="user__name">Иван Иванов</div>
@@ -983,16 +983,15 @@
               <button class="farming__btn btn" type="button">
                 <span>Start Farming</span>
               </button>
-              <!--  <button class="farming__btn farming__btn--gray btn" type="button">
-                    <span>Farming: 100,2</span>
-                    <span class="gray">8h 59m</span>
-                </button>
-                -->
-              <!-- <button class="farming__btn btn" type="button">
-                    <span>Claim: 250 RTXM</span>
-                </button>
-                -->
-              <!-- <button class="farming__btn btn" type="button" disabled="">It is necessary to make a Prediction</button>-->
+              <button class="farming__btn farming__btn--gray btn" type="button">
+                <span>Farming: <strong id="farmingValue">100,0002</strong>
+                </span>
+                <span class="gray">8h 59m</span>
+              </button>
+              <button class="farming__btn btn" type="button">
+                <span>Claim: 250 RTXM</span>
+              </button>
+              <button class="farming__btn btn" type="button" disabled="">It is necessary to make a Prediction</button>
             </div>
             <div class="farming__option js-toggleTasks">
               <div class="farming__option-text">Show completed tasks (1)</div>
@@ -2998,15 +2997,15 @@
      window.Telegram.WebApp.disableVerticalSwipes();
 
 window.addEventListener('load', function() {
-    let farmingSum = document.getElementById('farmingSum');
+    let farmingValue = document.getElementById('farmingValue');
     const totalOptions = {
         decimalPlaces: 4,
         duration: 1,
         separator: ' ',
         useEasing: false
     }
-    const countUpTotal = new CountUp('farmingSum', 1200, totalOptions);
-    countUpTotal.update(1200.0001);
+    const countUpTotal = new CountUp('farmingValue', 1200, totalOptions);
+    countUpTotal.update(300.0001);
 
     preloader.start();
     setTimeout(() => {
@@ -3017,7 +3016,7 @@ window.addEventListener('load', function() {
         createNotification('success', 'Successful prediction ', 2, '+70'); 
         createNotification('unsuccess', 'Unsuccessful prediction ', 2, '-15'); 
         setInterval(function() { 
-            let sum = farmingSum.textContent;
+            let sum = farmingValue.textContent;
             sum = parseFloat(sum.replace(' ', ''));
             let newSum = sum + 0.0034;
             countUpTotal.update(newSum);
