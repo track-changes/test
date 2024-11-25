@@ -974,24 +974,22 @@
           </section>
           <section class="farming js-sectionFarming hide">
             <div class="farming-control">
-              <div class="small" id="stars-container">
+              <div id="stars-container">
                 <div id="stars4"></div>
                 <div id="stars5"></div>
                 <div id="stars6"></div>
               </div>
               <div class="farming__sum coin" id="farmingSum">2 129.370</div>
-              <button class="farming__btn btn" type="button">
-                <span>Start Farming</span>
-              </button>
-              <button class="farming__btn farming__btn--gray btn" type="button">
-                <span>Farming: <strong id="farmingValue">100,002</strong>
-                </span>
-                <span class="gray">8h 59m</span>
-              </button>
+              <!--button(type="button").farming__btn.btn span Start Farming
+                -->
+              <!--<button class="farming__btn farming__btn--gray btn" type="button">-->
+              <!--    <span>Farming: <strong id="farmingValue">100,002</strong></span>-->
+              <!--    <span class="gray">8h 59m</span>-->
+              <!--</button>-->
               <button class="farming__btn btn js-testCountUp" type="button">
                 <span>Claim: 100 RTXM</span>
               </button>
-              <button class="farming__btn btn" type="button" disabled="">It is necessary to make a Prediction</button>
+              <!--<button class="farming__btn btn" type="button" disabled="">It is necessary to make a Prediction</button>-->
             </div>
             <div class="farming__option js-toggleTasks">
               <div class="farming__option-text">Show completed tasks (1)</div>
@@ -1636,7 +1634,7 @@
             <div class="wallet-main js-walletMain">
               <div class="wallet-head">
                 <div class="wallet__title">Assets</div>
-                <div class="wallet__verif">Verified</div>
+                <!--<div class="wallet__verif">Verified</div>-->
                 <!--<div class="wallet__verif wallet__verif--timer">In process</div>-->
                 <!--<a class="wallet__verif wallet__verif--noverif" href="#" target="_blank">Verification</a>-->
               </div>
@@ -1748,29 +1746,6 @@
               <div class="wallet__title">Депозит</div>
               <div class="wallet__text">Deposit TON from your TON Wallet</div>
               <div class="wallet__form js-form">
-                <div class="wallet__input input__block js-cryptoSelect">
-                  <div class="input__label">Выберите криптовалюту</div>
-                  <div class="input__wrap">
-                    <div class="itc-select js-select">
-                      <button class="itc-select__toggle" type="button" name="cryptocurrency" value="ton" data-select="toggle" data-index="1">
-                        <img src="img/icons/ton-logo.svg" alt="Ton">
-                        <span>TON</span>
-                      </button>
-                      <div class="itc-select__dropdown">
-                        <ul class="itc-select__options">
-                          <li class="itc-select__option" data-select="option" data-value="usdt" data-index="0">
-                            <img src="img/icons/usdt.svg" alt="usdt">
-                            <span>USDT</span>
-                          </li>
-                          <li class="itc-select__option itc-select__option_selected" data-select="option" data-value="ton" data-index="1">
-                            <img src="img/icons/ton-logo.svg" alt="Ton">
-                            <span>TON</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <div class="wallet__wrap hide">
                   <div class="wallet__input input__block">
                     <div class="input__label">Сеть</div>
@@ -1817,11 +1792,10 @@
                 </div>
                 <div class="wallet__wrap js-walletTon">
                   <div class="wallet__step" data-step="deposit-ton-start">
-                    <!-- <button class="wallet__btn wallet__btn--ton btn" type="button">
-                          <img src="img/icons/ton-logo.svg" alt="">
-                          <span>Connect Wallet </span>
-                      </button>
-                      -->
+                    <!--<button class="wallet__btn wallet__btn--ton btn js-popupOpen" type="button">-->
+                    <!--    <img src="img/icons/ton-logo.svg" alt="">-->
+                    <!--    <span>Connect Wallet </span>-->
+                    <!--</button>-->
                     <button class="js-openWalletStep wallet__btn btn" type="button" data-step-open="deposit-ton-input">Deposit from TON Wallet</button>
                   </div>
                   <div class="wallet__step hide" data-step="deposit-ton-input">
@@ -1842,7 +1816,7 @@
                         <input class="input__field js-walletDepositTonInput" type="text" placeholder="0" inputmode="decimal">
                       </div>
                     </div>
-                    <button class="wallet__btn btn js-depositTonBtn" type="button" disabled>Deposit <span class="js-depositTonBtnText"></span>
+                    <button class="js-openWalletStep wallet__btn btn js-depositTonBtn" type="button" disabled data-step-open="deposit-ton-processing">Deposit <span class="js-depositTonBtnText"></span>
                     </button>
                   </div>
                   <div class="wallet__processing js-depositResult hide" data-step="deposit-ton-processing">
@@ -2982,13 +2956,14 @@ window.addEventListener('load', function() {
         createNotification('default', 'Short notification', 2);
         createNotification('default', 'Long notification', 2, 'Notification’s description');
         createNotification('warning', 'Short notification!', 2); 
-        createNotification('success', 'Successful prediction ', 2, '+70'); 
+        createNotification('success', 'Successful prediction Successful prediction Successful prediction Successful prediction ', 2, '+70'); 
         createNotification('unsuccess', 'Unsuccessful prediction ', 2, '-15'); 
         const farmingValueInterval = startValueUpdate();
 
         document.querySelector('.js-testCountUp').addEventListener('click', () => {
             startFarmingSum += 100;
             countUpFarmingSum.update(startFarmingSum);
+            createNotification('success', 'Successful prediction Successful prediction Successful predict ', 10, '+70'); 
         });
 
         preloader.stop();
