@@ -1139,7 +1139,7 @@
             </div>
           </section>
           <section class="predict js-sectionPredict hide">
-            <div class="predict-main js-predictMain">
+            <div class="predict-main js-predictMain boost">
               <div class="predict-info">
                 <div class="predict__header">
                   <div class="predict__select itc-select js-select">
@@ -1237,8 +1237,8 @@
                             <div class="predict__card-change">+0.13%</div>
                           </div>
                           <div class="predict__card-box">
-                            <div class="predict__card-label">Prize Pool:</div>
-                            <div class="predict__card-text">100.00 TON</div>
+                            <div class="predict__card-label">Locked price:</div>
+                            <div class="predict__card-text">56 680,91</div>
                           </div>
                           <div class="predict__card-predict">No prediction</div>
                         </div>
@@ -1257,8 +1257,8 @@
                             <div class="predict__card-price">Open for prediction</div>
                           </div>
                           <div class="predict__card-box">
-                            <div class="predict__card-label">Prize Pool:</div>
-                            <div class="predict__card-text">51.50 TON</div>
+                            <div class="predict__card-label">Locked price:</div>
+                            <div class="predict__card-text">-</div>
                           </div>
                           <div class="predict__card-predict">No prediction</div>
                         </div>
@@ -1282,8 +1282,9 @@
                             <div class="predict__card-label">Locked price:</div>
                             <div class="predict__card-text">56 680,91</div>
                           </div>
-                          <div class="predict__card-predict">
+                          <div class="predict__card-predict predict__card-predict--bet">
                             <span class="up">100.1 TON</span>
+                            <span>1.88x</span>
                           </div>
                         </div>
                         <div class="predict__card-ratio predict__card-ratio--gray">
@@ -1301,6 +1302,7 @@
                           </div>
                           <div class="predict__card-predict predict__card-predict--fw">
                             <span class="up">100.1 TON</span>
+                            <span>1.88x</span>
                           </div>
                           <button class="predict__card-btn js-popupOpen" type="button" data-popup="predict-cancel">Cancel</button>
                         </div>
@@ -1309,6 +1311,50 @@
                           <span>1.88x</span>
                         </div>
                       </li>
+                      </li>
+                      <li class="predict__card predict__card--live">
+                        <div class="predict__card-head">
+                          <div class="predict__card-status">04:59</div>
+                          <div class="predict__card-text">09:00</div>
+                          <div class="predict__card-line js-predictLiveLine"></div>
+                        </div>
+                        <div class="predict__card-body">
+                          <div class="predict__card-box">
+                            <div class="predict__card-price predict__card-price--red">0.000000008</div>
+                            <div class="predict__card-change predict__card-change--red">-0.13%</div>
+                          </div>
+                          <div class="predict__card-box">
+                            <div class="predict__card-label">Locked price:</div>
+                            <div class="predict__card-text">56 680,91</div>
+                          </div>
+                          <div class="predict__card-predict predict__card-predict--bet">
+                            <span class="down">100.1 TON</span>
+                            <span class="fire">1.88x</span>
+                          </div>
+                        </div>
+                        <div class="predict__card-ratio predict__card-ratio--gray">
+                          <span>1.88x</span>
+                          <span>1.88x</span>
+                        </div>
+                      <li class="predict__card">
+                        <div class="predict__card-head">
+                          <div class="predict__card-status">00:59:59</div>
+                          <div class="predict__card-text">10:00</div>
+                        </div>
+                        <div class="predict__card-body">
+                          <div class="predict__card-box">
+                            <div class="predict__card-price predict__card-price--gray">Prediction submitted</div>
+                          </div>
+                          <div class="predict__card-predict predict__card-predict--fw">
+                            <span class="down">100.1 TON</span>
+                            <span class="fire">1.88x</span>
+                          </div>
+                          <button class="predict__card-btn js-popupOpen" type="button" data-popup="predict-cancel">Cancel</button>
+                        </div>
+                        <div class="predict__card-ratio">
+                          <span>1.88x</span>
+                          <span>1.88x</span>
+                        </div>
                       </li>
                       <li class="predict__card predict__card--live">
                         <div class="predict__card-head">
@@ -1326,6 +1372,7 @@
                             <span>.</span>
                           </div>
                         </div>
+                      </li>
                       </li>
                     </ul>
                   </div>
@@ -1348,8 +1395,8 @@
                       </div>
                       <button class="predict__input-max js-amountMaxBtn" type="button">MAX</button>
                     </div>
-                    <!--input(type="checkbox" name="rtxm" id="rtxm" checked).predict__checkbox.js-predictCheckbox-->
-                    <!--label(for="rtxm") RTXM -->
+                    <input class="predict__checkbox js-predictCheckbox" type="checkbox" name="rtxm" id="rtxm" checked>
+                    <label for="rtxm">RTXM </label>
                   </div>
                   <div class="predict__range">
                     <div class="predict__range-input" id="range"></div>
@@ -1364,19 +1411,17 @@
                   <div class="predict__box">
                     <span>Available:</span>
                     <div class="predict__available">
-                      <span class="js-availableFounds" data-available="28.4">28.4</span>&nbsp;TON
+                      <span class="js-availableFounds" data-available="1.75">1.75</span>&nbsp;TON
                       <button class="predict__buy js-openWalletDeposit" type="button">Deposit</button>
                     </div>
                   </div>
                 </div>
                 <div class="predict__btns">
                   <button class="predict__btn js-popupOpen" type="button" id="up" name="direction" value="up" data-popup="predict-submit">
-                    Rise
-                    <!--span (1 000 RTXM)-->
+                    Rise<span>(1 000 RTXM)</span>
                   </button>
                   <button class="predict__btn predict__btn--down" type="button" id="down" name="direction" value="down">
-                    Fall
-                    <!--span (1 000 RTXM)-->
+                    Fall<span>(1 000 RTXM)</span>
                   </button>
                 </div>
               </div>
@@ -1414,11 +1459,12 @@
                       <div class="predict-history__direction predict-history__direction--green">
                         <img src="img/icons/trend-up-green.svg" alt="Rise">
                         <span>Rise</span>
+                        <div class="predict-history__ratio">1.88x</div>
                       </div>
                     </div>
                     <div class="predict-history__box">
-                      <div class="predict-history__label">Prize pool:</div>
-                      <span class="predict-history__result">100.00 TON</span>
+                      <div class="predict-history__label">RTXM:</div>
+                      <span class="predict-history__result predict-history__result--red">-1 000</span>
                     </div>
                     <div class="predict-history__box">
                       <div class="predict-history__label">Locked/Closed</div>
@@ -1455,11 +1501,12 @@
                       <div class="predict-history__direction predict-history__direction--red">
                         <img src="img/icons/trend-down.svg" alt="Rise">
                         <span>Fall</span>
+                        <div class="predict-history__ratio">1.88x</div>
                       </div>
                     </div>
                     <div class="predict-history__box">
-                      <div class="predict-history__label">Prize pool:</div>
-                      <span class="predict-history__result">100.00 TON</span>
+                      <div class="predict-history__label">RTXM:</div>
+                      <span class="predict-history__result predict-history__result--red">-1 000</span>
                     </div>
                     <div class="predict-history__box">
                       <div class="predict-history__label">Locked/Closed</div>
@@ -1498,11 +1545,12 @@
                       <div class="predict-history__direction predict-history__direction--green">
                         <img src="img/icons/trend-up-green.svg" alt="Rise">
                         <span>Rise</span>
+                        <div class="predict-history__ratio">1.88x</div>
                       </div>
                     </div>
                     <div class="predict-history__box">
-                      <div class="predict-history__label">Prize pool:</div>
-                      <span class="predict-history__result">100.00 TON</span>
+                      <div class="predict-history__label">RTXM:</div>
+                      <span class="predict-history__result predict-history__result--green">+1 000</span>
                     </div>
                     <div class="predict-history__box">
                       <div class="predict-history__label">Locked/Closed</div>
@@ -1539,11 +1587,12 @@
                       <div class="predict-history__direction predict-history__direction--green">
                         <img src="img/icons/trend-up-green.svg" alt="Rise">
                         <span>Rise</span>
+                        <div class="predict-history__ratio">1.88x</div>
                       </div>
                     </div>
                     <div class="predict-history__box">
-                      <div class="predict-history__label">Prize pool:</div>
-                      <span class="predict-history__result">100.00 TON</span>
+                      <div class="predict-history__label">RTXM:</div>
+                      <span class="predict-history__result predict-history__result--red">-1 000</span>
                     </div>
                     <div class="predict-history__box">
                       <div class="predict-history__label">Locked/Closed</div>
@@ -1580,11 +1629,12 @@
                       <div class="predict-history__direction predict-history__direction--green">
                         <img src="img/icons/trend-up-green.svg" alt="Rise">
                         <span>Rise</span>
+                        <div class="predict-history__ratio">1.88x</div>
                       </div>
                     </div>
                     <div class="predict-history__box">
-                      <div class="predict-history__label">Prize pool:</div>
-                      <span class="predict-history__result">100.00 TON</span>
+                      <div class="predict-history__label">RTXM:</div>
+                      <span class="predict-history__result">-</span>
                     </div>
                     <div class="predict-history__box">
                       <div class="predict-history__label">Locked/Closed</div>
@@ -2802,6 +2852,7 @@
                 <div class="popup-transaction__predict">
                   <!--<span class="green"> Rise </span>-->
                   <span class="red">Fall</span>
+                  <span class="fire">1.88x</span>
                 </div>
               </div>
               <div class="popup-transaction__box">
@@ -2813,13 +2864,13 @@
                 <div class="popup-transaction__label">Amount:</div>
                 <div class="popup-transaction__value">0.1 TON</div>
               </div>
-              <!--.popup-transaction__box
-                .popup-transaction__label Sum:
-                .popup-transaction__value.popup-transaction__value--green +0.188 TON
-                -->
+              <div class="popup-transaction__box">
+                <div class="popup-transaction__label">Sum:</div>
+                <div class="popup-transaction__value popup-transaction__value--green">+0.188 TON</div>
+              </div>
               <div class="popup-transaction__box">
                 <div class="popup-transaction__label">Cost:</div>
-                <div class="popup-transaction__value">0 RTXM</div>
+                <div class="popup-transaction__value">1 000 RTXM</div>
               </div>
               <button class="popup__btn" type="button">Confirm</button>
             </div>
@@ -2841,6 +2892,7 @@
                 <div class="popup-transaction__label">Prediction:</div>
                 <div class="popup-transaction__predict">
                   <span class="green">Rise</span>
+                  <span>1.88x</span>
                 </div>
               </div>
               <div class="popup-transaction__box">
@@ -2999,7 +3051,7 @@ window.addEventListener('load', function() {
     const fiveMinutesLater = adjustCurrentTime(3);
     
     // Вызов функции animateLiveLine с двумя параметрами
-    animateLiveLine(fiveMinutesAgo, fiveMinutesLater);
+    //animateLiveLine(fiveMinutesAgo, fiveMinutesLater);
 
 
     let openDeposit = document.querySelector('.js-openDeposit');
