@@ -283,7 +283,7 @@
                   <button class="js-openSubsection" type="button" data-subsection="contacts">Contact us</button>
                 </li>
                 <li class="settings__link">
-                  <a href="#" target="_blank">Terms of Service</a>
+                  <a href="terms-of-use.pdf" target="_blank">Terms of Service</a>
                 </li>
                 <li class="settings__link">
                   <a href="#" target="_blank">AML Policy</a>
@@ -1415,20 +1415,6 @@
                       </script>
                   </div>
                 </div>
-                <ul class="predict__interval">
-                  <li class="predict__interval-item">
-                    <input class="predict__interval-btn js-intervalBtn" type="radio" id="interval-1" name="interval" value="5" checked>
-                    <label for="interval-1">5 m</label>
-                  </li>
-                  <li class="predict__interval-item">
-                    <input class="predict__interval-btn js-intervalBtn" type="radio" id="interval-2" name="interval" value="60">
-                    <label for="interval-2">1 h</label>
-                  </li>
-                  <li class="predict__interval-item">
-                    <input class="predict__interval-btn js-intervalBtn" type="radio" id="interval-3" name="interval" value="240">
-                    <label for="interval-3">4 h</label>
-                  </li>
-                </ul>
                 <div class="predict__cards">
                   <div class="predict__cards-wrapper">
                     <ul class="predict__cards-list">
@@ -1531,7 +1517,7 @@
                             <div class="predict__card-change predict__card-change--red">-0.13%</div>
                           </div>
                           <div class="predict__card-box">
-                            <div class="predict__card-label">Locked price:</div>
+                            <div class="predict__card-label">Prize Pool:</div>
                             <div class="predict__card-text">56 680,91</div>
                           </div>
                           <div class="predict__card-predict predict__card-predict--bet">
@@ -1615,13 +1601,14 @@
                     <div class="predict__range-label">75%</div>
                     <div class="predict__range-label">100%</div>
                   </div>
-                  <div class="predict__box">
+                  <div class="predict__box predict__box--right js-availableBlock">
                     <span>Available:</span>
-                    <div class="predict__available">
+                    <div class="predict__available js-availableFoundsBlock">
                       <span class="js-availableFounds" data-available="1.75">1.75</span>&nbsp;TON
                       <button class="predict__buy js-openWalletDeposit" type="button">Deposit</button>
                     </div>
                   </div>
+                  <p class="predict__error hide js-predictErrorText">There is not enough balance to make a prediction</p>
                 </div>
                 <div class="predict__btns">
                   <button class="predict__btn js-popupOpen" type="button" id="up" name="direction" value="up" data-popup="predict-submit">
@@ -3170,6 +3157,20 @@
             </div>
           </div>
         </div>
+        <div class="popup js-popup hide" id="make-deposit">
+          <div class="popup-inner">
+            <div class="popup__bg"> </div>
+            <div class="popup-inner__wrap">
+              <div class="popup__close js-popupClose"></div>
+              <div class="popup__title">Make a Deposit</div>
+              <div class="popup__subtext">Insufficient TON to make a prediction. Connect your wallet and top up your balance in just two clicks!</div>
+              <div class="popup__footer">
+                <button class="popup__btn popup__btn--border" type="button">Make a Deposit</button>
+                <button class="popup__btn popup__btn--text js-setCookiePopupDeposit" type="button">Don't show again</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -3177,7 +3178,7 @@
 <script>
      window.Telegram.WebApp.disableVerticalSwipes();
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const farmingSumElement = document.getElementById('farmingSum');
     const farmingValueElement = document.getElementById('farmingValue');
 
@@ -3209,7 +3210,7 @@ window.addEventListener('load', function() {
         return setInterval(updateFarmingValue, 1000);
     };
 
-    preloader.start();
+    /*preloader.start();
 
     setTimeout(() => {
         createNotification('default', 'Short notification', 2);
@@ -3227,7 +3228,7 @@ window.addEventListener('load', function() {
 
         preloader.stop();
         showTermsEn() 
-    }, 3000);
+    }, 3000);*/
 
     document.querySelector('.js-navItem[data-nav="farming"]').addEventListener('click', () => {
         preloaderSmall.start();
@@ -3238,13 +3239,13 @@ window.addEventListener('load', function() {
 
     let toggleSetting = this.document.querySelectorAll('.js-toggleSetting');
     toggleSetting.forEach(toggle => {
-        toggle.addEventListener('click', function() {
+        toggle.addEventListener('click', function () {
             toggle.classList.toggle('on');
         })
     });
     let toggleTasks = this.document.querySelector('.js-toggleTasks');
-    
-    toggleTasks.addEventListener('click', function() {
+
+    toggleTasks.addEventListener('click', function () {
         toggleTasks.classList.toggle('on');
     })
 
@@ -3253,17 +3254,17 @@ window.addEventListener('load', function() {
         const adjustedTime = new Date(now.getTime() + minutes * 60 * 1000);
         return adjustedTime.toUTCString(); // Возвращает время в формате UTC
     }
-    
+
     // Получаем текущее время в UTC с минусом 5 минут и плюс 5 минут
     const fiveMinutesAgo = adjustCurrentTime(-2);
     const fiveMinutesLater = adjustCurrentTime(3);
-    
+
     // Вызов функции animateLiveLine с двумя параметрами
     //animateLiveLine(fiveMinutesAgo, fiveMinutesLater);
 
 
     let openDeposit = document.querySelector('.js-openDeposit');
-    openDeposit.addEventListener('click', function() {
+    openDeposit.addEventListener('click', function () {
         let activePopup = document.querySelector('.js-popup.block');
         if (activePopup) {
             closePopup(activePopup);
@@ -3275,13 +3276,14 @@ window.addEventListener('load', function() {
         }, 350);
     })
     let farmingBtn = document.querySelector('.farming__btn');
-    farmingBtn.addEventListener('click', function() {
+    farmingBtn.addEventListener('click', function () {
         startConfettiAnimation();
     })
     let predictBtnDown = document.querySelector('.predict__btn--down');
-    predictBtnDown.addEventListener('click', function() {
-        createNotification('success', 'Successful prediction ', 2, '+70'); 
-        startConfettiAnimation();
+    predictBtnDown.addEventListener('click', function () {
+        //createNotification('success', 'Successful prediction ', 2, '+70');
+        //startConfettiAnimation();
+        showErrorUserBalance();
     })
 });
 
