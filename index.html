@@ -1604,18 +1604,16 @@
                   <div class="predict__box predict__box--right js-availableBlock">
                     <span>Available:</span>
                     <div class="predict__available js-availableFoundsBlock">
-                      <span class="js-availableFounds" data-available="1.75">1.75</span>&nbsp;TON
+                      <span class="js-availableFounds" data-available="0.09">0.09</span>&nbsp;TON
                       <button class="predict__buy js-openWalletDeposit" type="button">Deposit</button>
                     </div>
                   </div>
                   <p class="predict__error hide js-predictErrorText">There is not enough balance to make a prediction</p>
                 </div>
                 <div class="predict__btns">
-                  <button class="predict__btn js-popupOpen" type="button" id="up" name="direction" value="up" data-popup="predict-submit">
-                    Rise<span>(1 000 RTXM)</span>
+                  <button class="predict__btn js-predictBtn" type="button" id="up" name="direction" value="up" data-popup="predict-submit">Rise<span>(1 000 RTXM)</span>
                   </button>
-                  <button class="predict__btn predict__btn--down" type="button" id="down" name="direction" value="down">
-                    Fall<span>(1 000 RTXM)</span>
+                  <button class="predict__btn predict__btn--down js-predictBtn" type="button" id="down" name="direction" value="down" data-popup="predict-submit">Fall<span>(1 000 RTXM)</span>
                   </button>
                 </div>
               </div>
@@ -3283,7 +3281,6 @@ window.addEventListener('load', function () {
     predictBtnDown.addEventListener('click', function () {
         //createNotification('success', 'Successful prediction ', 2, '+70');
         //startConfettiAnimation();
-        showErrorUserBalance();
     })
 });
 
