@@ -231,16 +231,31 @@
       <div id="wrapper">
         <header class="header js-header">
           <div class="header__inner">
-            <button class="header__btn header__btn--settings js-openSettings" type="button" aria-label="settings"></button>
-            <div class="header__right">
-              <button class="header__btn header__btn--user js-openUser" type="button" aria-label="settings"></button>
-            </div>
+            <button class="header__btn js-openSettings" type="button" aria-label="settings"></button>
+            <button class="header__balance hide js-openWallet" type="button" aria-label="balance">
+              <img src="img/icons/ton-white.svg" alt="">
+              <span>9.31</span>
+              <span>TON</span>
+            </button>
+            <button class="header__connect" type="button" aria-label="connect-wallet">
+              <img src="img/icons/ton-white.svg" alt="">
+              <span>Connect Wallet</span>
+            </button>
           </div>
         </header>
         <main class="main">
           <section class="settings js-sectionSettings hide">
             <div class="settings-inner">
               <h3 class="settings__title">Настройки</h3>
+              <div class="user-info user-info--settings js-openUser">
+                <div class="user__avatar">
+                  <img src="img/test.jpg" alt="">
+                </div>
+                <div class="user__text">
+                  <div class="user__name">Иван Иванов</div>
+                  <div class="user__tg">@username</div>
+                </div>
+              </div>
               <div class="settings__blocks">
                 <div class="settings__block js-toggleSetting">
                   <div class="settings__description">
@@ -3281,6 +3296,11 @@ window.addEventListener('load', function () {
     predictBtnDown.addEventListener('click', function () {
         //createNotification('success', 'Successful prediction ', 2, '+70');
         //startConfettiAnimation();
+    })
+    let headerConnect = document.querySelector('.header__connect');
+    headerConnect.addEventListener('click', function () {
+        headerConnect.classList.add('hide')
+        document.querySelector('.header__balance').classList.remove('hide')
     })
 });
 
