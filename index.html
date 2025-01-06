@@ -247,7 +247,7 @@
           <section class="settings js-sectionSettings hide">
             <div class="settings-inner">
               <h3 class="settings__title">Настройки</h3>
-              <div class="user-info user-info--settings js-openUser">
+              <div class="user-info">
                 <div class="user__avatar">
                   <img src="img/test.jpg" alt="">
                 </div>
@@ -304,38 +304,6 @@
                   <a href="#" target="_blank">AML Policy</a>
                 </li>
               </ul>
-            </div>
-          </section>
-          <section class="user js-sectionUser hide">
-            <div class="user-info">
-              <div class="user__avatar">
-                <img src="img/test.jpg" alt="">
-              </div>
-              <div class="user__text">
-                <div class="user__name">Иван Иванов</div>
-                <div class="user__tg">@username</div>
-              </div>
-            </div>
-            <div class="user-verif">
-              <div class="user__status">
-                <div class="user__status-title">Not verified</div>
-                <div class="user__status-text">In order to perform all operations without restrictions, verification is required.</div>
-              </div>
-              <button class="user__btn" type="button">Verification</button>
-            </div>
-            <div class="user-verif">
-              <div class="user__status">
-                <div class="user__status-title">In progress</div>
-                <div class="user__status-text">In order to perform all operations without restrictions, verification is required.</div>
-              </div>
-              <button class="user__btn" type="button" disabled>In progress</button>
-            </div>
-            <div class="user-verif user-verif--complete">
-              <div class="user__status">
-                <div class="user__status-title">Verified</div>
-                <div class="user__status-text">In order to perform all operations without restrictions, verification is required.</div>
-              </div>
-              <button class="user__btn" type="button" disabled>Done</button>
             </div>
           </section>
           <div class="battle__wrapper js-sectionBattle hide">
@@ -1499,6 +1467,7 @@
                           <span>1.88x</span>
                           <span>1.88x</span>
                         </div>
+                      </li>
                       <li class="predict__card">
                         <div class="predict__card-head">
                           <div class="predict__card-status">00:59:59</div>
@@ -1508,17 +1477,19 @@
                           <div class="predict__card-box">
                             <div class="predict__card-price predict__card-price--gray">Prediction submitted</div>
                           </div>
+                          <div class="predict__card-box">
+                            <div class="predict__card-label">Prize Pool:</div>
+                            <div class="predict__card-text js-testChangeInner">100.00 TON</div>
+                          </div>
                           <div class="predict__card-predict predict__card-predict--fw">
                             <span class="up">100.1 TON</span>
-                            <!--span 1.88x-->
+                            <button class="predict__card-btn js-popupOpen" type="button" data-popup="predict-cancel">Cancel</button>
                           </div>
-                          <button class="predict__card-btn js-popupOpen" type="button" data-popup="predict-cancel">Cancel</button>
                         </div>
                         <div class="predict__card-ratio">
                           <span>1.88x</span>
                           <span>1.88x</span>
                         </div>
-                      </li>
                       </li>
                       <li class="predict__card predict__card--live">
                         <div class="predict__card-head">
@@ -1544,26 +1515,21 @@
                           <span>1.88x</span>
                           <span>1.88x</span>
                         </div>
-                      <li class="predict__card">
-                        <div class="predict__card-head">
-                          <div class="predict__card-status">00:59:59</div>
-                          <div class="predict__card-text">10:00</div>
-                        </div>
-                        <div class="predict__card-body">
-                          <div class="predict__card-box">
-                            <div class="predict__card-price predict__card-price--gray">Prediction submitted</div>
-                          </div>
-                          <div class="predict__card-predict predict__card-predict--fw">
-                            <span class="down">100.1 TON</span>
-                            <span class="fire">1.88x</span>
-                          </div>
-                          <button class="predict__card-btn js-popupOpen" type="button" data-popup="predict-cancel">Cancel</button>
-                        </div>
-                        <div class="predict__card-ratio">
-                          <span>1.88x</span>
-                          <span>1.88x</span>
-                        </div>
-                      </li>
+                        <!--li.predict__card
+                          .predict__card-head
+                              .predict__card-status 00:59:59
+                              .predict__card-text 10:00
+                          .predict__card-body 
+                              .predict__card-box  
+                                  .predict__card-price.predict__card-price--gray Prediction submitted
+                              .predict__card-predict.predict__card-predict--fw 
+                                  span.down 100.1 TON
+                                  span.fire 1.88x
+                              button(type='button' data-popup="predict-cancel").predict__card-btn.js-popupOpen Cancel
+                          .predict__card-ratio
+                              span 1.88x
+                              span 1.88x
+                          -->
                       <li class="predict__card predict__card--live">
                         <div class="predict__card-head">
                           <div class="predict__card-status">04:59</div>
@@ -2948,6 +2914,42 @@
               </div>
             </div>
           </div>
+          <section class="start-info js-startInfo">
+            <div class="start-info__stars"></div>
+            <div class="start-info__head">
+              <div class="start-info__logo">
+                <img src="img/icons/logo.svg" alt="">
+              </div>
+              <button class="start-info__close js-closeStartInfo" type="button"></button>
+            </div>
+            <div class="start-info__slider swiper-container js-startSlider">
+              <ul class="start-info__items swiper-wrapper">
+                <li class="start-info__item swiper-slide">
+                  <div class="start-info__img" data-lottie="lottie/screen-1.json"></div>
+                  <div class="start-info__description">
+                    <h5 class="start-info__title">Welcome to Riwatex!</h5>
+                    <p class="start-info__text">Analyze the market, make predictions, and earn! Your journey to smarter decisions starts here!</p>
+                  </div>
+                </li>
+                <li class="start-info__item swiper-slide">
+                  <div class="start-info__img" data-lottie="lottie/screen-2.json"></div>
+                  <div class="start-info__description">
+                    <h5 class="start-info__title">Choose crypto</h5>
+                    <p class="start-info__text">You have access to 7 cryptocurrencies. Choose one or several, make forecasts, and increase your profit!</p>
+                  </div>
+                </li>
+                <li class="start-info__item swiper-slide">
+                  <div class="start-info__img" data-lottie="lottie/screen-3.json"></div>
+                  <div class="start-info__description">
+                    <h5 class="start-info__title">Start now!</h5>
+                    <p class="start-info__text">Connect your wallet, make a deposit, and place your first prediction!</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="start-info__pagination swiper-pagination js-startSliderPagination"></div>
+              <button class="start-info__next js-startSliderNext" type="button" data-last="Start Riwatex">Next</button>
+            </div>
+          </section>
         </main>
         <nav class="nav js-nav">
           <ul class="nav__list js-navList">
@@ -3192,6 +3194,7 @@
      window.Telegram.WebApp.disableVerticalSwipes();
 
 window.addEventListener('load', function () {
+    showStartInfo();
     const farmingSumElement = document.getElementById('farmingSum');
     const farmingValueElement = document.getElementById('farmingValue');
 
@@ -3301,6 +3304,20 @@ window.addEventListener('load', function () {
     headerConnect.addEventListener('click', function () {
         headerConnect.classList.add('hide')
         document.querySelector('.header__balance').classList.remove('hide')
+    })
+    let testChangeInner = document.querySelector('.js-testChangeInner');
+    let counterTest = 0; 
+    testChangeInner.addEventListener('click', function () {
+        if (counterTest == 0) {
+            replaceTextWithAnimation('.js-testChangeInner', '200.00 TON');
+            counterTest++;
+        } else if (counterTest == 1) {
+            replaceTextWithAnimation('.js-testChangeInner', '300.00 TON');
+            counterTest++;
+        } else {
+            replaceTextWithAnimation('.js-testChangeInner', '100.00 TON');
+            counterTest = 0;
+        }
     })
 });
 
